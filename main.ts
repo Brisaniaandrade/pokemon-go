@@ -1,4 +1,3 @@
-let statusbar: StatusBarSprite = null
 let Ash = sprites.create(img`
     . . . . . . f f f f . . . . . . 
     . . . . f f f 2 2 f f f . . . . 
@@ -53,7 +52,6 @@ let Brock = sprites.create(img`
     . . . f f 1 1 d 1 d 1 f f . . . 
     . . . . . f b b f f f . . . . . 
     `, SpriteKind.Player)
-statusbar.value = 0
 let Team_Rocket = sprites.create(img`
     ........................
     ........................
