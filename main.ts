@@ -52,10 +52,30 @@ let Brock = sprites.create(img`
     . . . f f 1 1 d 1 d 1 f f . . . 
     . . . . . f b b f f f . . . . . 
     `, SpriteKind.Player)
+let YN = sprites.create(img`
+    . f f f . f f f f . f f f . 
+    f f f f f c c c c f f f f f 
+    f f f f b c c c c b f f f f 
+    f f f c 3 c c c c 3 c f f f 
+    . f 3 3 c c c c c c 3 3 f . 
+    . f c c c c 4 4 c c c c f . 
+    . f f c c 4 4 4 4 c c f f . 
+    . f f f b f 4 4 f b f f f . 
+    . f f 4 1 f d d f 1 4 f f . 
+    . . f f d d d d d d f f . . 
+    . . e f e 4 4 4 4 e f e . . 
+    . e 4 f b 3 3 3 3 b f 4 e . 
+    . 4 d f 3 3 3 3 3 3 c d 4 . 
+    . 4 4 f 6 6 6 6 6 6 f 4 4 . 
+    . . . . f f f f f f . . . . 
+    . . . . f f . . f f . . . . 
+    `, SpriteKind.Player)
 controller.player1.moveSprite(Ash, 100, 100)
 controller.player2.moveSprite(Brock, 100, 100)
 controller.player3.moveSprite(Misty, 100, 100)
+controller.player4.moveSprite(YN, 100, 100)
 tiles.loadMap(tiles.createMap(tilemap`level1`))
 splitScreen.cameraFollowSprite(splitScreen.Camera.Camera1, Ash)
 splitScreen.cameraFollowSprite(splitScreen.Camera.Camera2, Brock)
 splitScreen.cameraFollowSprite(splitScreen.Camera.Camera3, Misty)
+splitScreen.cameraFollowSprite(splitScreen.Camera.Camera4, YN)
