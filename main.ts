@@ -1,8 +1,7 @@
 scene.onOverlapTile(SpriteKind.Player, sprites.castle.tilePath5, function (sprite, location) {
 	
 })
-let mySprite = [
-sprites.create(img`
+let Ash = sprites.create(img`
     . . . . . . f f f f . . . . . . 
     . . . . f f f 2 2 f f f . . . . 
     . . . f f f 2 2 2 2 f f f . . . 
@@ -19,8 +18,8 @@ sprites.create(img`
     . . 4 4 f 4 4 5 5 4 4 f 4 4 . . 
     . . . . . f f f f f f . . . . . 
     . . . . . f f . . f f . . . . . 
-    `, SpriteKind.Player),
-sprites.create(img`
+    `, SpriteKind.Player)
+let Misty = sprites.create(img`
     . . . . . . 5 . 5 . . . . . . . 
     . . . . . f 5 5 5 f f . . . . . 
     . . . . f 1 5 2 5 1 6 f . . . . 
@@ -37,8 +36,8 @@ sprites.create(img`
     . . . f 3 3 5 3 3 5 3 3 f . . . 
     . . . f f f f f f f f f f . . . 
     . . . . . f f . . f f . . . . . 
-    `, SpriteKind.Player),
-sprites.create(img`
+    `, SpriteKind.Player)
+let Brock = sprites.create(img`
     . . . . . . . f f . . . . . . . 
     . . . . . f f 4 4 f f . . . . . 
     . . . . f 5 4 5 5 4 5 f . . . . 
@@ -55,8 +54,8 @@ sprites.create(img`
     . . e f b b d b d d e e f . . . 
     . . . f f 1 1 d 1 d 1 f f . . . 
     . . . . . f b b f f f . . . . . 
-    `, SpriteKind.Player),
-sprites.create(img`
+    `, SpriteKind.Player)
+let Team_Rocket = sprites.create(img`
     ........................
     ........................
     ........................
@@ -82,7 +81,9 @@ sprites.create(img`
     ........................
     ........................
     `, SpriteKind.Player)
-]._pickRandom()
-scene.cameraFollowSprite(mySprite)
-controller.player1.moveSprite(mySprite, 100, 100)
+scene.cameraFollowSprite(Ash)
+controller.player1.moveSprite(Ash, 100, 100)
+controller.player2.moveSprite(Brock, 100, 100)
+controller.player3.moveSprite(Misty, 100, 100)
+controller.player4.moveSprite(Team_Rocket, 100, 100)
 tiles.loadMap(tiles.createMap(tilemap`level1`))
