@@ -1,3 +1,6 @@
+function Statusbar () {
+	
+}
 let Ash = sprites.create(img`
     . . . . . . f f f f . . . . . . 
     . . . . f f f 2 2 f f f . . . . 
@@ -78,7 +81,6 @@ let Team_Rocket = sprites.create(img`
     ........................
     ........................
     `, SpriteKind.Player)
-light.showAnimation(light.runningLightsAnimation, 5000)
 scene.cameraFollowSprite(Ash)
 controller.player1.moveSprite(Ash, 100, 100)
 controller.player2.moveSprite(Brock, 100, 100)
