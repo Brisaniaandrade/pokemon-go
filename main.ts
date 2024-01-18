@@ -59,5 +59,9 @@ scene.cameraFollowSprite(Ash)
 controller.player1.moveSprite(Ash, 100, 100)
 tiles.loadMap(tiles.createMap(tilemap`level1`))
 game.onUpdate(function () {
-	
+    if (true) {
+        music.play(music.createSong(hex`00780004080200`), music.PlaybackMode.UntilDone)
+    } else {
+        info.setScore(0)
+    }
 })
