@@ -87,9 +87,3 @@ controller.player2.moveSprite(Brock, 100, 100)
 controller.player3.moveSprite(Misty, 100, 100)
 controller.player4.moveSprite(Team_Rocket, 100, 100)
 tiles.loadMap(tiles.createMap(tilemap`level1`))
-game.onUpdate(function () {
-    scene.setBackgroundColor(0)
-    if (true) {
-        tiles.coverAllTiles(assets.tile`transparency16`, assets.tile`transparency16`)
-    }
-})
