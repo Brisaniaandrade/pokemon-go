@@ -58,3 +58,6 @@ let Brock = sprites.create(img`
 scene.cameraFollowSprite(Ash)
 controller.player1.moveSprite(Ash, 100, 100)
 tiles.loadMap(tiles.createMap(tilemap`level1`))
+game.onUpdate(function () {
+	
+})
