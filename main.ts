@@ -341,6 +341,7 @@ YN = sprites.create(img`
     . . . . f f f f f f . . . . 
     . . . . f f . . f f . . . . 
     `, SpriteKind.Player)
+Ash.setPosition(0, 0)
 controller.player1.moveSprite(Ash, 100, 100)
 controller.player2.moveSprite(Brock, 100, 100)
 controller.player3.moveSprite(Misty, 100, 100)
