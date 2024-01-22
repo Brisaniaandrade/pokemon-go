@@ -333,10 +333,10 @@ let YN = sprites.create(img`
     . . . . f f f f f f . . . . 
     . . . . f f . . f f . . . . 
     `, SpriteKind.Player)
-ashp.follow(Ash, 40)
-brockp.follow(Brock, 40)
-mistyp.follow(Misty, 40)
-ynp.follow(YN, 40)
+ashp.follow(Ash, 45)
+brockp.follow(Brock, 45)
+mistyp.follow(Misty, 45)
+ynp.follow(YN, 45)
 controller.player1.moveSprite(Ash, 100, 100)
 controller.player2.moveSprite(Brock, 100, 100)
 controller.player3.moveSprite(Misty, 100, 100)
