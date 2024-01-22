@@ -9,8 +9,7 @@
         "controller": "*",
         "arcade-split-screen": "github:riknoll/arcade-split-screen#v0.0.3",
         "pxt-status-bar": "github:jwunderl/pxt-status-bar#v0.4.2",
-        "pxt-skillmap-sample": "github:microsoft/pxt-skillmap-sample#b36c62725e3fe26fca25b64cf158878b5fccd9be",
-        "arcade-story": "github:microsoft/arcade-storytelling#v1.0.3"
+        "pxt-skillmap-sample": "github:microsoft/pxt-skillmap-sample#b36c62725e3fe26fca25b64cf158878b5fccd9be"
     },
     "files": [
         "main.blocks",
