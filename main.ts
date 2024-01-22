@@ -261,7 +261,24 @@ img`
     . b 1 1 1 1 1 1 1 d d d d 1 1 1 
     `
 ]
-let ashp = sprites.create(list._pickRandom(), SpriteKind.Player)
+let ashp = sprites.create(img`
+    . . . . . . . . . . . . . . e e 
+    . . . . . . . . . . . . e e 4 5 
+    . . . . . . . . . . e e 4 5 5 5 
+    . . . . . . . . . e 4 6 7 7 6 6 
+    . . . . . . . . e 4 6 7 4 5 5 5 
+    . . . . . . . 4 4 4 8 7 4 4 4 4 
+    . . . . . . 4 5 2 2 e 7 7 7 7 7 
+    . . . . . 4 5 2 3 2 2 7 7 6 6 7 
+    . . . . 4 5 5 2 3 2 e 7 6 6 7 2 
+    . . . 4 4 5 6 7 7 7 7 5 5 4 6 2 
+    . . . e 6 6 7 7 4 5 5 4 4 7 7 e 
+    . . e 4 6 7 7 7 4 4 4 6 7 7 e 5 
+    . . e 5 6 6 8 6 7 7 6 6 6 e 5 d 
+    . e 4 5 5 4 4 e 8 7 7 6 e 5 d 5 
+    . e 5 5 4 e e e e 6 6 e 5 d 5 5 
+    . e 5 5 e e 4 4 f e e 5 d 5 d 5 
+    `, SpriteKind.Enemy)
 let brockp = sprites.create(list._pickRandom(), SpriteKind.Player)
 let mistyp = sprites.create(list._pickRandom(), SpriteKind.Player)
 let ynp = sprites.create(list._pickRandom(), SpriteKind.Player)
