@@ -182,6 +182,9 @@ function pok () {
         `
     ]
 }
+statusbars.onStatusReached(StatusBarKind.Health, statusbars.StatusComparison.LTE, statusbars.ComparisonType.Percentage, 50, function (status) {
+	
+})
 let list: Image[] = []
 list = [
 img`
