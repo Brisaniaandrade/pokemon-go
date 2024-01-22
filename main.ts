@@ -1,4 +1,4 @@
-function pok () {
+scene.onOverlapTile(SpriteKind.Player, sprites.swamp.swampTile1, function (sprite, location) {
     list = [
     img`
         . . . . c c c b b b b b . . . . 
@@ -181,7 +181,7 @@ function pok () {
         . c c c c c c c . . . . . . . . 
         `
     ]
-}
+})
 let list: Image[] = []
 list = [
 img`
