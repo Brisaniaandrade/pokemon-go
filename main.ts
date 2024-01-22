@@ -182,10 +182,6 @@ function pok () {
         `
     ]
 }
-let YN: Sprite = null
-let Misty: Sprite = null
-let Brock: Sprite = null
-let Ash: Sprite = null
 let list: Image[] = []
 list = [
 img`
@@ -261,15 +257,7 @@ img`
     . b 1 1 1 1 1 1 1 d d d d 1 1 1 
     `
 ]
-let ashp = sprites.create(list._pickRandom(), SpriteKind.Player)
-let brockp = sprites.create(list._pickRandom(), SpriteKind.Player)
-let mistyp = sprites.create(list._pickRandom(), SpriteKind.Player)
-let ynp = sprites.create(list._pickRandom(), SpriteKind.Player)
-ashp.follow(Ash)
-brockp.follow(Brock)
-mistyp.follow(Misty)
-ynp.follow(YN)
-Ash = sprites.create(img`
+let Ash = sprites.create(img`
     . . . . . . f f f f . . . . . . 
     . . . . f f f 2 2 f f f . . . . 
     . . . f f f 2 2 2 2 f f f . . . 
@@ -287,7 +275,7 @@ Ash = sprites.create(img`
     . . . . . f f f f f f . . . . . 
     . . . . . f f . . f f . . . . . 
     `, SpriteKind.Player)
-Misty = sprites.create(img`
+let Misty = sprites.create(img`
     . . . . . . 5 . 5 . . . . . . . 
     . . . . . f 5 5 5 f f . . . . . 
     . . . . f 1 5 2 5 1 6 f . . . . 
@@ -305,7 +293,7 @@ Misty = sprites.create(img`
     . . . f f f f f f f f f f . . . 
     . . . . . f f . . f f . . . . . 
     `, SpriteKind.Player)
-Brock = sprites.create(img`
+let Brock = sprites.create(img`
     . . . . . . . f f . . . . . . . 
     . . . . . f f 4 4 f f . . . . . 
     . . . . f 5 4 5 5 4 5 f . . . . 
@@ -323,7 +311,7 @@ Brock = sprites.create(img`
     . . . f f 1 1 d 1 d 1 f f . . . 
     . . . . . f b b f f f . . . . . 
     `, SpriteKind.Player)
-YN = sprites.create(img`
+let YN = sprites.create(img`
     . f f f . f f f f . f f f . 
     f f f f f c c c c f f f f f 
     f f f f b c c c c b f f f f 
