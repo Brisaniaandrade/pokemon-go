@@ -182,8 +182,94 @@ function pok () {
         `
     ]
 }
+let YN: Sprite = null
+let Misty: Sprite = null
+let Brock: Sprite = null
+let Ash: Sprite = null
 let list: Image[] = []
-let Ash = sprites.create(img`
+list = [
+img`
+    . . . . . . . . . . . . . . e e 
+    . . . . . . . . . . . . e e 4 5 
+    . . . . . . . . . . e e 4 5 5 5 
+    . . . . . . . . . e 4 6 7 7 6 6 
+    . . . . . . . . e 4 6 7 4 5 5 5 
+    . . . . . . . 4 4 4 8 7 4 4 4 4 
+    . . . . . . 4 5 2 2 e 7 7 7 7 7 
+    . . . . . 4 5 2 3 2 2 7 7 6 6 7 
+    . . . . 4 5 5 2 3 2 e 7 6 6 7 2 
+    . . . 4 4 5 6 7 7 7 7 5 5 4 6 2 
+    . . . e 6 6 7 7 4 5 5 4 4 7 7 e 
+    . . e 4 6 7 7 7 4 4 4 6 7 7 e 5 
+    . . e 5 6 6 8 6 7 7 6 6 6 e 5 d 
+    . e 4 5 5 4 4 e 8 7 7 6 e 5 d 5 
+    . e 5 5 4 e e e e 6 6 e 5 d 5 5 
+    . e 5 5 e e 4 4 f e e 5 d 5 d 5 
+    `,
+img`
+    . . . . . . . . . . . . . . b b 
+    . . . . . . . . . . . b b 6 6 6 
+    . . . . . . . . . b b 3 3 6 7 7 
+    . . . . . . . . b 3 3 3 3 3 8 8 
+    . . . . . . . b 3 3 3 3 3 3 3 3 
+    . . . . . . b 3 4 4 4 3 3 3 3 3 
+    . . . . . b 3 4 5 5 4 3 3 3 3 3 
+    . . . . b 3 3 3 2 2 3 3 3 d d d 
+    . . . b 3 d 3 3 3 3 3 3 d d 3 b 
+    . . b 3 d 3 3 3 3 3 3 d 3 b b 3 
+    . . b d 3 3 3 3 3 3 3 3 b 3 3 a 
+    . b 3 d 3 6 6 3 3 3 3 b 3 3 a a 
+    . b d 3 b 9 8 3 3 3 3 a 3 a a 3 
+    . b d 6 9 8 3 3 3 3 b a a a 3 3 
+    b 3 d 6 8 3 3 3 3 3 b b a 3 3 3 
+    b d d 3 3 3 3 3 3 3 b b 3 3 3 3 
+    `,
+img`
+    . . . . . . . . . . . 6 6 6 6 6 
+    . . . . . . . . . 6 6 7 7 7 7 8 
+    . . . . . . 8 8 8 7 7 8 8 6 8 8 
+    . . e e e e c 6 6 8 8 . 8 7 8 . 
+    . e 2 5 4 2 e c 8 . . . 6 7 8 . 
+    e 2 4 2 2 2 2 2 c . . . 6 7 8 . 
+    e 2 2 2 2 2 2 2 c . . . 8 6 8 . 
+    e 2 e e 2 2 2 2 e e e e c 6 8 . 
+    c 2 e e 2 2 2 2 e 2 5 4 2 c 8 . 
+    . c 2 e e e 2 e 2 4 2 2 2 2 c . 
+    . . c 2 2 2 e e 2 2 2 2 2 2 2 e 
+    . . . e c c e c 2 2 2 2 2 2 2 e 
+    . . . . . . . c 2 e e 2 2 e 2 c 
+    . . . . . . . c e e e e e e 2 c 
+    . . . . . . . . c e 2 2 2 2 c . 
+    . . . . . . . . . c c c c c . . 
+    `,
+img`
+    . . . . . . . . . . . . . . . b 
+    . . . . . . . . . . . b b b b d 
+    . . . . . . . . b b b d 1 1 1 1 
+    . . . . . . b b d 1 1 1 1 1 1 1 
+    . . . . b b d 1 1 1 1 1 1 1 d d 
+    . . . b d 1 1 1 1 1 1 d d d 1 1 
+    . . b d 1 1 1 1 1 d d d 1 1 1 d 
+    . b d 1 1 1 1 1 d d 1 1 1 d d d 
+    . b 1 1 1 1 1 d 1 1 1 d d d 1 1 
+    b d 1 1 1 1 1 d 1 d d d 1 1 1 1 
+    b 1 1 1 1 1 d 1 d d d 1 1 1 1 1 
+    b 1 1 1 1 1 d d d d d 1 1 1 1 1 
+    b 1 1 1 1 1 d d d d d 1 1 1 1 1 
+    b 1 1 1 1 1 1 d d d d 1 1 1 1 1 
+    b d 1 1 1 1 1 1 d d d d 1 1 1 1 
+    . b 1 1 1 1 1 1 1 d d d d 1 1 1 
+    `
+]
+let ashp = sprites.create(list._pickRandom(), SpriteKind.Player)
+let brockp = sprites.create(list._pickRandom(), SpriteKind.Player)
+let mistyp = sprites.create(list._pickRandom(), SpriteKind.Player)
+let ynp = sprites.create(list._pickRandom(), SpriteKind.Player)
+ashp.follow(Ash)
+brockp.follow(Brock)
+mistyp.follow(Misty)
+ynp.follow(YN)
+Ash = sprites.create(img`
     . . . . . . f f f f . . . . . . 
     . . . . f f f 2 2 f f f . . . . 
     . . . f f f 2 2 2 2 f f f . . . 
@@ -201,7 +287,7 @@ let Ash = sprites.create(img`
     . . . . . f f f f f f . . . . . 
     . . . . . f f . . f f . . . . . 
     `, SpriteKind.Player)
-let Misty = sprites.create(img`
+Misty = sprites.create(img`
     . . . . . . 5 . 5 . . . . . . . 
     . . . . . f 5 5 5 f f . . . . . 
     . . . . f 1 5 2 5 1 6 f . . . . 
@@ -219,7 +305,7 @@ let Misty = sprites.create(img`
     . . . f f f f f f f f f f . . . 
     . . . . . f f . . f f . . . . . 
     `, SpriteKind.Player)
-let Brock = sprites.create(img`
+Brock = sprites.create(img`
     . . . . . . . f f . . . . . . . 
     . . . . . f f 4 4 f f . . . . . 
     . . . . f 5 4 5 5 4 5 f . . . . 
@@ -237,7 +323,7 @@ let Brock = sprites.create(img`
     . . . f f 1 1 d 1 d 1 f f . . . 
     . . . . . f b b f f f . . . . . 
     `, SpriteKind.Player)
-let YN = sprites.create(img`
+YN = sprites.create(img`
     . f f f . f f f f . f f f . 
     f f f f f c c c c f f f f f 
     f f f f b c c c c b f f f f 
