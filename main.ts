@@ -1,4 +1,7 @@
 function pok () {
+	
+}
+statusbars.onStatusReached(StatusBarKind.Health, statusbars.StatusComparison.LTE, statusbars.ComparisonType.Percentage, 0, function (status) {
     list = [
     img`
         . . . . c c c b b b b b . . . . 
@@ -181,10 +184,29 @@ function pok () {
         . c c c c c c c . . . . . . . . 
         `
     ]
-}
-statusbars.onStatusReached(StatusBarKind.Health, statusbars.StatusComparison.LTE, statusbars.ComparisonType.Percentage, 50, function (status) {
-	
+    ashd = sprites.create(list._pickRandom(), SpriteKind.Enemy)
+    brockd = sprites.create(list._pickRandom(), SpriteKind.Enemy)
+    mistyd = sprites.create(list._pickRandom(), SpriteKind.Enemy)
+    ynd = sprites.create(list._pickRandom(), SpriteKind.Enemy)
+    story.startCutscene(function () {
+        sprites.destroy(null, effects.clouds, 500)
+    })
 })
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, location) {
+    tiles.loadMap(tiles.createMap(tilemap`level16`))
+    tiles.placeOnRandomTile(Ash, assets.tile`myTile1`)
+    tiles.placeOnRandomTile(Brock, assets.tile`myTile2`)
+    tiles.placeOnRandomTile(Misty, assets.tile`myTile3`)
+    tiles.placeOnRandomTile(YN, assets.tile`myTile4`)
+})
+let ynd: Sprite = null
+let mistyd: Sprite = null
+let brockd: Sprite = null
+let ashd: Sprite = null
+let YN: Sprite = null
+let Brock: Sprite = null
+let Misty: Sprite = null
+let Ash: Sprite = null
 let list: Image[] = []
 list = [
 img`
@@ -264,7 +286,7 @@ let ashp = sprites.create(list._pickRandom(), SpriteKind.Player)
 let brockp = sprites.create(list._pickRandom(), SpriteKind.Player)
 let mistyp = sprites.create(list._pickRandom(), SpriteKind.Player)
 let ynp = sprites.create(list._pickRandom(), SpriteKind.Player)
-let Ash = sprites.create(img`
+Ash = sprites.create(img`
     . . . . . . f f f f . . . . . . 
     . . . . f f f 2 2 f f f . . . . 
     . . . f f f 2 2 2 2 f f f . . . 
@@ -282,7 +304,7 @@ let Ash = sprites.create(img`
     . . . . . f f f f f f . . . . . 
     . . . . . f f . . f f . . . . . 
     `, SpriteKind.Player)
-let Misty = sprites.create(img`
+Misty = sprites.create(img`
     . . . . . . 5 . 5 . . . . . . . 
     . . . . . f 5 5 5 f f . . . . . 
     . . . . f 1 5 2 5 1 6 f . . . . 
@@ -300,7 +322,7 @@ let Misty = sprites.create(img`
     . . . f f f f f f f f f f . . . 
     . . . . . f f . . f f . . . . . 
     `, SpriteKind.Player)
-let Brock = sprites.create(img`
+Brock = sprites.create(img`
     . . . . . . . f f . . . . . . . 
     . . . . . f f 4 4 f f . . . . . 
     . . . . f 5 4 5 5 4 5 f . . . . 
@@ -318,7 +340,7 @@ let Brock = sprites.create(img`
     . . . f f 1 1 d 1 d 1 f f . . . 
     . . . . . f b b f f f . . . . . 
     `, SpriteKind.Player)
-let YN = sprites.create(img`
+YN = sprites.create(img`
     . f f f . f f f f . f f f . 
     f f f f f c c c c f f f f f 
     f f f f b c c c c b f f f f 
