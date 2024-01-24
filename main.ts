@@ -211,6 +211,16 @@ let Brock: Sprite = null
 let Misty: Sprite = null
 let Ash: Sprite = null
 let list: Image[] = []
+story.setPagePauseLength(100, 200)
+story.printCharacterText("PLEASE SELECT A STARTER")
+story.showPlayerChoices("BULBASAUR", "CHARMANDER", "SQUIRTLE")
+if (story.checkLastAnswer("BULBASAUR")) {
+	
+} else if (story.checkLastAnswer("CHARMANDER")) {
+	
+} else if (story.checkLastAnswer("SQUIRTLE")) {
+	
+}
 list = [
 img`
     . . . . . . . . . . . . . . e e 
