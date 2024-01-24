@@ -1,7 +1,7 @@
 function pok () {
 	
 }
-statusbars.onStatusReached(StatusBarKind.Health, statusbars.StatusComparison.LTE, statusbars.ComparisonType.Percentage, 0, function (status) {
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, location) {
     list = [
     img`
         . . . . c c c b b b b b . . . . 
@@ -188,17 +188,20 @@ statusbars.onStatusReached(StatusBarKind.Health, statusbars.StatusComparison.LTE
     brockd = sprites.create(list._pickRandom(), SpriteKind.Enemy)
     mistyd = sprites.create(list._pickRandom(), SpriteKind.Enemy)
     ynd = sprites.create(list._pickRandom(), SpriteKind.Enemy)
-    story.startCutscene(function () {
-        sprites.destroy(null, effects.clouds, 500)
-    })
-})
-scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, location) {
+    statusbar = statusbars.create(10, 5, StatusBarKind.Health)
+    statusbar.positionDirection(CollisionDirection.Top)
+    statusbar.value = 100
     tiles.loadMap(tiles.createMap(tilemap`level16`))
     tiles.placeOnRandomTile(Ash, assets.tile`myTile1`)
     tiles.placeOnRandomTile(Brock, assets.tile`myTile2`)
     tiles.placeOnRandomTile(Misty, assets.tile`myTile3`)
     tiles.placeOnRandomTile(YN, assets.tile`myTile4`)
+    tiles.placeOnRandomTile(ashd, assets.tile`myTile6`)
+    tiles.placeOnRandomTile(brockd, assets.tile`myTile7`)
+    tiles.placeOnRandomTile(mistyd, assets.tile`myTile8`)
+    tiles.placeOnRandomTile(ynd, assets.tile`myTile9`)
 })
+let statusbar: StatusBarSprite = null
 let ynd: Sprite = null
 let mistyd: Sprite = null
 let brockd: Sprite = null
