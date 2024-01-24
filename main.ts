@@ -1,6 +1,26 @@
 function pok () {
-	
+    statusbar = statusbars.create(10, 5, StatusBarKind.Health)
+    statusbar.setLabel("HP")
+    statusbar.positionDirection(CollisionDirection.Top)
+    statusbar.value = 100
+    statusbar.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
+    statusbar.attachToSprite(ashp, 5, 5)
+    statusbar.attachToSprite(brockp, 5, 5)
+    statusbar.attachToSprite(mistyp, 5, 5)
+    statusbar.attachToSprite(ynp, 5, 5)
 }
+statusbars.onStatusReached(StatusBarKind.Health, statusbars.StatusComparison.LTE, statusbars.ComparisonType.Percentage, 50, function (status) {
+    story.startCutscene(function () {
+        sprites.destroy(ashd, effects.spray, 500)
+        sprites.destroy(ashd, effects.spray, 500)
+        sprites.destroy(ashd, effects.spray, 500)
+        sprites.destroy(ashd, effects.spray, 500)
+    })
+})
+statusbars.onZero(StatusBarKind.Health, function (status) {
+    game.splash("You Died")
+    game.gameOver(false)
+})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, location) {
     list = [
     img`
@@ -188,9 +208,6 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, l
     brockd = sprites.create(list._pickRandom(), SpriteKind.Enemy)
     mistyd = sprites.create(list._pickRandom(), SpriteKind.Enemy)
     ynd = sprites.create(list._pickRandom(), SpriteKind.Enemy)
-    statusbar = statusbars.create(10, 5, StatusBarKind.Health)
-    statusbar.positionDirection(CollisionDirection.Top)
-    statusbar.value = 100
     tiles.loadMap(tiles.createMap(tilemap`level16`))
     tiles.placeOnRandomTile(Ash, assets.tile`myTile1`)
     tiles.placeOnRandomTile(Brock, assets.tile`myTile2`)
@@ -200,16 +217,30 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, l
     tiles.placeOnRandomTile(brockd, assets.tile`myTile7`)
     tiles.placeOnRandomTile(mistyd, assets.tile`myTile8`)
     tiles.placeOnRandomTile(ynd, assets.tile`myTile9`)
+    story.startCutscene(function () {
+        fight = miniMenu.createMenuFromArray([
+        miniMenu.createMenuItem("Fight"),
+        miniMenu.createMenuItem("Stay"),
+        miniMenu.createMenuItem("Run")
+        ])
+        fight.setStyleProperty(miniMenu.StyleKind.Selected, miniMenu.StyleProperty.Padding, 5)
+        pok()
+    })
 })
-let statusbar: StatusBarSprite = null
+let fight: miniMenu.MenuSprite = null
 let ynd: Sprite = null
 let mistyd: Sprite = null
 let brockd: Sprite = null
 let ashd: Sprite = null
+let statusbar: StatusBarSprite = null
 let YN: Sprite = null
 let Brock: Sprite = null
 let Misty: Sprite = null
 let Ash: Sprite = null
+let ynp: Sprite = null
+let mistyp: Sprite = null
+let brockp: Sprite = null
+let ashp: Sprite = null
 let list: Image[] = []
 list = [
 img`
@@ -285,10 +316,10 @@ img`
     . b 1 1 1 1 1 1 1 d d d d 1 1 1 
     `
 ]
-let ashp = sprites.create(list._pickRandom(), SpriteKind.Player)
-let brockp = sprites.create(list._pickRandom(), SpriteKind.Player)
-let mistyp = sprites.create(list._pickRandom(), SpriteKind.Player)
-let ynp = sprites.create(list._pickRandom(), SpriteKind.Player)
+ashp = sprites.create(list._pickRandom(), SpriteKind.Player)
+brockp = sprites.create(list._pickRandom(), SpriteKind.Player)
+mistyp = sprites.create(list._pickRandom(), SpriteKind.Player)
+ynp = sprites.create(list._pickRandom(), SpriteKind.Player)
 Ash = sprites.create(img`
     . . . . . . f f f f . . . . . . 
     . . . . f f f 2 2 f f f . . . . 
