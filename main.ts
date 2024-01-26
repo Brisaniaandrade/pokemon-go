@@ -1,30 +1,5 @@
-function sb () {
-    statusbar = statusbars.create(20, 4, StatusBarKind.Health)
-    statusbar.setLabel("HP")
-    statusbar.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
-    statusbar.attachToSprite(ashp, 10, 1)
-    statusbar.setColor(3, 15, 0)
-    statusbar.value = 100
-    statusbar = statusbars.create(20, 4, StatusBarKind.EnemyHealth)
-    statusbar.setLabel("HP")
-    statusbar.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
-    statusbar.attachToSprite(ashd, 10, 1)
-    statusbar.setColor(2, 15, 0)
-    statusbar.value = 100
-}
-function sd () {
-    statusbar4 = statusbars.create(20, 4, StatusBarKind.Health)
-    statusbar4.setLabel("HP")
-    statusbar4.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
-    statusbar4.attachToSprite(ashp, 10, 1)
-    statusbar4.setColor(3, 15, 0)
-    statusbar4.value = 100
-    statusbar4 = statusbars.create(20, 4, StatusBarKind.EnemyHealth)
-    statusbar4.setLabel("HP")
-    statusbar4.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
-    statusbar4.attachToSprite(ashd, 10, 1)
-    statusbar4.setColor(2, 15, 0)
-    statusbar4.value = 100
+function pok () {
+	
 }
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, location) {
     list = [
@@ -213,6 +188,9 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, l
     brockd = sprites.create(list._pickRandom(), SpriteKind.Enemy)
     mistyd = sprites.create(list._pickRandom(), SpriteKind.Enemy)
     ynd = sprites.create(list._pickRandom(), SpriteKind.Enemy)
+    statusbar = statusbars.create(10, 5, StatusBarKind.Health)
+    statusbar.positionDirection(CollisionDirection.Top)
+    statusbar.value = 100
     tiles.loadMap(tiles.createMap(tilemap`level16`))
     tiles.placeOnRandomTile(Ash, assets.tile`myTile1`)
     tiles.placeOnRandomTile(Brock, assets.tile`myTile2`)
@@ -222,49 +200,16 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, l
     tiles.placeOnRandomTile(brockd, assets.tile`myTile7`)
     tiles.placeOnRandomTile(mistyd, assets.tile`myTile8`)
     tiles.placeOnRandomTile(ynd, assets.tile`myTile9`)
-    statusbar.attachToSprite(ashp, 3, 1)
 })
-function pt () {
-    statusbar3 = statusbars.create(20, 4, StatusBarKind.Health)
-    statusbar3.setLabel("HP")
-    statusbar3.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
-    statusbar3.attachToSprite(ashp, 10, 1)
-    statusbar3.setColor(3, 15, 0)
-    statusbar3.value = 100
-    statusbar3 = statusbars.create(20, 4, StatusBarKind.EnemyHealth)
-    statusbar3.setLabel("HP")
-    statusbar3.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
-    statusbar3.attachToSprite(ashd, 10, 1)
-    statusbar3.setColor(2, 15, 0)
-    statusbar3.value = 100
-}
-function pa () {
-    statusbar2 = statusbars.create(20, 4, StatusBarKind.Health)
-    statusbar2.setLabel("HP")
-    statusbar2.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
-    statusbar2.attachToSprite(ashp, 10, 1)
-    statusbar2.setColor(3, 15, 0)
-    statusbar2.value = 100
-    statusbar2 = statusbars.create(20, 4, StatusBarKind.EnemyHealth)
-    statusbar2.setLabel("HP")
-    statusbar2.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
-    statusbar2.attachToSprite(ashd, 10, 1)
-    statusbar2.setColor(2, 15, 0)
-    statusbar2.value = 100
-}
-let statusbar2: StatusBarSprite = null
-let statusbar3: StatusBarSprite = null
+let statusbar: StatusBarSprite = null
 let ynd: Sprite = null
 let mistyd: Sprite = null
 let brockd: Sprite = null
-let statusbar4: StatusBarSprite = null
 let ashd: Sprite = null
-let statusbar: StatusBarSprite = null
 let YN: Sprite = null
 let Brock: Sprite = null
 let Misty: Sprite = null
 let Ash: Sprite = null
-let ashp: Sprite = null
 let list: Image[] = []
 story.setPagePauseLength(100, 200)
 story.printCharacterText("PLEASE SELECT A STARTER")
@@ -350,10 +295,10 @@ img`
     . b 1 1 1 1 1 1 1 d d d d 1 1 1 
     `
 ]
-ashp = sprites.create(list._pickRandom(), SpriteKind.Projectile)
-let brockp = sprites.create(list._pickRandom(), SpriteKind.Projectile)
-let mistyp = sprites.create(list._pickRandom(), SpriteKind.Projectile)
-let ynp = sprites.create(list._pickRandom(), SpriteKind.Projectile)
+let ashp = sprites.create(list._pickRandom(), SpriteKind.Player)
+let brockp = sprites.create(list._pickRandom(), SpriteKind.Player)
+let mistyp = sprites.create(list._pickRandom(), SpriteKind.Player)
+let ynp = sprites.create(list._pickRandom(), SpriteKind.Player)
 Ash = sprites.create(img`
     . . . . . . f f f f . . . . . . 
     . . . . f f f 2 2 f f f . . . . 
