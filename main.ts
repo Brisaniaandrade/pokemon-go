@@ -5,7 +5,6 @@ function sb () {
     statusbar.attachToSprite(ashp, 10, 1)
     statusbar.setColor(3, 15, 0)
     statusbar.value = 100
-    statusbar = statusbars.create(20, 4, StatusBarKind.EnemyHealth)
     statusbar.setLabel("HP")
     statusbar.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
     statusbar.setColor(2, 15, 0)
@@ -15,10 +14,9 @@ function sd () {
     statusbar4 = statusbars.create(20, 4, StatusBarKind.Health)
     statusbar4.setLabel("HP")
     statusbar4.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
-    statusbar4.attachToSprite(ashp, 10, 1)
+    statusbar4.attachToSprite(ynp, 10, 1)
     statusbar4.setColor(3, 15, 0)
     statusbar4.value = 100
-    statusbar4 = statusbars.create(20, 4, StatusBarKind.EnemyHealth)
     statusbar4.setLabel("HP")
     statusbar4.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
     statusbar4.setColor(2, 15, 0)
@@ -220,15 +218,18 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, l
     tiles.placeOnRandomTile(brockd, assets.tile`myTile7`)
     tiles.placeOnRandomTile(mistyd, assets.tile`myTile8`)
     tiles.placeOnRandomTile(ynd, assets.tile`myTile9`)
+    sd()
+    pa()
+    sb()
+    pt()
 })
 function pt () {
     statusbar3 = statusbars.create(20, 4, StatusBarKind.Health)
     statusbar3.setLabel("HP")
     statusbar3.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
-    statusbar3.attachToSprite(ashp, 10, 1)
+    statusbar3.attachToSprite(mistyp, 10, 1)
     statusbar3.setColor(3, 15, 0)
     statusbar3.value = 100
-    statusbar3 = statusbars.create(20, 4, StatusBarKind.EnemyHealth)
     statusbar3.setLabel("HP")
     statusbar3.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
     statusbar3.setColor(2, 15, 0)
@@ -238,10 +239,9 @@ function pa () {
     statusbar2 = statusbars.create(20, 4, StatusBarKind.Health)
     statusbar2.setLabel("HP")
     statusbar2.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
-    statusbar2.attachToSprite(ashp, 10, 1)
+    statusbar2.attachToSprite(brockp, 10, 1)
     statusbar2.setColor(3, 15, 0)
     statusbar2.value = 100
-    statusbar2 = statusbars.create(20, 4, StatusBarKind.EnemyHealth)
     statusbar2.setLabel("HP")
     statusbar2.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
     statusbar2.setColor(2, 15, 0)
@@ -259,6 +259,9 @@ let YN: Sprite = null
 let Brock: Sprite = null
 let Misty: Sprite = null
 let Ash: Sprite = null
+let ynp: Sprite = null
+let mistyp: Sprite = null
+let brockp: Sprite = null
 let ashp: Sprite = null
 let list: Image[] = []
 story.setPagePauseLength(100, 200)
@@ -346,9 +349,9 @@ img`
     `
 ]
 ashp = sprites.create(list._pickRandom(), SpriteKind.Projectile)
-let brockp = sprites.create(list._pickRandom(), SpriteKind.Projectile)
-let mistyp = sprites.create(list._pickRandom(), SpriteKind.Projectile)
-let ynp = sprites.create(list._pickRandom(), SpriteKind.Projectile)
+brockp = sprites.create(list._pickRandom(), SpriteKind.Projectile)
+mistyp = sprites.create(list._pickRandom(), SpriteKind.Projectile)
+ynp = sprites.create(list._pickRandom(), SpriteKind.Projectile)
 Ash = sprites.create(img`
     . . . . . . f f f f . . . . . . 
     . . . . f f f 2 2 f f f . . . . 
