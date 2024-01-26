@@ -8,7 +8,6 @@ function sb () {
     statusbar = statusbars.create(20, 4, StatusBarKind.EnemyHealth)
     statusbar.setLabel("HP")
     statusbar.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
-    statusbar.attachToSprite(ashd, 10, 1)
     statusbar.setColor(2, 15, 0)
     statusbar.value = 100
 }
@@ -22,7 +21,6 @@ function sd () {
     statusbar4 = statusbars.create(20, 4, StatusBarKind.EnemyHealth)
     statusbar4.setLabel("HP")
     statusbar4.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
-    statusbar4.attachToSprite(ashd, 10, 1)
     statusbar4.setColor(2, 15, 0)
     statusbar4.value = 100
 }
@@ -222,7 +220,6 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, l
     tiles.placeOnRandomTile(brockd, assets.tile`myTile7`)
     tiles.placeOnRandomTile(mistyd, assets.tile`myTile8`)
     tiles.placeOnRandomTile(ynd, assets.tile`myTile9`)
-    statusbar.attachToSprite(ashp, 3, 1)
 })
 function pt () {
     statusbar3 = statusbars.create(20, 4, StatusBarKind.Health)
@@ -234,7 +231,6 @@ function pt () {
     statusbar3 = statusbars.create(20, 4, StatusBarKind.EnemyHealth)
     statusbar3.setLabel("HP")
     statusbar3.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
-    statusbar3.attachToSprite(ashd, 10, 1)
     statusbar3.setColor(2, 15, 0)
     statusbar3.value = 100
 }
@@ -248,7 +244,6 @@ function pa () {
     statusbar2 = statusbars.create(20, 4, StatusBarKind.EnemyHealth)
     statusbar2.setLabel("HP")
     statusbar2.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
-    statusbar2.attachToSprite(ashd, 10, 1)
     statusbar2.setColor(2, 15, 0)
     statusbar2.value = 100
 }
@@ -257,8 +252,8 @@ let statusbar3: StatusBarSprite = null
 let ynd: Sprite = null
 let mistyd: Sprite = null
 let brockd: Sprite = null
-let statusbar4: StatusBarSprite = null
 let ashd: Sprite = null
+let statusbar4: StatusBarSprite = null
 let statusbar: StatusBarSprite = null
 let YN: Sprite = null
 let Brock: Sprite = null
