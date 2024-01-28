@@ -58,30 +58,17 @@ function sb () {
     statusbar.setColor(2, 15, 0)
     statusbar.value = 100
 }
+function Fightvspok (mySprite: Sprite) {
+    question = game.askForString("Derivative is the ____ of a tangent line at a given point.")
+    if (question == "slope") {
+        info.changeScoreBy(1)
+    } else {
+        info.changeScoreBy(1)
+    }
+}
 scene.onOverlapTile(SpriteKind.Ash, img`myTile12`, function (sprite, location) {
     tiles.replaceAllTiles(img`myTile12`, img`myTile10`)
     ashp = sprites.create(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Projectile)
-})
-scene.onOverlapTile(SpriteKind.YN, img`myTile21`, function (sprite, location) {
-    tiles.replaceAllTiles(img`myTile21`, img`myTile10`)
-    ynp = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -115,6 +102,27 @@ function sd () {
 scene.onOverlapTile(SpriteKind.Ash, img`myTile13`, function (sprite, location) {
     tiles.replaceAllTiles(img`myTile13`, img`myTile10`)
     ashp = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Projectile)
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile12`, function (sprite, location) {
+    tiles.replaceAllTiles(img`myTile21`, assets.tile`myTile10`)
+    ynp = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -512,6 +520,7 @@ let brockd: Sprite = null
 let ashd: Sprite = null
 let statusbar3: StatusBarSprite = null
 let statusbar4: StatusBarSprite = null
+let question = ""
 let statusbar: StatusBarSprite = null
 let YN2: Sprite = null
 let Brock2: Sprite = null
@@ -520,205 +529,11 @@ let Ash2: Sprite = null
 let ynp: Sprite = null
 let mistyp: Sprite = null
 let brockp: Sprite = null
-let ashp: Sprite = null
 let list: Image[] = []
+let ashp: Sprite = null
 story.setPagePauseLength(100, 200)
 story.printCharacterText("PLEASE SELECT A STARTER PRESENTED IN FRONT OF YOU (walk to it)")
-list = [
-img`
-    . . . . . . . . . . . . . . e e 
-    . . . . . . . . . . . . e e 4 5 
-    . . . . . . . . . . e e 4 5 5 5 
-    . . . . . . . . . e 4 6 7 7 6 6 
-    . . . . . . . . e 4 6 7 4 5 5 5 
-    . . . . . . . 4 4 4 8 7 4 4 4 4 
-    . . . . . . 4 5 2 2 e 7 7 7 7 7 
-    . . . . . 4 5 2 3 2 2 7 7 6 6 7 
-    . . . . 4 5 5 2 3 2 e 7 6 6 7 2 
-    . . . 4 4 5 6 7 7 7 7 5 5 4 6 2 
-    . . . e 6 6 7 7 4 5 5 4 4 7 7 e 
-    . . e 4 6 7 7 7 4 4 4 6 7 7 e 5 
-    . . e 5 6 6 8 6 7 7 6 6 6 e 5 d 
-    . e 4 5 5 4 4 e 8 7 7 6 e 5 d 5 
-    . e 5 5 4 e e e e 6 6 e 5 d 5 5 
-    . e 5 5 e e 4 4 f e e 5 d 5 d 5 
-    `,
-img`
-    . . . . . . . . . . . . . . b b 
-    . . . . . . . . . . . b b 6 6 6 
-    . . . . . . . . . b b 3 3 6 7 7 
-    . . . . . . . . b 3 3 3 3 3 8 8 
-    . . . . . . . b 3 3 3 3 3 3 3 3 
-    . . . . . . b 3 4 4 4 3 3 3 3 3 
-    . . . . . b 3 4 5 5 4 3 3 3 3 3 
-    . . . . b 3 3 3 2 2 3 3 3 d d d 
-    . . . b 3 d 3 3 3 3 3 3 d d 3 b 
-    . . b 3 d 3 3 3 3 3 3 d 3 b b 3 
-    . . b d 3 3 3 3 3 3 3 3 b 3 3 a 
-    . b 3 d 3 6 6 3 3 3 3 b 3 3 a a 
-    . b d 3 b 9 8 3 3 3 3 a 3 a a 3 
-    . b d 6 9 8 3 3 3 3 b a a a 3 3 
-    b 3 d 6 8 3 3 3 3 3 b b a 3 3 3 
-    b d d 3 3 3 3 3 3 3 b b 3 3 3 3 
-    `,
-img`
-    . . . . . . . . . . . 6 6 6 6 6 
-    . . . . . . . . . 6 6 7 7 7 7 8 
-    . . . . . . 8 8 8 7 7 8 8 6 8 8 
-    . . e e e e c 6 6 8 8 . 8 7 8 . 
-    . e 2 5 4 2 e c 8 . . . 6 7 8 . 
-    e 2 4 2 2 2 2 2 c . . . 6 7 8 . 
-    e 2 2 2 2 2 2 2 c . . . 8 6 8 . 
-    e 2 e e 2 2 2 2 e e e e c 6 8 . 
-    c 2 e e 2 2 2 2 e 2 5 4 2 c 8 . 
-    . c 2 e e e 2 e 2 4 2 2 2 2 c . 
-    . . c 2 2 2 e e 2 2 2 2 2 2 2 e 
-    . . . e c c e c 2 2 2 2 2 2 2 e 
-    . . . . . . . c 2 e e 2 2 e 2 c 
-    . . . . . . . c e e e e e e 2 c 
-    . . . . . . . . c e 2 2 2 2 c . 
-    . . . . . . . . . c c c c c . . 
-    `,
-img`
-    . . . . . . . . . . . . . . . b 
-    . . . . . . . . . . . b b b b d 
-    . . . . . . . . b b b d 1 1 1 1 
-    . . . . . . b b d 1 1 1 1 1 1 1 
-    . . . . b b d 1 1 1 1 1 1 1 d d 
-    . . . b d 1 1 1 1 1 1 d d d 1 1 
-    . . b d 1 1 1 1 1 d d d 1 1 1 d 
-    . b d 1 1 1 1 1 d d 1 1 1 d d d 
-    . b 1 1 1 1 1 d 1 1 1 d d d 1 1 
-    b d 1 1 1 1 1 d 1 d d d 1 1 1 1 
-    b 1 1 1 1 1 d 1 d d d 1 1 1 1 1 
-    b 1 1 1 1 1 d d d d d 1 1 1 1 1 
-    b 1 1 1 1 1 d d d d d 1 1 1 1 1 
-    b 1 1 1 1 1 1 d d d d 1 1 1 1 1 
-    b d 1 1 1 1 1 1 d d d d 1 1 1 1 
-    . b 1 1 1 1 1 1 1 d d d d 1 1 1 
-    `
-]
-ashp = sprites.create(list._pickRandom(), SpriteKind.Projectile)
-brockp = sprites.create(list._pickRandom(), SpriteKind.Projectile)
-mistyp = sprites.create(list._pickRandom(), SpriteKind.Projectile)
-ynp = sprites.create(list._pickRandom(), SpriteKind.Projectile)
-Ash2 = sprites.create(img`
-    . . . . . . f f f f . . . . . . 
-    . . . . f f f 2 2 f f f . . . . 
-    . . . f f f 2 2 2 2 f f f . . . 
-    . . f f f e e e e e e f f f . . 
-    . . f f e 2 2 2 2 2 2 e e f . . 
-    . . f e 2 f f f f f f 2 e f . . 
-    . . f f f f e e e e f f f f . . 
-    . f f e f b f 4 4 f b f e f f . 
-    . f e e 4 1 f d d f 1 4 e e f . 
-    . . f e e d d d d d d e e f . . 
-    . . . f e e 4 4 4 4 e e f . . . 
-    . . e 4 f 2 2 2 2 2 2 f 4 e . . 
-    . . 4 d f 2 2 2 2 2 2 f d 4 . . 
-    . . 4 4 f 4 4 5 5 4 4 f 4 4 . . 
-    . . . . . f f f f f f . . . . . 
-    . . . . . f f . . f f . . . . . 
-    `, SpriteKind.Player)
-Misty2 = sprites.create(img`
-    . . . . . . 5 . 5 . . . . . . . 
-    . . . . . f 5 5 5 f f . . . . . 
-    . . . . f 1 5 2 5 1 6 f . . . . 
-    . . . f 1 6 6 6 6 6 1 6 f . . . 
-    . . . f 6 6 f f f f 6 1 f . . . 
-    . . . f 6 f f d d f f 6 f . . . 
-    . . f 6 f d f d d f d f 6 f . . 
-    . . f 6 f d 3 d d 3 d f 6 f . . 
-    . . f 6 6 f d d d d f 6 6 f . . 
-    . f 6 6 f 3 f f f f 3 f 6 6 f . 
-    . . f f d 3 5 3 3 5 3 d f f . . 
-    . . f d d f 3 5 5 3 f d d f . . 
-    . . . f f 3 3 3 3 3 3 f f . . . 
-    . . . f 3 3 5 3 3 5 3 3 f . . . 
-    . . . f f f f f f f f f f . . . 
-    . . . . . f f . . f f . . . . . 
-    `, SpriteKind.Player)
-Brock2 = sprites.create(img`
-    . . . . . . . f f . . . . . . . 
-    . . . . . f f 4 4 f f . . . . . 
-    . . . . f 5 4 5 5 4 5 f . . . . 
-    . . . f e 4 5 5 5 5 4 e f . . . 
-    . . f b 3 e 4 4 4 4 e 3 b f . . 
-    . f e 3 3 3 3 3 3 3 3 3 3 e f . 
-    . f 3 3 e b 3 e e 3 b e 3 3 f . 
-    . f b 3 f f e e e e f f 3 b f . 
-    f f b b f b f e e f b f b b f f 
-    f b b b e 1 f 4 4 f 1 e b b b f 
-    . f b b f 4 4 4 4 4 e e b b f . 
-    . . f e f b d d d e 4 4 4 f . . 
-    . . e 4 c d d d d e 4 4 e f . . 
-    . . e f b b d b d d e e f . . . 
-    . . . f f 1 1 d 1 d 1 f f . . . 
-    . . . . . f b b f f f . . . . . 
-    `, SpriteKind.Player)
-YN2 = sprites.create(img`
-    . f f f . f f f f . f f f . 
-    f f f f f c c c c f f f f f 
-    f f f f b c c c c b f f f f 
-    f f f c 3 c c c c 3 c f f f 
-    . f 3 3 c c c c c c 3 3 f . 
-    . f c c c c 4 4 c c c c f . 
-    . f f c c 4 4 4 4 c c f f . 
-    . f f f b f 4 4 f b f f f . 
-    . f f 4 1 f d d f 1 4 f f . 
-    . . f f d d d d d d f f . . 
-    . . e f e 4 4 4 4 e f e . . 
-    . e 4 f b 3 3 3 3 b f 4 e . 
-    . 4 d f 3 3 3 3 3 3 c d 4 . 
-    . 4 4 f 6 6 6 6 6 6 f 4 4 . 
-    . . . . f f f f f f . . . . 
-    . . . . f f . . f f . . . . 
-    `, SpriteKind.Player)
-ashp.follow(Ash2, 45)
-brockp.follow(Brock2, 45)
-mistyp.follow(Misty2, 45)
-ynp.follow(YN2, 45)
-controller.player1.moveSprite(Ash2, 100, 100)
-controller.player2.moveSprite(Brock2, 100, 100)
-controller.player3.moveSprite(Misty2, 100, 100)
-controller.player4.moveSprite(YN2, 100, 100)
-pauseUntil(() => controller.A.isPressed())
-tiles.loadMap(tiles.createMap(tilemap`level1`))
-tiles.placeOnRandomTile(Ash2, img`myTile1`)
-tiles.placeOnRandomTile(Brock2, img`myTile2`)
-tiles.placeOnRandomTile(Misty2, img`myTile3`)
-tiles.placeOnRandomTile(YN2, img`myTile4`)
-splitScreen.cameraFollowSprite(splitScreen.Camera.Camera1, Ash2)
-splitScreen.cameraFollowSprite(splitScreen.Camera.Camera2, Brock2)
-splitScreen.cameraFollowSprite(splitScreen.Camera.Camera3, Misty2)
-splitScreen.cameraFollowSprite(splitScreen.Camera.Camera4, YN2)
-let MERCHANT = sprites.create(img`
-    ........................
-    ........................
-    ........................
-    ........................
-    ..........ffff..........
-    ........ff1111ff........
-    .......fb111111bf.......
-    .......f11111111f.......
-    ......fd11111111df......
-    ......fd11111111df......
-    ......fddd1111dddf......
-    ......fbdbfddfbdbf......
-    ......fcdcf11fcdcf......
-    .......fb111111bf.......
-    ......fffcdb1bdffff.....
-    ....fc111cbfbfc111cf....
-    ....f1b1b1ffff1b1b1f....
-    ....fbfbffffffbfbfbf....
-    .........ffffff.........
-    ...........fff..........
-    ........................
-    ........................
-    ........................
-    ........................
-    `, SpriteKind.Player)
-let mySprite20240126T183605772Z = sprites.create(img`
+let onep = sprites.create(img`
     111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
     111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
     111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
@@ -839,8 +654,8 @@ let mySprite20240126T183605772Z = sprites.create(img`
     111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
     111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
     111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
-    `, SpriteKind.Player)
-let mySprite20240126T184510975Z = sprites.create(img`
+    `, SpriteKind.Projectile)
+let twop = sprites.create(img`
     11dddd111ddd111dddd111ddd1deeeeeeeeeeecfeeedd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd11
     11dddd111ddd111dddd111ddd1deeeeeeeeeecceeeedd1111ddd111ddd1111ddd111dddd111ddd111dddd111ddd111dddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd11
     11dddd111ddd111dddd111dddddeffffffeefffeeeedd111dddd111dddd111ddd111dddd111ddd111dddd111dddd11dddd111ddd1111ddd111dddd111ddd111dddd111dddd111ddd111dddd111ddd11
@@ -1000,8 +815,8 @@ let mySprite20240126T184510975Z = sprites.create(img`
     dd111dddd111ddd1111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd111dddd111dddd111ddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd111dddd111dd
     ddd11dddd111dddd11ddddd111dddd1ddddd11dddd11ddddd11ddddd11dddd11ddddd11dddd111dddd11ddddd11dddd11ddddd11dddd11ddddd11ddddd11dddd111ddd111dddd11ddddd11dddd111dd
     11dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111dddd111ddd111dddd111ddd111dddd111ddd111dddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd11
-    `, SpriteKind.Player)
-let mySprite20240126T185030604Z = sprites.create(img`
+    `, SpriteKind.Projectile)
+let threep = sprites.create(img`
     ...............................................................................................................................................................
     ...............................................................................................................................................................
     ...............................................................................................................................................................
@@ -1162,4 +977,127 @@ let mySprite20240126T185030604Z = sprites.create(img`
     ...............................................................................................................................................................
     ...............................................................................................................................................................
     ...............................................................................................................................................................
+    `, SpriteKind.Projectile)
+if (true) {
+	
+}
+ashp = sprites.create(list._pickRandom(), SpriteKind.Projectile)
+brockp = sprites.create(list._pickRandom(), SpriteKind.Projectile)
+mistyp = sprites.create(list._pickRandom(), SpriteKind.Projectile)
+ynp = sprites.create(list._pickRandom(), SpriteKind.Projectile)
+Ash2 = sprites.create(img`
+    . . . . . . f f f f . . . . . . 
+    . . . . f f f 2 2 f f f . . . . 
+    . . . f f f 2 2 2 2 f f f . . . 
+    . . f f f e e e e e e f f f . . 
+    . . f f e 2 2 2 2 2 2 e e f . . 
+    . . f e 2 f f f f f f 2 e f . . 
+    . . f f f f e e e e f f f f . . 
+    . f f e f b f 4 4 f b f e f f . 
+    . f e e 4 1 f d d f 1 4 e e f . 
+    . . f e e d d d d d d e e f . . 
+    . . . f e e 4 4 4 4 e e f . . . 
+    . . e 4 f 2 2 2 2 2 2 f 4 e . . 
+    . . 4 d f 2 2 2 2 2 2 f d 4 . . 
+    . . 4 4 f 4 4 5 5 4 4 f 4 4 . . 
+    . . . . . f f f f f f . . . . . 
+    . . . . . f f . . f f . . . . . 
+    `, SpriteKind.Player)
+Misty2 = sprites.create(img`
+    . . . . . . 5 . 5 . . . . . . . 
+    . . . . . f 5 5 5 f f . . . . . 
+    . . . . f 1 5 2 5 1 6 f . . . . 
+    . . . f 1 6 6 6 6 6 1 6 f . . . 
+    . . . f 6 6 f f f f 6 1 f . . . 
+    . . . f 6 f f d d f f 6 f . . . 
+    . . f 6 f d f d d f d f 6 f . . 
+    . . f 6 f d 3 d d 3 d f 6 f . . 
+    . . f 6 6 f d d d d f 6 6 f . . 
+    . f 6 6 f 3 f f f f 3 f 6 6 f . 
+    . . f f d 3 5 3 3 5 3 d f f . . 
+    . . f d d f 3 5 5 3 f d d f . . 
+    . . . f f 3 3 3 3 3 3 f f . . . 
+    . . . f 3 3 5 3 3 5 3 3 f . . . 
+    . . . f f f f f f f f f f . . . 
+    . . . . . f f . . f f . . . . . 
+    `, SpriteKind.Player)
+Brock2 = sprites.create(img`
+    . . . . . . . f f . . . . . . . 
+    . . . . . f f 4 4 f f . . . . . 
+    . . . . f 5 4 5 5 4 5 f . . . . 
+    . . . f e 4 5 5 5 5 4 e f . . . 
+    . . f b 3 e 4 4 4 4 e 3 b f . . 
+    . f e 3 3 3 3 3 3 3 3 3 3 e f . 
+    . f 3 3 e b 3 e e 3 b e 3 3 f . 
+    . f b 3 f f e e e e f f 3 b f . 
+    f f b b f b f e e f b f b b f f 
+    f b b b e 1 f 4 4 f 1 e b b b f 
+    . f b b f 4 4 4 4 4 e e b b f . 
+    . . f e f b d d d e 4 4 4 f . . 
+    . . e 4 c d d d d e 4 4 e f . . 
+    . . e f b b d b d d e e f . . . 
+    . . . f f 1 1 d 1 d 1 f f . . . 
+    . . . . . f b b f f f . . . . . 
+    `, SpriteKind.Player)
+YN2 = sprites.create(img`
+    . f f f . f f f f . f f f . 
+    f f f f f c c c c f f f f f 
+    f f f f b c c c c b f f f f 
+    f f f c 3 c c c c 3 c f f f 
+    . f 3 3 c c c c c c 3 3 f . 
+    . f c c c c 4 4 c c c c f . 
+    . f f c c 4 4 4 4 c c f f . 
+    . f f f b f 4 4 f b f f f . 
+    . f f 4 1 f d d f 1 4 f f . 
+    . . f f d d d d d d f f . . 
+    . . e f e 4 4 4 4 e f e . . 
+    . e 4 f b 3 3 3 3 b f 4 e . 
+    . 4 d f 3 3 3 3 3 3 c d 4 . 
+    . 4 4 f 6 6 6 6 6 6 f 4 4 . 
+    . . . . f f f f f f . . . . 
+    . . . . f f . . f f . . . . 
+    `, SpriteKind.Player)
+ashp.follow(Ash2, 45)
+brockp.follow(Brock2, 45)
+mistyp.follow(Misty2, 45)
+ynp.follow(YN2, 45)
+controller.player1.moveSprite(Ash2, 100, 100)
+controller.player2.moveSprite(Brock2, 100, 100)
+controller.player3.moveSprite(Misty2, 100, 100)
+controller.player4.moveSprite(YN2, 100, 100)
+pauseUntil(() => controller.A.isPressed())
+tiles.loadMap(tiles.createMap(tilemap`level1`))
+tiles.placeOnRandomTile(Ash2, assets.tile`myTile1`)
+tiles.placeOnRandomTile(Brock2, assets.tile`myTile2`)
+tiles.placeOnRandomTile(Misty2, assets.tile`myTile3`)
+tiles.placeOnRandomTile(YN2, assets.tile`myTile4`)
+splitScreen.cameraFollowSprite(splitScreen.Camera.Camera1, Ash2)
+splitScreen.cameraFollowSprite(splitScreen.Camera.Camera2, Brock2)
+splitScreen.cameraFollowSprite(splitScreen.Camera.Camera3, Misty2)
+splitScreen.cameraFollowSprite(splitScreen.Camera.Camera4, YN2)
+let MERCHANT = sprites.create(img`
+    ........................
+    ........................
+    ........................
+    ........................
+    ..........ffff..........
+    ........ff1111ff........
+    .......fb111111bf.......
+    .......f11111111f.......
+    ......fd11111111df......
+    ......fd11111111df......
+    ......fddd1111dddf......
+    ......fbdbfddfbdbf......
+    ......fcdcf11fcdcf......
+    .......fb111111bf.......
+    ......fffcdb1bdffff.....
+    ....fc111cbfbfc111cf....
+    ....f1b1b1ffff1b1b1f....
+    ....fbfbffffffbfbfbf....
+    .........ffffff.........
+    ...........fff..........
+    ........................
+    ........................
+    ........................
+    ........................
     `, SpriteKind.Player)
