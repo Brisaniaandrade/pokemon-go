@@ -496,7 +496,7 @@ function brockdb () {
 }
 function Fightvspok2 (mySprite: Sprite) {
     question = game.askForString("Who is the best looking men? ")
-    if (question == "v") {
+    if (question == "V") {
         statusbar.value += 1
     } else {
         while (false) {
