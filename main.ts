@@ -118,9 +118,51 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile15`, function (sprite, 
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile13`, function (sprite, location) {
 	
 })
+function mistyq (mySprite: Sprite) {
+    q1 = game.askForNumber("Choose a number from one to four")
+    if (q1 == 1) {
+        Fightvspok3(Ash2)
+    } else if (q1 == 2) {
+        Fightvspok3(Brock2)
+    } else if (q1 == 3) {
+        Fightvspok3(Misty2)
+    } else if (q1 == 4) {
+        Fightvspok3(YN2)
+    } else {
+        game.reset()
+    }
+}
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile12`, function (sprite, location) {
 	
 })
+function ashq (mySprite: Sprite) {
+    q1 = game.askForNumber("Choose a number from one to four")
+    if (q1 == 1) {
+        Fightvspok(Ash2)
+    } else if (q1 == 2) {
+        Fightvspok(Brock2)
+    } else if (q1 == 3) {
+        Fightvspok(Misty2)
+    } else if (q1 == 4) {
+        Fightvspok(YN2)
+    } else {
+        game.reset()
+    }
+}
+function ynq (mySprite: Sprite) {
+    q1 = game.askForNumber("Choose a number from one to four")
+    if (q1 == 1) {
+        Fightvspok4(Ash2)
+    } else if (q1 == 2) {
+        Fightvspok4(Brock2)
+    } else if (q1 == 3) {
+        Fightvspok4(Misty2)
+    } else if (q1 == 4) {
+        Fightvspok4(YN2)
+    } else {
+        game.reset()
+    }
+}
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile18`, function (sprite, location) {
     tiles.loadMap(tiles.createMap(tilemap`level22`))
     tiles.placeOnRandomTile(Ash2, assets.tile`myTile1`)
@@ -138,6 +180,20 @@ function ashdb () {
     statusbar5.attachToSprite(ashd, 10, 1)
     statusbar5.setColor(3, 15, 0)
     statusbar5.value = 100
+}
+function brockq (mySprite: Sprite) {
+    q1 = game.askForNumber("Choose a number from one to four")
+    if (q1 == 1) {
+        Fightvspok2(Ash2)
+    } else if (q1 == 2) {
+        Fightvspok2(Brock2)
+    } else if (q1 == 3) {
+        Fightvspok2(Misty2)
+    } else if (q1 == 4) {
+        Fightvspok2(YN2)
+    } else {
+        game.reset()
+    }
 }
 function ashpb () {
     statusbar = statusbars.create(20, 4, StatusBarKind.Health)
@@ -488,6 +544,17 @@ function Fightvspok2 (mySprite: Sprite) {
         }
     }
 }
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile23`, function (sprite, location) {
+    if (tiles.locationOfSprite(Ash2) == location) {
+        ashq(Ash2)
+    } else if (tiles.locationOfSprite(Brock2) == location) {
+        brockq(Brock2)
+    } else if (tiles.locationOfSprite(Misty2) == location) {
+        mistyq(Misty2)
+    } else {
+        ynq(YN2)
+    }
+})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile14`, function (sprite, location) {
 	
 })
@@ -508,6 +575,7 @@ let brockd: Sprite = null
 let list: Image[] = []
 let ashd: Sprite = null
 let statusbar5: StatusBarSprite = null
+let q1 = 0
 let ynd: Sprite = null
 let statusbar8: StatusBarSprite = null
 let statusbar: StatusBarSprite = null
