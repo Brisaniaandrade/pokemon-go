@@ -4,16 +4,6 @@ namespace SpriteKind {
     export const Brock = SpriteKind.create()
     export const YN = SpriteKind.create()
 }
-scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile19`, function (sprite, location) {
-    tiles.loadMap(tiles.createMap(tilemap`level22`))
-    player2 = [
-    Ash2,
-    Brock2,
-    Misty2,
-    YN2
-    ]
-    Fightvspok(player2._pickRandom())
-})
 function Fightvspok (mySprite: Sprite) {
     question = game.askForString("Derivative is the ____ of a tangent line at a given point.")
     if (question == "slope") {
@@ -125,21 +115,18 @@ function yndb () {
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile15`, function (sprite, location) {
 	
 })
-scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile22`, function (sprite, location) {
-    tiles.loadMap(tiles.createMap(tilemap`level22`))
-    player2 = [
-    Ash2,
-    Brock2,
-    Misty2,
-    YN2
-    ]
-    Fightvspok2(player2._pickRandom())
-})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile13`, function (sprite, location) {
 	
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile12`, function (sprite, location) {
 	
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile18`, function (sprite, location) {
+    tiles.loadMap(tiles.createMap(tilemap`level22`))
+    tiles.placeOnRandomTile(Ash2, assets.tile`myTile1`)
+    tiles.placeOnRandomTile(Brock2, assets.tile`myTile2`)
+    tiles.placeOnRandomTile(Misty2, assets.tile`myTile3`)
+    tiles.placeOnRandomTile(YN2, assets.tile`myTile4`)
 })
 statusbars.onStatusReached(StatusBarKind.Health, statusbars.StatusComparison.EQ, statusbars.ComparisonType.Percentage, 0, function (status) {
     game.gameOver(false)
@@ -152,26 +139,6 @@ function ashdb () {
     statusbar5.setColor(3, 15, 0)
     statusbar5.value = 100
 }
-scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile21`, function (sprite, location) {
-    tiles.loadMap(tiles.createMap(tilemap`level22`))
-    player2 = [
-    Ash2,
-    Brock2,
-    Misty2,
-    YN2
-    ]
-    Fightvspok4(player2._pickRandom())
-})
-scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile20`, function (sprite, location) {
-    tiles.loadMap(tiles.createMap(tilemap`level22`))
-    player2 = [
-    Ash2,
-    Brock2,
-    Misty2,
-    YN2
-    ]
-    Fightvspok3(player2._pickRandom())
-})
 function ashpb () {
     statusbar = statusbars.create(20, 4, StatusBarKind.Health)
     statusbar.setLabel("Life")
@@ -545,7 +512,6 @@ let ynd: Sprite = null
 let statusbar8: StatusBarSprite = null
 let statusbar: StatusBarSprite = null
 let question = ""
-let player2: Sprite[] = []
 let ynp: Sprite = null
 let mistyp: Sprite = null
 let brockp: Sprite = null
