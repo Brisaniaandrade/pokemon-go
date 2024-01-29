@@ -4,16 +4,6 @@ namespace SpriteKind {
     export const Brock = SpriteKind.create()
     export const YN = SpriteKind.create()
 }
-scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile19`, function (sprite, location) {
-    tiles.loadMap(tiles.createMap(tilemap`level22`))
-    player2 = [
-    Ash2,
-    Brock2,
-    Misty2,
-    YN2
-    ]
-    Fightvspok(player2._pickRandom())
-})
 function Fightvspok (mySprite: Sprite) {
     question = game.askForString("Derivative is the ____ of a tangent line at a given point.")
     if (question == "slope") {
@@ -125,21 +115,50 @@ function yndb () {
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile15`, function (sprite, location) {
 	
 })
-scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile22`, function (sprite, location) {
-    tiles.loadMap(tiles.createMap(tilemap`level22`))
-    player2 = [
-    Ash2,
-    Brock2,
-    Misty2,
-    YN2
-    ]
-    Fightvspok2(player2._pickRandom())
-})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile13`, function (sprite, location) {
 	
 })
+function mistyq (mySprite: Sprite) {
+    q1 = game.askForNumber("Choose a number from 1-4")
+    if (q1 == 1) {
+        Fightvspok2(Ash2)
+    } else if (q1 == 2) {
+        Fightvspok2(Brock2)
+    } else if (q1 == 3) {
+        Fightvspok2(Misty2)
+    } else {
+        Fightvspok2(YN2)
+    }
+}
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile12`, function (sprite, location) {
 	
+})
+function ashq (mySprite: Sprite) {
+    q1 = game.askForNumber("Choose a number from 1-4")
+    if (q1 == 1) {
+        Fightvspok(Ash2)
+    } else if (q1 == 2) {
+        Fightvspok(Brock2)
+    } else if (q1 == 3) {
+        Fightvspok(Misty2)
+    } else {
+        Fightvspok(YN2)
+    }
+}
+function ynq (mySprite: Sprite) {
+    q1 = game.askForNumber("Choose a number from 1-4")
+    if (q1 == 1) {
+        Fightvspok4(Ash2)
+    } else if (q1 == 2) {
+        Fightvspok4(Brock2)
+    } else if (q1 == 3) {
+        Fightvspok4(Misty2)
+    } else {
+        Fightvspok4(YN2)
+    }
+}
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile18`, function (sprite, location) {
+    tiles.loadMap(tiles.createMap(tilemap`level22`))
 })
 statusbars.onStatusReached(StatusBarKind.Health, statusbars.StatusComparison.EQ, statusbars.ComparisonType.Percentage, 0, function (status) {
     game.gameOver(false)
@@ -152,26 +171,6 @@ function ashdb () {
     statusbar5.setColor(3, 15, 0)
     statusbar5.value = 100
 }
-scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile21`, function (sprite, location) {
-    tiles.loadMap(tiles.createMap(tilemap`level22`))
-    player2 = [
-    Ash2,
-    Brock2,
-    Misty2,
-    YN2
-    ]
-    Fightvspok4(player2._pickRandom())
-})
-scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile20`, function (sprite, location) {
-    tiles.loadMap(tiles.createMap(tilemap`level22`))
-    player2 = [
-    Ash2,
-    Brock2,
-    Misty2,
-    YN2
-    ]
-    Fightvspok3(player2._pickRandom())
-})
 function ashpb () {
     statusbar = statusbars.create(20, 4, StatusBarKind.Health)
     statusbar.setLabel("Life")
@@ -463,6 +462,18 @@ function mistydb () {
     statusbar6.setColor(3, 15, 0)
     statusbar6.value = 100
 }
+function brokeq (mySprite: Sprite) {
+    q1 = game.askForNumber("Choose a number from 1-4")
+    if (q1 == 1) {
+        Fightvspok3(Ash2)
+    } else if (q1 == 2) {
+        Fightvspok3(Brock2)
+    } else if (q1 == 3) {
+        Fightvspok3(Misty2)
+    } else {
+        Fightvspok3(YN2)
+    }
+}
 function brockdb () {
     statusbar7 = statusbars.create(20, 4, StatusBarKind.Health)
     statusbar7.setLabel("Life")
@@ -521,6 +532,18 @@ function Fightvspok2 (mySprite: Sprite) {
         }
     }
 }
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile23`, function (sprite, location) {
+    tiles.replaceAllTiles(assets.tile`myTile23`, assets.tile`myTile17`)
+    if (tiles.locationOfSprite(Ash2) == location) {
+        ashq(Ash2)
+    } else if (tiles.locationOfSprite(Brock2) == location) {
+        brokeq(Brock2)
+    } else if (tiles.locationOfSprite(Misty2) == location) {
+        mistyq(Misty2)
+    } else {
+        ynq(YN2)
+    }
+})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile14`, function (sprite, location) {
 	
 })
@@ -541,11 +564,11 @@ let brockd: Sprite = null
 let list: Image[] = []
 let ashd: Sprite = null
 let statusbar5: StatusBarSprite = null
+let q1 = 0
 let ynd: Sprite = null
 let statusbar8: StatusBarSprite = null
 let statusbar: StatusBarSprite = null
 let question = ""
-let player2: Sprite[] = []
 let ynp: Sprite = null
 let mistyp: Sprite = null
 let brockp: Sprite = null
