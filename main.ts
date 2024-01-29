@@ -164,7 +164,7 @@ function ynq (mySprite: Sprite) {
     }
 }
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile18`, function (sprite, location) {
-    tiles.loadMap(tiles.createMap(tilemap`level22`))
+    tiles.loadMap(tiles.createMap(tilemap`level1`))
     tiles.placeOnRandomTile(Ash2, assets.tile`myTile1`)
     tiles.placeOnRandomTile(Brock2, assets.tile`myTile2`)
     tiles.placeOnRandomTile(Misty2, assets.tile`myTile3`)
@@ -390,7 +390,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, l
     brockd = sprites.create(list._pickRandom(), SpriteKind.Enemy)
     mistyd = sprites.create(list._pickRandom(), SpriteKind.Enemy)
     ynd = sprites.create(list._pickRandom(), SpriteKind.Enemy)
-    tiles.loadMap(tiles.createMap(tilemap`level5`))
+    tiles.loadMap(tiles.createMap(tilemap`level2`))
     tiles.placeOnRandomTile(Ash2, assets.tile`myTile1`)
     tiles.placeOnRandomTile(ashp, assets.tile`myTile1`)
     tiles.placeOnRandomTile(Brock2, assets.tile`myTile2`)
