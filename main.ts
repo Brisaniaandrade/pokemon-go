@@ -4,206 +4,274 @@ namespace SpriteKind {
     export const Brock = SpriteKind.create()
     export const YN = SpriteKind.create()
 }
-function Fightvspok (mySprite: Sprite) {
-    question = game.askForString("Derivative is the ____ of a tangent line at a given point.")
-    if (question == "slope") {
-        statusbar.value += 1
-    } else {
-        while (false) {
-            statusbar.value += -1
-            ashp.startEffect(effects.spray, 500)
-            mistyp.startEffect(effects.spray, 500)
-            ynp.startEffect(effects.spray, 500)
-            brockp.startEffect(effects.spray, 500)
-        }
-    }
-    question = game.askForString("What is the formula for dx? (_ - _)")
-    if (question == "b a") {
-        statusbar.value += 1
-    } else {
-        while (false) {
-            statusbar.value += -1
-            ashp.startEffect(effects.spray, 500)
-            mistyp.startEffect(effects.spray, 500)
-            ynp.startEffect(effects.spray, 500)
-            brockp.startEffect(effects.spray, 500)
-        }
-    }
-    question = game.askForString("6 x 3")
-    if (question == "18") {
-        statusbar.value += 1
-    } else {
-        while (false) {
-            statusbar.value += -1
-            ashp.startEffect(effects.spray, 500)
-            mistyp.startEffect(effects.spray, 500)
-            ynp.startEffect(effects.spray, 500)
-            brockp.startEffect(effects.spray, 500)
-        }
-    }
-    question = game.askForString(" 1+1")
-    if (question == "2") {
-        statusbar.value += 1
-    } else {
-        while (false) {
-            statusbar.value += -1
-            ashp.startEffect(effects.spray, 500)
-            mistyp.startEffect(effects.spray, 500)
-            ynp.startEffect(effects.spray, 500)
-            brockp.startEffect(effects.spray, 500)
-        }
-    }
-}
-function Fightvspok3 (mySprite: Sprite) {
-    question = game.askForString("(3.14)r^2")
-    if (question == "circle area") {
-        statusbar.value += 1
-    } else {
-        while (false) {
-            statusbar.value += -1
-            ashp.startEffect(effects.spray, 500)
-            mistyp.startEffect(effects.spray, 500)
-            ynp.startEffect(effects.spray, 500)
-            brockp.startEffect(effects.spray, 500)
-        }
-    }
-    question = game.askForString("Formula for rectangle area?")
-    if (question == "lw") {
-        statusbar.value += 1
-    } else {
-        while (false) {
-            statusbar.value += -1
-            ashp.startEffect(effects.spray, 500)
-            mistyp.startEffect(effects.spray, 500)
-            ynp.startEffect(effects.spray, 500)
-            brockp.startEffect(effects.spray, 500)
-        }
-    }
-    question = game.askForString("How do you find vertical tangent? (y'=?)  ")
-    if (question == "undefine") {
-        statusbar.value += 1
-    } else {
-        while (false) {
-            statusbar.value += -1
-            ashp.startEffect(effects.spray, 500)
-            mistyp.startEffect(effects.spray, 500)
-            ynp.startEffect(effects.spray, 500)
-            brockp.startEffect(effects.spray, 500)
-        }
-    }
-    question = game.askForString(" 36-8")
-    if (question == "28") {
-        statusbar.value += 1
-    } else {
-        while (false) {
-            statusbar.value += -1
-            ashp.startEffect(effects.spray, 500)
-            mistyp.startEffect(effects.spray, 500)
-            ynp.startEffect(effects.spray, 500)
-            brockp.startEffect(effects.spray, 500)
-        }
-    }
-}
-function yndb () {
-    statusbar8 = statusbars.create(20, 4, StatusBarKind.Health)
-    statusbar8.setLabel("Life")
-    statusbar8.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
-    statusbar8.attachToSprite(ynd, 10, 1)
-    statusbar8.setColor(3, 15, 0)
-    statusbar8.value = 100
-}
-scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile15`, function (sprite, location) {
-	
+scene.onOverlapTile(SpriteKind.Brock, img`myTile17`, function (sprite, location) {
+    tiles.replaceAllTiles(img`myTile17`, img`myTile10`)
+    brockp = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Projectile)
 })
-scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile13`, function (sprite, location) {
-	
+scene.onOverlapTile(SpriteKind.Brock, img`myTile18`, function (sprite, location) {
+    tiles.replaceAllTiles(img`myTile18`, img`myTile10`)
+    brockp = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Projectile)
 })
-function mistyq (mySprite: Sprite) {
-    q1 = game.askForNumber("Choose a number from one to four")
-    if (q1 == 1) {
-        Fightvspok3(Ash2)
-    } else if (q1 == 2) {
-        Fightvspok3(Brock2)
-    } else if (q1 == 3) {
-        Fightvspok3(Misty2)
-    } else if (q1 == 4) {
-        Fightvspok3(YN2)
-    } else {
-        game.reset()
-    }
-}
-scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile12`, function (sprite, location) {
-	
-})
-function ashq (mySprite: Sprite) {
-    q1 = game.askForNumber("Choose a number from one to four")
-    if (q1 == 1) {
-        Fightvspok(Ash2)
-    } else if (q1 == 2) {
-        Fightvspok(Brock2)
-    } else if (q1 == 3) {
-        Fightvspok(Misty2)
-    } else if (q1 == 4) {
-        Fightvspok(YN2)
-    } else {
-        game.reset()
-    }
-}
-function ynq (mySprite: Sprite) {
-    q1 = game.askForNumber("Choose a number from one to four")
-    if (q1 == 1) {
-        Fightvspok4(Ash2)
-    } else if (q1 == 2) {
-        Fightvspok4(Brock2)
-    } else if (q1 == 3) {
-        Fightvspok4(Misty2)
-    } else if (q1 == 4) {
-        Fightvspok4(YN2)
-    } else {
-        game.reset()
-    }
-}
-scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile18`, function (sprite, location) {
-    tiles.loadMap(tiles.createMap(tilemap`level22`))
-    tiles.placeOnRandomTile(Ash2, assets.tile`myTile1`)
-    tiles.placeOnRandomTile(Brock2, assets.tile`myTile2`)
-    tiles.placeOnRandomTile(Misty2, assets.tile`myTile3`)
-    tiles.placeOnRandomTile(YN2, assets.tile`myTile4`)
-})
-statusbars.onStatusReached(StatusBarKind.Health, statusbars.StatusComparison.EQ, statusbars.ComparisonType.Percentage, 0, function (status) {
-    game.gameOver(false)
-})
-function ashdb () {
-    statusbar5 = statusbars.create(20, 4, StatusBarKind.Health)
-    statusbar5.setLabel("Life")
-    statusbar5.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
-    statusbar5.attachToSprite(ashd, 10, 1)
-    statusbar5.setColor(3, 15, 0)
-    statusbar5.value = 100
-}
-function brockq (mySprite: Sprite) {
-    q1 = game.askForNumber("Choose a number from one to four")
-    if (q1 == 1) {
-        Fightvspok2(Ash2)
-    } else if (q1 == 2) {
-        Fightvspok2(Brock2)
-    } else if (q1 == 3) {
-        Fightvspok2(Misty2)
-    } else if (q1 == 4) {
-        Fightvspok2(YN2)
-    } else {
-        game.reset()
-    }
-}
-function ashpb () {
+function sb () {
     statusbar = statusbars.create(20, 4, StatusBarKind.Health)
-    statusbar.setLabel("Life")
+    statusbar.setLabel("HP")
     statusbar.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
     statusbar.attachToSprite(ashp, 10, 1)
     statusbar.setColor(3, 15, 0)
     statusbar.value = 100
+    statusbar.setLabel("HP")
+    statusbar.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
+    statusbar.setColor(2, 15, 0)
+    statusbar.value = 100
 }
-scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, location) {
+scene.onOverlapTile(SpriteKind.Ash, img`myTile12`, function (sprite, location) {
+    tiles.replaceAllTiles(img`myTile12`, img`myTile10`)
+    ashp = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Projectile)
+})
+scene.onOverlapTile(SpriteKind.YN, img`myTile21`, function (sprite, location) {
+    tiles.replaceAllTiles(img`myTile21`, img`myTile10`)
+    ynp = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Projectile)
+})
+function sd () {
+    statusbar4 = statusbars.create(20, 4, StatusBarKind.Health)
+    statusbar4.setLabel("HP")
+    statusbar4.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
+    statusbar4.attachToSprite(ynp, 10, 1)
+    statusbar4.setColor(3, 15, 0)
+    statusbar4.value = 100
+    statusbar4.setLabel("HP")
+    statusbar4.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
+    statusbar4.setColor(2, 15, 0)
+    statusbar4.value = 100
+}
+scene.onOverlapTile(SpriteKind.Ash, img`myTile13`, function (sprite, location) {
+    tiles.replaceAllTiles(img`myTile13`, img`myTile10`)
+    ashp = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Projectile)
+})
+scene.onOverlapTile(SpriteKind.Brock, img`myTile19`, function (sprite, location) {
+    tiles.replaceAllTiles(img`myTile19`, img`myTile10`)
+    brockp = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Projectile)
+})
+scene.onOverlapTile(SpriteKind.Misty, img`myTile15`, function (sprite, location) {
+    tiles.replaceAllTiles(img`myTile15`, img`myTile10`)
+    mistyp = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Projectile)
+})
+function pt () {
+    statusbar3 = statusbars.create(20, 4, StatusBarKind.Health)
+    statusbar3.setLabel("HP")
+    statusbar3.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
+    statusbar3.attachToSprite(mistyp, 10, 1)
+    statusbar3.setColor(3, 15, 0)
+    statusbar3.value = 100
+    statusbar3.setLabel("HP")
+    statusbar3.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
+    statusbar3.setColor(2, 15, 0)
+    statusbar3.value = 100
+}
+scene.onOverlapTile(SpriteKind.Misty, img`myTile16`, function (sprite, location) {
+    tiles.replaceAllTiles(img`myTile16`, img`myTile10`)
+    mistyp = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Projectile)
+})
+scene.onOverlapTile(SpriteKind.YN, img`myTile20`, function (sprite, location) {
+    tiles.replaceAllTiles(img`myTile20`, img`myTile10`)
+    ynp = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Projectile)
+})
+scene.onOverlapTile(SpriteKind.YN, img`myTile22`, function (sprite, location) {
+    tiles.replaceAllTiles(img`myTile22`, img`myTile10`)
+    ynp = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Projectile)
+})
+scene.onOverlapTile(SpriteKind.Misty, img`myTile14`, function (sprite, location) {
+    tiles.replaceAllTiles(img`myTile14`, img`myTile10`)
+    mistyp = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Projectile)
+})
+scene.onOverlapTile(SpriteKind.Player, img`myTile5`, function (sprite, location) {
     list = [
     img`
         . . . . c c c b b b b b . . . . 
@@ -391,206 +459,149 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, l
     mistyd = sprites.create(list._pickRandom(), SpriteKind.Enemy)
     ynd = sprites.create(list._pickRandom(), SpriteKind.Enemy)
     tiles.loadMap(tiles.createMap(tilemap`level5`))
-    tiles.placeOnRandomTile(Ash2, assets.tile`myTile1`)
-    tiles.placeOnRandomTile(ashp, assets.tile`myTile1`)
-    tiles.placeOnRandomTile(Brock2, assets.tile`myTile2`)
-    tiles.placeOnRandomTile(brockp, assets.tile`myTile2`)
-    tiles.placeOnRandomTile(Misty2, assets.tile`myTile3`)
-    tiles.placeOnRandomTile(mistyp, assets.tile`myTile3`)
-    tiles.placeOnRandomTile(YN2, assets.tile`myTile4`)
-    tiles.placeOnRandomTile(ynp, assets.tile`myTile4`)
-    tiles.placeOnRandomTile(ashd, assets.tile`myTile6`)
-    tiles.placeOnRandomTile(brockd, assets.tile`myTile7`)
-    tiles.placeOnRandomTile(mistyd, assets.tile`myTile8`)
-    tiles.placeOnRandomTile(ynd, assets.tile`myTile9`)
-    ashpb()
-    mistydb()
-    brockdb()
-    yndb()
-    ynpb()
-    mistypb()
-    ashdb()
-    brockpd()
+    tiles.placeOnRandomTile(Ash2, img`myTile1`)
+    tiles.placeOnRandomTile(Brock2, img`myTile2`)
+    tiles.placeOnRandomTile(Misty2, img`myTile3`)
+    tiles.placeOnRandomTile(YN2, img`myTile4`)
+    tiles.placeOnRandomTile(ashd, img`myTile6`)
+    tiles.placeOnRandomTile(brockd, img`myTile7`)
+    tiles.placeOnRandomTile(mistyd, img`myTile8`)
+    tiles.placeOnRandomTile(ynd, img`myTile9`)
+    sd()
+    pa()
+    sb()
+    pt()
 })
-function mistypb () {
-    statusbar3 = statusbars.create(20, 4, StatusBarKind.Health)
-    statusbar3.setLabel("Life")
-    statusbar3.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
-    statusbar3.attachToSprite(mistyp, 10, 1)
-    statusbar3.setColor(3, 15, 0)
-    statusbar3.value = 100
-}
-function ynpb () {
-    statusbar4 = statusbars.create(20, 4, StatusBarKind.Health)
-    statusbar4.setLabel("Life")
-    statusbar4.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
-    statusbar4.attachToSprite(ynp, 10, 1)
-    statusbar4.setColor(3, 15, 0)
-    statusbar4.value = 100
-}
-function Fightvspok4 (mySprite: Sprite) {
-    question = game.askForString("3x3")
-    if (question == "9") {
-        statusbar.value += 1
-    } else {
-        while (false) {
-            statusbar.value += -1
-            ashp.startEffect(effects.spray, 500)
-            mistyp.startEffect(effects.spray, 500)
-            ynp.startEffect(effects.spray, 500)
-            brockp.startEffect(effects.spray, 500)
-        }
-    }
-    question = game.askForString("Best character from shameless? ")
-    if (question == "Carl") {
-        statusbar.value += 1
-    } else {
-        while (false) {
-            statusbar.value += -1
-            ashp.startEffect(effects.spray, 500)
-            mistyp.startEffect(effects.spray, 500)
-            ynp.startEffect(effects.spray, 500)
-            brockp.startEffect(effects.spray, 500)
-        }
-    }
-    question = game.askForString("WHo is the younger brother from Supernatural?")
-    if (question == "Sam") {
-        statusbar.value += 1
-    } else {
-        while (false) {
-            statusbar.value += -1
-            ashp.startEffect(effects.spray, 500)
-            mistyp.startEffect(effects.spray, 500)
-            ynp.startEffect(effects.spray, 500)
-            brockp.startEffect(effects.spray, 500)
-        }
-    }
-    question = game.askForString(" Who is the oldest brother from Supernatural?")
-    if (question == "Dean") {
-        statusbar.value += 1
-    } else {
-        while (false) {
-            statusbar.value += -1
-            ashp.startEffect(effects.spray, 500)
-            mistyp.startEffect(effects.spray, 500)
-            ynp.startEffect(effects.spray, 500)
-            brockp.startEffect(effects.spray, 500)
-        }
-    }
-}
-function mistydb () {
-    statusbar6 = statusbars.create(20, 4, StatusBarKind.Health)
-    statusbar6.setLabel("Life")
-    statusbar6.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
-    statusbar6.attachToSprite(mistyd, 10, 1)
-    statusbar6.setColor(3, 15, 0)
-    statusbar6.value = 100
-}
-function brockdb () {
-    statusbar7 = statusbars.create(20, 4, StatusBarKind.Health)
-    statusbar7.setLabel("Life")
-    statusbar7.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
-    statusbar7.attachToSprite(brockd, 10, 1)
-    statusbar7.setColor(3, 15, 0)
-    statusbar7.value = 100
-}
-function Fightvspok2 (mySprite: Sprite) {
-    question = game.askForString("Who is the best looking men? ")
-    if (question == "V") {
-        statusbar.value += 1
-    } else {
-        while (false) {
-            statusbar.value += -1
-            ashp.startEffect(effects.spray, 500)
-            mistyp.startEffect(effects.spray, 500)
-            ynp.startEffect(effects.spray, 500)
-            brockp.startEffect(effects.spray, 500)
-        }
-    }
-    question = game.askForString("First rule for second Derivative test? (y=?)")
-    if (question == "0") {
-        statusbar.value += 1
-    } else {
-        while (false) {
-            statusbar.value += -1
-            ashp.startEffect(effects.spray, 500)
-            mistyp.startEffect(effects.spray, 500)
-            ynp.startEffect(effects.spray, 500)
-            brockp.startEffect(effects.spray, 500)
-        }
-    }
-    question = game.askForString("What color is the sky?")
-    if (question == "White") {
-        statusbar.value += 1
-    } else {
-        while (false) {
-            statusbar.value += -1
-            ashp.startEffect(effects.spray, 500)
-            mistyp.startEffect(effects.spray, 500)
-            ynp.startEffect(effects.spray, 500)
-            brockp.startEffect(effects.spray, 500)
-        }
-    }
-    question = game.askForString(" Who was the best player in Exatlon?")
-    if (question == "Nate") {
-        statusbar.value += 1
-    } else {
-        while (false) {
-            statusbar.value += -1
-            ashp.startEffect(effects.spray, 500)
-            mistyp.startEffect(effects.spray, 500)
-            ynp.startEffect(effects.spray, 500)
-            brockp.startEffect(effects.spray, 500)
-        }
-    }
-}
-scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile23`, function (sprite, location) {
-    if (tiles.locationOfSprite(Ash2) == location) {
-        ashq(Ash2)
-    } else if (tiles.locationOfSprite(Brock2) == location) {
-        brockq(Brock2)
-    } else if (tiles.locationOfSprite(Misty2) == location) {
-        mistyq(Misty2)
-    } else {
-        ynq(YN2)
-    }
+scene.onOverlapTile(SpriteKind.Ash, img`myTile11`, function (sprite, location) {
+    tiles.replaceAllTiles(img`myTile11`, img`myTile10`)
+    ashp = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Projectile)
 })
-scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile14`, function (sprite, location) {
-	
-})
-function brockpd () {
+function pa () {
     statusbar2 = statusbars.create(20, 4, StatusBarKind.Health)
-    statusbar2.setLabel("Life")
+    statusbar2.setLabel("HP")
     statusbar2.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
     statusbar2.attachToSprite(brockp, 10, 1)
     statusbar2.setColor(3, 15, 0)
+    statusbar2.value = 100
+    statusbar2.setLabel("HP")
+    statusbar2.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
+    statusbar2.setColor(2, 15, 0)
+    statusbar2.value = 100
 }
 let statusbar2: StatusBarSprite = null
-let statusbar7: StatusBarSprite = null
-let statusbar6: StatusBarSprite = null
-let statusbar4: StatusBarSprite = null
-let statusbar3: StatusBarSprite = null
+let ynd: Sprite = null
 let mistyd: Sprite = null
 let brockd: Sprite = null
-let list: Image[] = []
 let ashd: Sprite = null
-let statusbar5: StatusBarSprite = null
-let q1 = 0
-let ynd: Sprite = null
-let statusbar8: StatusBarSprite = null
+let statusbar3: StatusBarSprite = null
+let statusbar4: StatusBarSprite = null
 let statusbar: StatusBarSprite = null
-let question = ""
-let ynp: Sprite = null
-let mistyp: Sprite = null
-let brockp: Sprite = null
-let ashp: Sprite = null
 let YN2: Sprite = null
 let Brock2: Sprite = null
 let Misty2: Sprite = null
 let Ash2: Sprite = null
+let ynp: Sprite = null
+let mistyp: Sprite = null
+let brockp: Sprite = null
+let ashp: Sprite = null
+let list: Image[] = []
 story.setPagePauseLength(100, 200)
 story.printCharacterText("PLEASE SELECT A STARTER PRESENTED IN FRONT OF YOU (walk to it)")
-tiles.loadMap(tiles.createMap(tilemap`level1`))
+list = [
+img`
+    . . . . . . . . . . . . . . e e 
+    . . . . . . . . . . . . e e 4 5 
+    . . . . . . . . . . e e 4 5 5 5 
+    . . . . . . . . . e 4 6 7 7 6 6 
+    . . . . . . . . e 4 6 7 4 5 5 5 
+    . . . . . . . 4 4 4 8 7 4 4 4 4 
+    . . . . . . 4 5 2 2 e 7 7 7 7 7 
+    . . . . . 4 5 2 3 2 2 7 7 6 6 7 
+    . . . . 4 5 5 2 3 2 e 7 6 6 7 2 
+    . . . 4 4 5 6 7 7 7 7 5 5 4 6 2 
+    . . . e 6 6 7 7 4 5 5 4 4 7 7 e 
+    . . e 4 6 7 7 7 4 4 4 6 7 7 e 5 
+    . . e 5 6 6 8 6 7 7 6 6 6 e 5 d 
+    . e 4 5 5 4 4 e 8 7 7 6 e 5 d 5 
+    . e 5 5 4 e e e e 6 6 e 5 d 5 5 
+    . e 5 5 e e 4 4 f e e 5 d 5 d 5 
+    `,
+img`
+    . . . . . . . . . . . . . . b b 
+    . . . . . . . . . . . b b 6 6 6 
+    . . . . . . . . . b b 3 3 6 7 7 
+    . . . . . . . . b 3 3 3 3 3 8 8 
+    . . . . . . . b 3 3 3 3 3 3 3 3 
+    . . . . . . b 3 4 4 4 3 3 3 3 3 
+    . . . . . b 3 4 5 5 4 3 3 3 3 3 
+    . . . . b 3 3 3 2 2 3 3 3 d d d 
+    . . . b 3 d 3 3 3 3 3 3 d d 3 b 
+    . . b 3 d 3 3 3 3 3 3 d 3 b b 3 
+    . . b d 3 3 3 3 3 3 3 3 b 3 3 a 
+    . b 3 d 3 6 6 3 3 3 3 b 3 3 a a 
+    . b d 3 b 9 8 3 3 3 3 a 3 a a 3 
+    . b d 6 9 8 3 3 3 3 b a a a 3 3 
+    b 3 d 6 8 3 3 3 3 3 b b a 3 3 3 
+    b d d 3 3 3 3 3 3 3 b b 3 3 3 3 
+    `,
+img`
+    . . . . . . . . . . . 6 6 6 6 6 
+    . . . . . . . . . 6 6 7 7 7 7 8 
+    . . . . . . 8 8 8 7 7 8 8 6 8 8 
+    . . e e e e c 6 6 8 8 . 8 7 8 . 
+    . e 2 5 4 2 e c 8 . . . 6 7 8 . 
+    e 2 4 2 2 2 2 2 c . . . 6 7 8 . 
+    e 2 2 2 2 2 2 2 c . . . 8 6 8 . 
+    e 2 e e 2 2 2 2 e e e e c 6 8 . 
+    c 2 e e 2 2 2 2 e 2 5 4 2 c 8 . 
+    . c 2 e e e 2 e 2 4 2 2 2 2 c . 
+    . . c 2 2 2 e e 2 2 2 2 2 2 2 e 
+    . . . e c c e c 2 2 2 2 2 2 2 e 
+    . . . . . . . c 2 e e 2 2 e 2 c 
+    . . . . . . . c e e e e e e 2 c 
+    . . . . . . . . c e 2 2 2 2 c . 
+    . . . . . . . . . c c c c c . . 
+    `,
+img`
+    . . . . . . . . . . . . . . . b 
+    . . . . . . . . . . . b b b b d 
+    . . . . . . . . b b b d 1 1 1 1 
+    . . . . . . b b d 1 1 1 1 1 1 1 
+    . . . . b b d 1 1 1 1 1 1 1 d d 
+    . . . b d 1 1 1 1 1 1 d d d 1 1 
+    . . b d 1 1 1 1 1 d d d 1 1 1 d 
+    . b d 1 1 1 1 1 d d 1 1 1 d d d 
+    . b 1 1 1 1 1 d 1 1 1 d d d 1 1 
+    b d 1 1 1 1 1 d 1 d d d 1 1 1 1 
+    b 1 1 1 1 1 d 1 d d d 1 1 1 1 1 
+    b 1 1 1 1 1 d d d d d 1 1 1 1 1 
+    b 1 1 1 1 1 d d d d d 1 1 1 1 1 
+    b 1 1 1 1 1 1 d d d d 1 1 1 1 1 
+    b d 1 1 1 1 1 1 d d d d 1 1 1 1 
+    . b 1 1 1 1 1 1 1 d d d d 1 1 1 
+    `
+]
+ashp = sprites.create(list._pickRandom(), SpriteKind.Projectile)
+brockp = sprites.create(list._pickRandom(), SpriteKind.Projectile)
+mistyp = sprites.create(list._pickRandom(), SpriteKind.Projectile)
+ynp = sprites.create(list._pickRandom(), SpriteKind.Projectile)
 Ash2 = sprites.create(img`
     . . . . . . f f f f . . . . . . 
     . . . . f f f 2 2 f f f . . . . 
@@ -663,91 +674,492 @@ YN2 = sprites.create(img`
     . . . . f f f f f f . . . . 
     . . . . f f . . f f . . . . 
     `, SpriteKind.Player)
-ashp = sprites.create(img`
-    . . . . . . . . . . b 5 b . . . 
-    . . . . . . . . . b 5 b . . . . 
-    . . . . . . b b b b b b . . . . 
-    . . . . . b b 5 5 5 5 5 b . . . 
-    . . . . b b 5 d 1 f 5 d 4 c . . 
-    . . . . b 5 5 1 f f d d 4 4 4 b 
-    . . . . b 5 5 d f b 4 4 4 4 b . 
-    . . . b d 5 5 5 5 4 4 4 4 b . . 
-    . b b d d d 5 5 5 5 5 5 5 b . . 
-    b d d d b b b 5 5 5 5 5 5 5 b . 
-    c d d b 5 5 d c 5 5 5 5 5 5 b . 
-    c b b d 5 d c d 5 5 5 5 5 5 b . 
-    c b 5 5 b c d d 5 5 5 5 5 5 b . 
-    b b c c c d d d 5 5 5 5 5 d b . 
-    . . . . c c d d d 5 5 5 b b . . 
-    . . . . . . c c c c c b b . . . 
-    `, SpriteKind.Projectile)
-brockp = sprites.create(img`
-    . . . . . . . . . . b 5 b . . . 
-    . . . . . . . . . b 5 b . . . . 
-    . . . . . . b b b b b b . . . . 
-    . . . . . b b 5 5 5 5 5 b . . . 
-    . . . . b b 5 d 1 f 5 d 4 c . . 
-    . . . . b 5 5 1 f f d d 4 4 4 b 
-    . . . . b 5 5 d f b 4 4 4 4 b . 
-    . . . b d 5 5 5 5 4 4 4 4 b . . 
-    . b b d d d 5 5 5 5 5 5 5 b . . 
-    b d d d b b b 5 5 5 5 5 5 5 b . 
-    c d d b 5 5 d c 5 5 5 5 5 5 b . 
-    c b b d 5 d c d 5 5 5 5 5 5 b . 
-    c b 5 5 b c d d 5 5 5 5 5 5 b . 
-    b b c c c d d d 5 5 5 5 5 d b . 
-    . . . . c c d d d 5 5 5 b b . . 
-    . . . . . . c c c c c b b . . . 
-    `, SpriteKind.Projectile)
-mistyp = sprites.create(img`
-    . . . . . . . . . . b 5 b . . . 
-    . . . . . . . . . b 5 b . . . . 
-    . . . . . . b b b b b b . . . . 
-    . . . . . b b 5 5 5 5 5 b . . . 
-    . . . . b b 5 d 1 f 5 d 4 c . . 
-    . . . . b 5 5 1 f f d d 4 4 4 b 
-    . . . . b 5 5 d f b 4 4 4 4 b . 
-    . . . b d 5 5 5 5 4 4 4 4 b . . 
-    . b b d d d 5 5 5 5 5 5 5 b . . 
-    b d d d b b b 5 5 5 5 5 5 5 b . 
-    c d d b 5 5 d c 5 5 5 5 5 5 b . 
-    c b b d 5 d c d 5 5 5 5 5 5 b . 
-    c b 5 5 b c d d 5 5 5 5 5 5 b . 
-    b b c c c d d d 5 5 5 5 5 d b . 
-    . . . . c c d d d 5 5 5 b b . . 
-    . . . . . . c c c c c b b . . . 
-    `, SpriteKind.Projectile)
-ynp = sprites.create(img`
-    . . . . . . . . . . b 5 b . . . 
-    . . . . . . . . . b 5 b . . . . 
-    . . . . . . b b b b b b . . . . 
-    . . . . . b b 5 5 5 5 5 b . . . 
-    . . . . b b 5 d 1 f 5 d 4 c . . 
-    . . . . b 5 5 1 f f d d 4 4 4 b 
-    . . . . b 5 5 d f b 4 4 4 4 b . 
-    . . . b d 5 5 5 5 4 4 4 4 b . . 
-    . b b d d d 5 5 5 5 5 5 5 b . . 
-    b d d d b b b 5 5 5 5 5 5 5 b . 
-    c d d b 5 5 d c 5 5 5 5 5 5 b . 
-    c b b d 5 d c d 5 5 5 5 5 5 b . 
-    c b 5 5 b c d d 5 5 5 5 5 5 b . 
-    b b c c c d d d 5 5 5 5 5 d b . 
-    . . . . c c d d d 5 5 5 b b . . 
-    . . . . . . c c c c c b b . . . 
-    `, SpriteKind.Projectile)
-ynp.follow(YN2, 45)
-mistyp.follow(Misty2, 45)
-brockp.follow(Brock2, 45)
 ashp.follow(Ash2, 45)
+brockp.follow(Brock2, 45)
+mistyp.follow(Misty2, 45)
+ynp.follow(YN2, 45)
 controller.player1.moveSprite(Ash2, 100, 100)
 controller.player2.moveSprite(Brock2, 100, 100)
 controller.player3.moveSprite(Misty2, 100, 100)
 controller.player4.moveSprite(YN2, 100, 100)
-tiles.placeOnRandomTile(Ash2, assets.tile`myTile1`)
-tiles.placeOnRandomTile(Brock2, assets.tile`myTile2`)
-tiles.placeOnRandomTile(Misty2, assets.tile`myTile3`)
-tiles.placeOnRandomTile(YN2, assets.tile`myTile4`)
+pauseUntil(() => controller.A.isPressed())
+tiles.loadMap(tiles.createMap(tilemap`level1`))
+tiles.placeOnRandomTile(Ash2, img`myTile1`)
+tiles.placeOnRandomTile(Brock2, img`myTile2`)
+tiles.placeOnRandomTile(Misty2, img`myTile3`)
+tiles.placeOnRandomTile(YN2, img`myTile4`)
 splitScreen.cameraFollowSprite(splitScreen.Camera.Camera1, Ash2)
 splitScreen.cameraFollowSprite(splitScreen.Camera.Camera2, Brock2)
 splitScreen.cameraFollowSprite(splitScreen.Camera.Camera3, Misty2)
 splitScreen.cameraFollowSprite(splitScreen.Camera.Camera4, YN2)
+let MERCHANT = sprites.create(img`
+    ........................
+    ........................
+    ........................
+    ........................
+    ..........ffff..........
+    ........ff1111ff........
+    .......fb111111bf.......
+    .......f11111111f.......
+    ......fd11111111df......
+    ......fd11111111df......
+    ......fddd1111dddf......
+    ......fbdbfddfbdbf......
+    ......fcdcf11fcdcf......
+    .......fb111111bf.......
+    ......fffcdb1bdffff.....
+    ....fc111cbfbfc111cf....
+    ....f1b1b1ffff1b1b1f....
+    ....fbfbffffffbfbfbf....
+    .........ffffff.........
+    ...........fff..........
+    ........................
+    ........................
+    ........................
+    ........................
+    `, SpriteKind.Player)
+let mySprite20240126T183605772Z = sprites.create(img`
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    11111111111111111111111111111111111111111111111111111111111111111111111111111111111ded1111111111111111111111111111111111
+    11111111111111111111111111111111111111111111111111111111111111111111111111111111dbbb77ccb1111111111111111111111111111111
+    11111111111111111111111111111111111111111111111111111111111111111111111111111111deee7effcd111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111d77777ccccc77777ee7ecd11111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111ddd777777e7eee77777ee7efd11111111111111111111111111111
+    1111111111111111111111111111111111111111111111111111111111111111117777777777777777777ee7efd11111111111111111111111111111
+    1111111111111111111111111111111111111111111111111111111111111111d7777777777777777777777effd11111111111111111111111111111
+    111111111111111111111111111111111111111111111dddd11111111111111dd7777777777777777777777ecfd11111111111111111111111111111
+    111111111111111111111111111111111111111111111bccb1111111111111177777777cffc777777777777ecfd11111111111111111111111111111
+    11111111111111111111111111111111111111111111b666bbbb1dddddddddd67777777666cc77777777777eeebb1111111111111111111111111111
+    1111111111111111111111111111111111111111111167997c8cdd66666666666666ccc997cf77777777777ee7ecd111111111111111111111111111
+    111111111111111111111111111111111111111111116799996666999999999999cc999997cf77777777777ee77efb11111111111111111111111111
+    1111111111111111111111111111111111111111111167977966679997777799996c999997cf77777777777eee7efb11111111111111111111111111
+    11111111111111111111111111111111111111111111679669999999766666999999999997cf777777777777ee7efb11111111111111111111111111
+    1111111111111111111111111111111111111111111166679999999666666699999999999766c77777777777ee777ec1111111111111111111111111
+    1111111111111111111111111111111111111111111166699999997666666799999999999766f777777777777ee77ef1111111111111111111111111
+    1111111111111111111111111111111111111111111187999999966666669999999999999766f7777777777777ee7ef1111111111111111111111111
+    1111111111111111111111111111111111111111111187999999966666679999996666999966f7777777777777ee7eebd11111111111111111111111
+    1111111111111111111111111111111111111111111167999999966666999999996666999966f7777777777777ee777fb11111111111111111111111
+    11111111111111111111111111111111111111111166f69999999999999999996fbddcf776666ff77777777777ee777fb11111111111111111111111
+    11111111111111111111111111111111111111111168e6699999999666999996cebbdbc6666668fc7777777777ee777fb11111111111111111111111
+    111111111111111111111111111111111111111111cc2c69999999966699999fe22e1ddc86666ff8c777777777ee777fb11111111111111111111111
+    111111111111111111111111111111111111111111cc2c69999997666699999fe22e11dc86666fffc77777777ee7777fb11111111111111111111111
+    111111111111111111111111111111111111111111cc2c67999996666699999ce42ed11c666668f8c7777777ee77777fb11111111111111111111111
+    111111111111111111111111111111111111111111cc2316699996666999966231e22b1d666668866f777777ee77777fb11111111111111111111111
+    1111111111111111111111111111111111111111d66b2d166999996679999662b1344d1d66666686686c777eee777efbd11111111111111111111111
+    1111111111111111111111111111111111111111d6bd2d16699999999999966eb1d33d1d66666666668c777ee7777ef1111111111111111111111111
+    1111111111111111111111111111111111111111d66d22e669999999999996622e433dd6666666666666ccc777777ef1111111111111111111111111
+    1111111111111111111111111111111111111111d8cbeee6699999999999966bebbbbb6668666666666688cc7777e7b1111111111111111111111111
+    1111111111111111111111111111111111111111bfff77999999999999999999999776666866666666666668c77efb11111111111111111111111111
+    1111111111111111111111111111111111111111bf86cc67996679766999999999666cff86666666668886666cfcdd11111111111111111111111111
+    1111111111111111111111111111111111111111dc66f8c7776679766997777777668fff866686666688886668fc1111111111111111111111111111
+    111111111111111111111111111111111111111111c869deee79999999688fffffdd66666666866666888886668c1111111111111111111111111111
+    111111111111111111111111111111111111111111dd8666cceeeeeeeeeeeeeeeeb6666666886666666888866666cd11111111111111111111111111
+    11111111111111111111111111111111111111111111c66666eeee222222222e22c6666666886666666688866666fb11111111111111111111111111
+    11111111111111111111111111111111111111111111dcff86666e222444444c6666666fff6666666666666666668b11111111111111111111111111
+    111111111111111111111111111111111111111111111bccc6866ceeebbbbbb666668668ff6666666666666666668bd1111111111111111111111111
+    111111111111111111111111111111111111111111111111dfff66666666666666fffff6666686666f666668866668f1111111111111111111111111
+    111111111111111111111111111111111111111111111111df68ffffffffffffff866666666686666f666888886668f1111111111111111111111111
+    111111111111111111111111111111111111111111111111d866cccfffffffffff666666666686668f666888886668f1111111111111111111111111
+    111111111111111111111111111111111111111111111111d67777766f666666666686976666688ff6666888886668f1111111111111111111111111
+    1111111111111111111111111111111111111111111111111d6667776888866666886669766668fff6666888886668f1111111111111111111111111
+    111111111111111111111111111111111111111111111111116667996688f866668866679766688ff666688888666cc1111111111111111111111111
+    11111111111111111111111111111111111111111111111111666799666668fffff866666766688ff66666688666fb11111111111111111111111111
+    11111111111111111111111111111111111111111111111111666799666668fcccc666666766688cc86666688666fb11111111111111111111111111
+    11111111111111111111111111111111111111111111111111667999996668f111669666676668cddf8666866866fb11111111111111111111111111
+    11111111111111111111111111111111111111111111111111dd6776696668f1116697777766fbd1dfddcbd86dccdd11111111111111111111111111
+    11111111111111111111111111111111111111111111111111dd667667666cc1116697797666fd11dcdbebdfcdbb1111111111111111111111111111
+    11111111111111111111111111111111111111111111111111cc1bc1dfddfb1111cc96677666fd1111ffffffffd11111111111111111111111111111
+    11111111111111111111111111111111111111111111111111bbbcfbcfcbbd11dbbb6bd66d6cbd1111bbbbbbbbd11111111111111111111111111111
+    111111111111111111111111111111111111111111111111111dfffffffc1111bfddfb1cb1cf11111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111cfffffffd111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111bbbbbbbbd111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+    `, SpriteKind.Player)
+let mySprite20240126T184510975Z = sprites.create(img`
+    11dddd111ddd111dddd111ddd1deeeeeeeeeeecfeeedd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd11
+    11dddd111ddd111dddd111ddd1deeeeeeeeeecceeeedd1111ddd111ddd1111ddd111dddd111ddd111dddd111ddd111dddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd11
+    11dddd111ddd111dddd111dddddeffffffeefffeeeedd111dddd111dddd111ddd111dddd111ddd111dddd111dddd11dddd111ddd1111ddd111dddd111ddd111dddd111dddd111ddd111dddd111ddd11
+    dd1111ddd111ddd1111bbbbbbbbeeeeeeeeeeeeeeeebbbbbbbbdddd111dddd111ddd111dddd111dddd111ddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd111dddd111dd
+    dd111dddd111ddd1111ceefffff4422224222222244eeccffffdddd111dddd111ddd111dddd111dddd111ddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd111dddd111dd
+    dd111dddd111dddd111efffffff2222222222222224feecffffdddd111dddd111ddd111dddd111dddd111ddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111dddd11dddd111dd
+    11dddd111ddd111ddddeffffffe2222222222222222eeefffffd111dddd11dddd111dddd111ddd111dddd111dddd11dddd111dddd111ddd111dddd111ddd111dddd111dddd11dddd111dddd111ddd11
+    11dddd111ddd111bbbbeeeeeeee4444224422244422eeeeeeeebbbbddd1111ddd111dddd111ddd111dddd111ddd111dddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd11
+    11dddd111ddd11defff44444444444442442224422422244444ffffddd1111ddd111dddd111ddd111dddd111ddd111dddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd11
+    dd111dddd111dddeeef44444444444442422222422222222224fffcd11dddd11ddddd11dddd1ddddddd1dddd111ddd1111ddddddddddd11dddd11dddddd1dddd111ddd111ddddd11ddddd1ddddd1ddd
+    dd111dddd111dddcfff44444444444442222222222222222224fffc111dddd111ddd111dddd111dddd111ddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111dddd11dddd111dd
+    dd111dddd11bbbbeeee44444444444442222222222222222224eeeebbbbddd111ddd111dddd111dddd111ddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111dddd111ddd111dd
+    dd1111ddd11fffe4444444444444444424222222222222222224224ffffddd111dddd11dddd111dddd111ddd111dddd111ddd111dddd111ddd111dddd111dddd111ddd111dddd111dddd11dddd111dd
+    11dddd111ddfffe4444444444444444422222222222222222222224ffffd11ddd111dddd111ddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd11
+    11dddd111ddfffe4444444444444444422224422222222222222224ffffd11ddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd11
+    11dddd111dde22e444444444444444422222ee22222222222222244fffcd1dddd111dddd111ddd111dddd111dddd11dddd111dddd111ddd111dddd111ddd111dddd111dddd111ddd111dddd111ddd11
+    dd111dddd1de42444444444444442242222efff4222422222222222ececddd111ddd111dddd111dddd111ddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd1111ddd111dddd11dddd111dd
+    dd111dddd1d422444444444444444422222efff2222222222222222eeeeddd111ddd111dddd111dddd11dddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111dddd11dddd111dd
+    dd111dddd1d422444444444444444222222efff4222444222222222eeeeddd111ddd111dddd111dddd111ddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111dddd11dddd111dd
+    11ddd11bbb442244444444444444222222eefffee2eeeee22222222eeeebbbbdd111ddd1111ddd111dddd111dddd11ddddd11dddd111ddd111dddd111ddd111ddddd1dddd1111ddd111dddd111ddd11
+    11dddd1efce42224222222224222422efffecccceeeeeee22222224244effffdd111dddd111ddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd1111ddd111ddd1111ddd111dddd111ddd11
+    11dddd1eefe42224222422222222224feffeefffeeeeeee222222224424ffffdd111dddd111ddd111dddd111ddd111dddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd11
+    d1dddddeeee42222222222222222224ffffeeeeceeeccfe222242224224ffffdd111dddd11dddd111dddd111dddd11dddd111dddd11ddddd11dddd111ddd111dddd111dddd11dddd111dddd111ddd11
+    dd111ddeeee22222222422222222224feefecefbbbbcccce2e222444224ffff11ddd111dddd111dddd111ddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111dddd111ddd111dd
+    dd111ddeece22222222222222222222ffffefefd1116666cfee22222222ffff11ddd111dddd111dddd111ddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111dddd111ddd111dd
+    dd111ddccce42222222222222222222ffffefefd1116666cccf22222222ffff11dddd11dddd111dddd11dddd111dddd11dddd111ddddd11dddd11ddddd11dddd111ddd111dddd111dddd111ddd111dd
+    11dddd1cfce42442222222222222222efffeeefd1116666ccce42222222ffffdd111dddd111ddd111dddd111ddd111dddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd11
+    11dddd1bbbbe2e222222222222222222eeeefef11116666ceee22242224cfffdd111dddd111ddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd11
+    11dddd1111dfffe22222222222222242444ecef11116666ceee22222224eccfdd111dddd111ddd111dddd111ddd1111ddd111ddd1111ddd111dddd111ddd111dddd111dddd111ddd111dddd111ddd11
+    dd1111d1111fffe22242222222222222222eeee11116666ceee22222222eeef11dddd11dddd111dddd111ddd111ddd1111ddd111dddd111dddd11dddd111dddd111ddd111dddd111ddd1111ddd111dd
+    ddd11dd1111ceff42242222222222222222eeeed1116666cecf22222222eeee11ddd111dddd111dddd111ddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111dddd111ddd111dd
+    dd1111dd99bfeff22242222222222222222eeeebd9d6666cecf42242222eefebbbbd1111ddd111dddd111ddd111dddd111db433ddddd111ddd1d33bdd111dddd111ddd111dddd111dddd11dddd111dd
+    dddd119666cfefe22242222222222222222eeec66666666ceef22222222efeffffcdd1dddddddddddddddddddd1ddddd1dd44444444ddd1dddd4444dd1d1ddddd1dddd11dddddd1dddddddddddd11dd
+    11ddd116666fffe22222222222222222222eeec66666666ceee22222222effefffcddddd111ddd111dddd111ddd1111dddd442444441ddd111d4224d1ddd111dddd111dddd111ddd111dddd111ddd11
+    11dddd16666fffe22222222222222222222eeec66666666ceef22222222effefffcddddd111ddd111dddd111ddd1111dddd444444441ddd111d422411ddd1111ddd111dddd111ddd111dddd111dddd1
+    11dddd16666ffff22222222222222222222eeec66666666ceef22222222effefffcddddd111ddd111dddd111dddd11ddddd34344444ddddd11dd433344bd111dddd111dddd11dddd111dddd111ddd11
+    dd111d96666ffff22222222222222222222eeec66666666cccf42222222efeefffcd111dddd111dddd111ddd111dddd111ddd1142244444ddd1111d42241dddd111ddd111dddd111ddd111dddd111dd
+    dd111d96666ffff22222222222222222222eeec66666666cecf42222222eeeefffcd111dddd111dddd111ddd111dddd111ddd1142244444ddd1111d44241dddd111ddd111dddd111ddd1111ddd111dd
+    dd111196666ffff22222222222222222222eeec66666666ceef42222222eeeefffcdd11dddd111dddd111ddd111ddd1111ddd1142244444ddd1111d4444ddddd111ddd111dddd111dddd111ddd111dd
+    11ddd11666ceeee22222222222222222222eeec66666666ceef42222222eeeefffcddddd111ddd111dddd111ddd111dddd111ddb44444444ddddd1d4444433ddddd111dddd111ddd111dddd111ddd11
+    11dddd1eeee444442222222222222222242effc66666666cfff22222422eeeefffcddddd111ddd111dddd111ddd111dddd111ddd11142244444dddd44444422dddd111dddd111ddd111dddd111ddd11
+    11dddd1efce444442222222222222222242effc66666666cfff42222222efeefffcddddd111ddd111dddd111ddd111dddd111ddd11122244444dddd44442244dddd111dddd111ddd111dddd111ddd11
+    dddd111efcc444442222222222222222222efff66666666efff22222242eeeefffcdddddddddddddddd1dddddd1ddddd1ddddd11ddd22244444d1dd44444244dddddddddddddd1ddddd1ddddddddddd
+    dddbbbbeeee4444422222222222222222422eeebbbbbbbbe2ee22222222eefefffcd111dddd111dddd11dddd111ddd1111ddd111ddd222444443dd444444444d111ddd111dddd111dddd11dddd111dd
+    dddcfff444444444222222222222222222222444444424422444222ffeeeeeefffcd111dddd111dddd111ddd111dddd111ddd111ddd22244454444444444444d111ddd111dddd111dddd111ddd111dd
+    dddeecf444444444222222222222222222222222222222224422222feeeeefefffcd1d1ddddd1ddddd111dddd1dddd1111ddd111ddd22244444444444444444d11dddd111dddd111dddd1dddddd11dd
+    11deecf444444444222244222222222222222222222222224422442efeeeffefffcddddd111ddd111dddd111dddd111ddd111dddd1122244444444444444444dddd111dddd111ddd111dddd111ddd11
+    11deece444444442222222222222222222222222222222222222eeeeeeeeeeefffcddddd111ddd111dddd111dddd11dddd111dddd1122424444444444444444443d111dddd111ddd111dddd111ddd11
+    11deece44442422222222222222222222222222442224422224efeffeeeeeeefffcddddd111ddd111dddd111dddd11dddd111dddd11244222444444444444444444111dddd111ddd111dddd111ddd11
+    dddeecf44442222222222222222222222224222422224422224eceefeeffeeefffcd111dddd111dddd111ddd111dddd111ddd111ddd224244444444444444444224ddd111dddd111dddd111ddd111dd
+    dddcecf44442242222244422222222222244222222222222224eceeffffffeefffcd111dddd111dddd111ddd111dddd111ddd1111dd422222224444444444442224ddd111dddd111dddd111ddd111dd
+    dddefcf4444222222222ee242222222222222222eeeeeeeeeeeeeeeeefffeefbbbbd111dddd111dddd111ddd111dddd111ddd111dddbdd342244444444444444444433d111ddd111dddd11dddd111dd
+    1ddeeee2444eefe2222eeee4422222222244222eeecffffffeeefeeeeffeeeedd1d1dddd11ddddd11dddd111dddd11dddd111dddddd1ddd42222244444444444444442edd1111dddd11ddddd11ddd11
+    11deeee2222feee2224eeee4422222222444224ecccffffceceeeeeeefffeecdd111dddd111ddd111dddd111ddd1111ddd111ddd1111ddd42422224444444444444244edd1111ddd111dddd111ddd11
+    11dcfef4444effe4444eeee4422224444222224eeccffffceeeeeeeeeeeecccdd111dddd111ddd111dddd111ddd1111ddd111ddd1111ddd422222244444444444442244ddd111ddd111dddd111ddd11
+    dddbbbbeeeefeeeeeeeeeeee22222eeeeeeeeeebbbbffffeeefeeffeeefffffddddddddddddddddddddbbbbdd1ddd1dd1ddd3bbd11d1d1d422222224444444444444242444ddddd1ddddddddddddddd
+    dd1111dfffffefeffeeeffeefeeeeeffffffeecdd11feefefffeeffeeefffff11ddd111dddd111ddd11fffcd111dddd111d4e44ddddd1114222222242444444444442422224dd111dddd11dddd111dd
+    dd1111dffffeeeeeeffeeeeeeeeeeffeeccfeefd111feeefffeeefeefeeffff11ddd111dddd111ddd11cffcd111dddd111d4224ddddd11d4222222222244444444442222224d9111dddd11dddd111dd
+    dd111ddffffefeeeeeeeeeeeffeeeeeeeeeeeefd111feeefffeeffeefeeffff11dddd11dddd111ddd11fffcd111dddd111d4224ddddd11d4444222222244444444442222224d1111ddd111dddd111dd
+    11dddd1bbcefeeeffffffffffeeeeeeeeeefeefbbbbfeeeeeeeefffefeeffffdd111dddd111bbbbbbbbeeeebbbb111dddd1d34433ddd344444442222224444444444222222411ddd111dddd111ddd11
+    11dddd111ddfcccfffffffffeeeeeeeeefeffefeeffeeeeeeeeefffefeeffffdd111dddd111ffffffff4444feecd111ddd111dd42242224444442222222222222242222222411ddd111dddd111ddd11
+    11dddd111ddfcccffffffffcceeeeeeeffeffeeeeffeefeeeeeeefeefeeffffdd111dddd111feeeffef4444eeecd111ddd111dd42222224444442222222222222222222222411ddd111dddd111ddd11
+    ddd11dddd11fcccffffffffcceeecceefeeeffeefeeffffeeeeeffeefffffff11ddd111ddddfeeeefff4444feecdddd111ddd11422222244444422222222222222244444444dd111dddd11dddd111dd
+    dddbbbbbbbbbbbbbbbbbbbbffccffffffffeeeeeeeefeeeeeefffeeeeefffffbbbbbbbbbbbbeeeeefff4444feecdddd111ddd11442222244444422222222222222444444333dd111dddd11dddd111dd
+    dddefffffff1dddd111ddddffffffffffffceeceeeeceeeeffffffeeeeeeeeeeefeeeeeeeee4224efff4444feecdddd111ddd1144224444444442222222222222244444d11ddd111ddd1111ddd111dd
+    1ddcfffffffddd1dddd111dffffffffffffceeceeeeceeeeeeffffeeeeeffeeeefeeeffeeee4222efff4444feecd11ddddd11dd42222224444444222222222222244444dd11ddddd111dddd111ddd11
+    1ddffffffffd111dddd111dffffffffffffffefeeeeeeeeeffffffffeeeffefefeeeeefeeee4222efff4444ceecd111ddd111dd42222224444444222222222222244444ddd111ddd111dddd111ddd11
+    bbeeeeeefff3dddbeeebbbbffffeeeeeeeeeeeeeeeeeeffeeeeeffffffffffeeefeeeeeeeee4222eeee4444feecd111ddd111dd42244444444444444444422222244444ddd111ddd111dddd111ddd11
+    ffe4444ffff4444efffffffeefe444444444444eeefeeffffeeeeffffffffeeeefe22222222222222222442eeecd11dddd111dd42244444444444444444422222244444ddd111ddd111dddd111ddd11
+    ffe4444efff4444efffffffeeee444444444444eeefeeeffffeeeffffffffeffefe22222222222222242222ffecdddd111dddd142224444444444444444422222244444d1dddd111dddd11dddd111dd
+    ffe4444efff4444efffffffeeee444444444444effeeeeefffeeeffffffffeffefe22222222222222244242effcdddd111ddd1142245544444444444444422244444444d1dddd111ddd1111ddd111dd
+    ffe4444eeee4444e22222eeecce444444444444eeeefeeeeeffffffffffffeffefe2222222222222224222ebbbbdddd111ddd11d3444444444444444444444444444444333bd1111dddd11dddd111dd
+    eee44444444222222422224eeee4444444444444444efeeeefffffeeeeeffeffefe2222222222224222fffe1dddd11dddd111ddd11d2222444444444444444444444444444411ddd111dddd111ddd11
+    eee44444444222422222222eeee4444444444444444ffffeefffffeeeeeffeffefe2222222222244224fffe1ddd111dddd111dddd11222244444444444444444444222222241dddd111dddd111dddd1
+    ffe44444444222222222242feee4444444444444444eeeefeeffffeeeeefffffefe4222222222244224fffe1ddd1111ddd111ddd1112224444444444444444444444222222411ddd111dddd111ddd11
+    bbbeeee4444222222222222efce4555544444555554eeeeeeeffffeeeeeffffeefe222222222222e22efffcd111ddd1111ddd111ddd24444444444444444444444442222224d1111dddd11dddd111dd
+    dddeeee2224222222222222fffc45555555555555554444efeefffeeeeeffffeefeefee22222222eeeeffffd111dddd111ddd111ddd24424444444444244224444442222224dd111dddd11dddd111dd
+    dddceee2222422222222242ffffd5555555555555554444efeeffffeeeeffefeeffeeee22222222eeeeffffd111dddd111ddd111ddd22222224444444222222444444222224dd111dddd111ddd111dd
+    dddeeee4442222222222222ffff45555555555555554444efeeffffeeeeffeffffeeeee22222222eeeeffffdd11ddd111ddd1111ddd22222224444442222222444442222224d111ddddd11ddddd1ddd
+    11dbebbeeeeeeee2244eeee444455555555555555555554eeffeefffffeffffffeeffee222eeeeeffffccbb1ddd1111ddd111ddd111344442244444ee22222e44444222422411ddd111dddd111ddd11
+    11dddd1eceeeffe2224eece555555555555555555555554eeffeeffffeefffffeefeeeeeeefffffffffdd111ddd1111ddd111ddd1111ddd44224444ffffffff2224222222241dddd111dddd111ddd11
+    11dddd1eceeeeee2224eeee555555555555555555555554eeffeefffffeefffeeeeeeffeeeeffffffffdd111dddd111ddd111ddd111dddd44244444ffffffff222442242224d1ddd111dddd111dddd1
+    dd111ddecccecfe4244eeee555555555555555555555554eeffeeffeeeeeeeeeeeeeeeeeeefffffffffd1ddd111ddd1111ddd111dddd11d44444444ffffffff222242244444dd111dddd111ddd111dd
+    dd111ddbbbbbbbbeeeeeece555555555555555555555554eeefeeffeefffeeeffffffffffcfbbbbbbbb11ddd111dddd111ddd111dddd11db433eeeeffffffff22224224433bdd111dddd111ddd111dd
+    dd111dddd111ddbefececce555555555555555555555554eeffeeffeeffffefffffffffffff111ddd111dddd111dddd111ddd111dddd111ddd1effeffffffff42224224d1dddd111dddd111ddd111dd
+    11dddd111ddd11deefceeee555555555555555555555554effeeefeeeffffeeffffffffffffddd111dddd111ddd1111ddd111dddd111ddd1111efffffffffff22222422ddd11dddd111dddd111ddd11
+    11dddd111ddd11deefceefe555555555555555555555555efeefeffefffffffffffffffffffddd111dddd111ddd111dddd111dddd111ddd111dcffffffffffe42422424dd1111ddd111dddd111ddd11
+    11dddd111ddd111bbbbeeeed5d5555555555555555555554442eefeffffffeeffffffffbbbbddd111dddd111dddd11dddd111dddd111ddd111dceeeffffffff33333333ddd111ddd111dddd111ddd11
+    ddddddd1dddd1111dddefeedddddddd55555555555555554444eefeeffeeeeeeeeeffffd111dd1dd1ddddddddddd11ddddddddddd11dddd11ddeeefffffffffdddd1111ddddd1ddddddddddd11ddd11
+    dd1111ddd111dddd111ceeedddddddd55555555555555554444eeffefeeeffffeffffffdddd111dddd111ddd111dddd111ddd111dddd111ddd1eeeffffffffed11dddd111dddd111dddd111ddd111dd
+    dd111dddd111dddd111ceeedddddddd55555555555555555444eeeeeeeeefffeeffffffdddd111dddd111ddd111dddd111ddd111dddd111ddd1eeeeffffffffd111ddd1111ddd111dddd111ddd111dd
+    ddd11dddd1dddddbbbbeeeeddddddddddd55555555555554444eeeeefffffffffffffffdddd111dddd111ddd111dddd1d1ddd111dddd111bbbbeeeeeeeeefffd111ddd111dddd111dddd11dddd111dd
+    11dddd111ddd111efff4444ddddddddddd55555555555554444eeefffffffffffffffffd111ddd111dddd111dddd11dddd111dddd111dddefef44444444efffdddd111dddd111ddd111dddd111ddd11
+    11dddd111ddd11defff4444dddddddddddd5555555555554444eeefffffffffffffffffd111ddd111dddd111ddd111dddd111dddd111dddeeee44444444efff1ddd111dddd111ddd111dddd111ddd11
+    11dddd111ddd11defff4444ddddddddddddd555555555555444eeeeefffffffffffffffd111ddd111dddd111ddd111dddd111ddd1111dddefec44444444efffdddd111dddd111ddd111dddd111ddd11
+    ddd11dddd111dddeeef44ddddddddddddddddd5555555555554efeeffffffffffffffffdddd111dddd111ddd111dddd111ddd111dddbbbbeeee4444eeeebbbbd111ddd111dddd111dddd11dddd111dd
+    ddd11dddd111dddeeefddddddddddddddddddd5555555555555efeeffffffffffffffffdddd111dddd111ddd111dddd111ddd111dddfcfe44444444fffeddddd111ddd111dddd111dddd11dddd111dd
+    dd111dddd111dddefefdddddddddddddddddddd555555555555eeefefffffeeeeeeffffdddd111dddd111ddd111dddd111ddd111dddfeee44444444fffeddddd111ddd1111ddd111dddd11dddd111dd
+    dddddd1ddddd11deeefdddddddddddddddddddd555555555555eeefefffffeeeeeeffffd11dddddd1ddddd11dddddd1ddd1dd11d11dfefe44444444ffecdddd1dd1ddddddd11ddddddddddd1ddddddd
+    11dddd111ddd11dcfffdddddddddddddddddddd555555555555eeefefffffeeeeeeffffcbbbddd111dddd111ddd111dddd111ddbbbbeeee44444444ffffb1111ddd111dddd111ddd111dddd111ddd11
+    11dddd111ddd11dcfffdddddddddddddddddddd555555555555eeefefffffeeeeeeeeecffffddd111dddd111ddd111dddd111ddeefc444444444444ffffb1111ddd111dddd111ddd111dddd111ddd11
+    1dddddd1dddd1ddcfffdddddddddddddddddddd555555555555eeeeefffffeeeeeeeeeeffff1ddd1ddddd11ddddd11dddd111ddeeec444444444444ffffd111dddd11dddddd1dddddd1dddd1d1ddd11
+    dd1111ddd111dddcfffdddddddddddddddddddd555555555555eeefeeeeeeeeeeeffeefffff111ddd111dddd111dddd111ddd11eeee444444444444ffffddddd111ddd111dddd111dddd111ddd111dd
+    dd111dddd11bbbbffffdddddddddddddd55dddd555555555555efefeeeeeeeefffefeeeffffbbbbddd111ddd111ddddbbbbbbbbee2244444444eeeecbbb1dddd111ddd111dddd111dddd11dddd111dd
+    dd111dddd11feecffffddddddddddd55555dddd555555555555eeefeffeeeeeeeeefeeeeeeefffcddd11dddd111ddddfeeefffe222222224444fffcdd111dddd111ddd111dddd111dddd11dddd111dd
+    11dddd111ddfeffffffddddddddddd55555dddd555555555555eeeeeffffffeeeefeeeeeefefffcd1dddd111ddd1111feeeffff422222244444fffc11ddd111dddd111dddd111ddd111dddd111ddd11
+    11dddd111ddfeecffffdddddddddddd5555dddd555555555555eeefefffffeeeeeeeeefffeffffcd1dddd111ddd1111ceeeffff222442244444fffc11ddd1111ddd111dddd111ddd111dddd111ddd11
+    11ddd11bbbbeeeeffffdddddddddddd555555d5555555555554eeeee2222222eeeeeeeeeeeeffffbbbbbbbbbbbbbbbbeeeeeeee242222244444fffc11ddd111dddd111dddd11dddd111dddd111ddd11
+    d1d111dcfcf424effffddddddd55555dddd5555555555555444ecee44444444fffeeeefeeeffffffeeeeeeeeeeeefff42222222222222222224fffcdd111dddddddddd1dddddd111ddd111dddd111dd
+    dd1111deffe4224ffffdddddddd5555dddd5555555555555444ecce22222224eeefffeeeeeffffffeeeeeeeeeeeffff44442222222222222224fffcdd111dddd111ddd111dddd111ddd1111ddd111dd
+    dd111ddefff4224ffffdddddddd5555dddd5555555555554444eeee22222222eefeeefefeefffffccceeeeeeeeeffff42222222222222242444ffffdd111dddd111ddd111dddd111dddd111ddd111dd
+    dddbbeee2ee4444ffffd55dddd55555dddd555555555555eeeeeeee222222222222ee22efeeffffeeeeeeeeeeeefeefe222222222224222eeeebbcbdd1ddddddddddddddddddddddddddddddddddd1d
+    11defff42422222eecf55555555dddd5555dddd5555555defef222442222222244422242efeffefeeeeeeeeeeeeeeeffee2244422242222ffffddd111ddd111dddd111dddd111ddd111dddd111ddd11
+    11defff22422222eeef55555555dddd5555dddd5555555deeef22222222222222222222efeeeeeeeeeeeffeeeeeeeffeefe242222222222ffffddd111ddd1111ddd111dddd111ddd111dddd111ddd11
+    11defff22224422eeffd5555555dddd5555ddd555555554eeef22222222222222222224eeeeffeeecceeffeeeeeeeeeeeee242244444242ffffddd111ddd1111ddd111dddd111ddd111dddd111ddd11
+    dddefff2222442222ee444b555555d55555555555555555eeef22222222222222222224eeeeffeeeeeeeffefffeefeffeee2222222eeeeecbbb111ddd111dddd111ddd111dddd111dddd11dddd111dd
+    dddefff222224222224effe555555555555555555555555eeef22222222222222222222eeeefffeeeeeeffefffffffffeeffefffffffffcddd1111ddd111dddd111ddd111dddd111dddd11dddd111dd
+    dddefff222224222224eeee555555555555555555555555eeef22222222222222222222eeeefffeeeeeeffffffffffeeffffeeeeeeefffcdddd111ddd111dddd111ddd111dddd111dddd111ddd111dd
+    11defff222224442424eeee555555555555555555555554eecf22222222222222222222eeeeffeeecceeffffffffeeeeeeeefeeeeeefffcd11dddd111ddd1111ddd111dddd11dddd111dddd111ddd11
+    11deeee222224444424eefe444455555555555555555554cfff22222222222222222224eeeeffeeffffeefeeeeeeeeffeee4444cfffbbbb111dddd111ddd1111ddd111dddd111ddd111dddd111dddd1
+    11deeee242224224444eece444455555555555555554444ffff22222222222242244222efeeffeffffffffeeeeeeeeffeee4554cfff1ddd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd11
+    dddeeee442222222244eeee444455555555555555554444ffff22222222222242224222eeeeffeeffffeeeeeeeffeefeeee4555ffffd111dddd1dddddd11ddd1dddddd1dddddd111ddddddddddd1ddd
+    dddeefe244422222242eeee444455555555555555555444ffff42422222222224444222efeeffeeffffeefeeeeeeeeeefee4555ffffd111dddd111ddd111dddd111ddd111dddd111dddd111ddd111dd
+    dddeecee22224422222eeeeeeee45554444555555444444ffffe2222222222222222222eeeeffeeffffeefefffeee444444eeeebbbbd111ddd1111ddd111dddd111ddd111dddd111ddd111dddd111dd
+    dddeeeefeee4442efeeeffeeeee44444444444444444444ffffe2ee22222222eeeeeeeefeeeffeeffffeefffffe45555554ffff11ddd111ddd1111ddd111dddd111ddd111dddd111ddd111dddd111dd
+    11deeeeeeee2222eeeefffeeeee44444444444444444444fffffeee22222224eeeeeeeeeeeeeeeffffffeeeeeee45555554ffffd1111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd11
+    11dcccefeee2224eeeeefffeeee44444444444444444444fffffeee44444444efeeeeeefffffeefffffffffffee44455554ffffdd111ddd111dddd111ddd1111ddd111dddd11dddd111dddd111ddd11
+    11dbbbbeffeeeeeefeeeeffeeffeeee4444444444444444fffffeeee222222effeeeeeffffffeefffff44444444eeeeeeeebbbbdd111ddd111dddd111ddd111dddd111dddd111ddd111dddd111ddd11
+    dd1111deeeeffeffeeeeeeeefffffff4444444444444444fffffeefeeefffeeffeffffffffffeefffff55555554fffffffcdd111dddd111ddd1111ddd111dddd111ddd1111ddd111dddd11dddd111dd
+    dd1111deeeeffefeeeeeffeefecffff4444444444444444fffffefffeeeeffffeeffffffffffeefffff55555554cffffffcdd111dddd111ddd1111ddd111dddd111ddd1111ddd111dddd11dddd111dd
+    dd111ddeefefeefeeeeeffeeefeffff4444444444444444fffffffffeeeefeeeeefffffffeeeeeeffff44444454fffffffcdd111dddd111ddd1111ddd111dddd111ddd111dddd111dddd11dddd111dd
+    1ddddd1bbbbeeeeefeffffeefffefffeeeeeeee44444444eeeeeeeeeeeeeeffeeeeeeeeeeeeeeefffffeeeeeeeebbbbbbbbddddd1111ddd111ddd1d11dddd11dddd111dddd11dddd111dddd111ddd11
+    11dddd111ddfeefffffffffffffeeefffffceee444444444554eeeeeffffffeeeeeeeeeeeeeeeefffffffffffffd111ddd111dddd111ddd111dddd111ddd111dddd111dddd111ddd111dddd111ddd11
+    11dddd111ddcfeffffffffffffeeefeffffcfef444444444444eeeeefffffffeeeeeeeeeeefffeeffffffffffffd11dddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd11
+    11ddddd1dddfeefeffeeffefffefeeefffffcee444444444444eeeeffffffffffffffffffeeeeeeffffffffffffdd11dddd11dddd11dddd111dddd11dddd1111dddd11dddd11ddddd1ddddd111ddd11
+    dd111ddbbbbeeeeeeeeeeeeeffffeeefffffcffeeeeeeeeeeeeffffffffffffffffffffffeffffcccbbbbcccbbbdddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111dddd11dddd111dd
+    ddd11ddeeeefeeeefffeeeeffffeeeeeeefffffffffffffffffffffcfeefefffffffeeeeffffffcddd111ddd111dddd111dddd11dddd111ddd1111ddd111dddd111ddd111dddd111dddd111ddd111dd
+    dd111ddeeeeffefeeeeeefffffeffffeefeffffffffffffffffffffeeeeeeeffeeffeeeefefffffddd111ddd111dddd111ddd111dddd111dddd111ddd111dddd111ddd111dddd111dddd11dddd111dd
+    11dddd1efeeffeffffeeeeffffffeeeeeeffffffffffffffffffffffeeeeeeeeeeeffeeeffffffcd1dddd111ddd1111ddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd11
+    11dbbbbcffee22222e2eefeffffeeeefffcbbbbbbbbbbbbbbbbbbdbfffffffeffffffffffeeffccbbbbdd111dddd11dddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd11
+    11dccccfffe42222444eeeeefffeffffffcddd1111ddd111dddd11dffffceeeffeeffffffeefeeecccfdd111dddd11dddd111ddd1111ddd111dddd111ddd111dddd111dddd111ddd111dddd111ddd11
+    dddeeeefffe42222224eeeeefffeffffffcd11dddd111ddd111ddddffffcfeeffeeeeeefffeffffeeef11ddd111dddd111ddd111dddd111dddd111ddd111dddd111ddd111dddd111dddd11dddd111dd
+    dddeefffffe42222222eefeeffeefecffffd11dddd111ddd1111dddffffceeeffffeffffefeeeeeeeef11ddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111dddd11dddd111dd
+    eebbbbbeefed444eeeefffeffffffffbbbb1111ddd111ddd1111dddffffeeee22222222efeeeeefffff11ddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd111dddd111dd
+    eee11ddeeec1dddeeeeeeeefeefffff1ddd11dddddd1ddd11ddddddfeee222222222244efeeeeefffffd1ddddddddddd11ddddd1dddd1dddddddddddddddddddd1dddddddddddd11ddddddddddddddd
+    efeddd1eeecd11deeeeeeeeeeefffffd111dddd111ddd111dddd111feee422222224422eeeeeeeeffffdd111dddd11dddd111dddd111ddd111dddd111ddd111dddd111dddd111ddd111dddd111ddd11
+    fceddd1ececd11defeeefefeeeeffffd111dddd111ddd111dddd111ceee422422244224eeefefffffffdd111dddd111ddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd11
+    bbbbbbbffffbbbbcfffffffeeeeebbbd111dddd111ddd111dddd11dfffcb344eeee4444eeeeebbbffffdd111dddd11dddd111dddd111ddd111dddd111ddd111dddd111dddd11dddd111dddd111dddd1
+    dddeefcffffffffffffffffceecdd111ddd1111ddd111dddd111dddffffddd1fceed111eeee111dcfff11ddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd111dddd111dd
+    dddeeecffffffffffffffffceecdd111ddd111dddd111ddd1111dddffffddd1fceed111eeec111dffff11ddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111dddd11dddd111dd
+    dddccfffffffffffffffffffcfcdd111ddd1111ddd111dddd111dddffffddd1fffed111effc111dffff11ddd111ddd1111ddd111dddd111ddd111dddd111dddd111ddd111dddd111dddd111ddd111dd
+    11dbbbbbbbbbbbbbbbbbbbbbbbb11ddd111dddd111ddd111dddd111bbbb111dbbdd1dddbddbddddddbbdd111dddd11dddd111dddd111ddd111dddd111ddd111dddd111dddd111ddd111dddd111ddd11
+    11dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd111dddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd1111ddd111dddd11dddd111dddd111ddd11
+    11dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd1111ddd111dddd11dddd111dddd111ddd11
+    d1dddddddd1ddddd1ddddd1ddddddd1ddddddd1dddddd1dddddddd1d1ddddd1dddddd11ddd111dddddddddddd1dddddddd1dddddddddd1ddddd1dddddddddddddd1dddd1dddd1ddd1dd1ddddddd1ddd
+    ddd111ddd111ddd1111ddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111dddd111ddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111dddd111ddd111dd
+    dd111dddd111ddd1111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd111dddd111dddd111ddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd111dddd111dd
+    ddd11dddd111dddd11ddddd111dddd1ddddd11dddd11ddddd11ddddd11dddd11ddddd11dddd111dddd11ddddd11dddd11ddddd11dddd11ddddd11ddddd11dddd111ddd111dddd11ddddd11dddd111dd
+    11dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111dddd111ddd111dddd111ddd111dddd111ddd111dddd111dddd111ddd111dddd111ddd1111ddd111dddd111ddd111dddd111ddd11
+    `, SpriteKind.Player)
+let mySprite20240126T185030604Z = sprites.create(img`
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...........................................................eeeeeeeeee..........................................................................................
+    ...........................................................eeeeeeeeee..........................................................................................
+    .......................................................4444444444444444ee......................................................................................
+    .......................................................4444444444444444ee......................................................................................
+    .....................................................44444444444444444444......................................................................................
+    .....................................................44444444444444444444......................................................................................
+    ...................................................444444444444444444444444....................................................................................
+    ...................................................444444444444444444444444....................................................................................
+    ...................................................444444444444444444444444ee..................................................................................
+    ...................................................444444444444444444444444ee..................................................................................
+    .................................................ee44444444444444444444444444..................................................................................
+    .................................................ee44444444444444444444444444..................................................................................
+    ................................................ecc444444444444444444eeee4444..................................................................................
+    ................................................ecc444444444444444444eeee4444..................................................................................
+    ................................................e1c444444444444444411eeeeee44..................................................................................
+    ................................................e1c444444444444444411eeeeee44..................................................................................
+    ................................................e11444444444444444411ffccee44ee................................................................................
+    ................................................e11444444444444444411ffccee44ee................................................................................
+    ................................................6664444444444444444eeff66ee4444................................................................................
+    ................................................6664444444444444444eeff66ee4444................................................................................
+    ...............................................46664444444444444444ee6699ee4444..........................55....................................................
+    ...............................................44664444444444444444ee6699ee4444..........................55....................................................
+    ...............................................44444444444444444444444444444444..........................5522..................................................
+    ...............................................44444444444444444444444444444444..........................5522..................................................
+    ...............................................ee44444444444444444444eeff444444......................22..5544..................................................
+    ...............................................ee44444444444444444444eeff444444......................22..5544..................................................
+    ...............................................eeee44444444eeeeffff1122ee444444......................22..4444..................................................
+    ...............................................eeee44444444eeeeffff1122ee444444......................22..4444..................................................
+    ...............................................ee44ffffffff22222222ffee444444ee....................4422224422..22..............................................
+    ...............................................ee44ffffffff22222222ffee444444ee....................4422224422..22..............................................
+    .................................................ee4444ffee22222222ee44444444......................2244225522..22..............................................
+    .................................................ee4444ffee22222222ee44444444......................2244225522..22..............................................
+    .....................................................ee4444ffffffee44444444ee......................22552255442222..............................................
+    .....................................................ee4444ffffffee44444444ee......................22552255442222..............................................
+    .........................................................ee4444444444444444ee....................22445544555522................................................
+    .........................................................ee4444444444444444ee....................22445544555522................................................
+    .............................................................44eeee4444444444eeee................2255555555222244..............................................
+    .............................................................44eeee4444444444eeee................2255555555222244..............................................
+    .............................................44eeee....44eeee44444444444444444444eeee....ee......2255555555442222..............................................
+    .............................................44eeee....44eeee44444444444444444444eeee....ee......2255555555442222..............................................
+    .............................................44444444444444ee444444444444444444444444eeee44ee......224455ee4422................................................
+    .............................................44444444444444ee444444444444444444444444eeee44ee......224455ee4422................................................
+    .............................................ee44444444444444dddddd444444444444444444ee4444..........22eeee22..................................................
+    .............................................ee44444444444444dddddd444444444444444444ee4444..........22eeee22..................................................
+    .............................................ee444444444444dddddddddd444444444444444444444444........22eeee22..................................................
+    .............................................ee444444444444dddddddddd444444444444444444444444........22eeee22..................................................
+    ...............................................eeeeeeee4444dddddddddd4444444444ee4444444444............ee44....................................................
+    ...............................................eeeeeeee4444dddddddddd4444444444ee4444444444............ee44....................................................
+    .......................................................ee44dddddddddddd4444444444eeeeeeee............ee44ee....................................................
+    .......................................................ee44dddddddddddd4444444444eeeeeeee............ee44ee....................................................
+    .......................................................eedddddddddddddd4444444444ee................ee4444......................................................
+    .......................................................eedddddddddddddd4444444444ee................ee4444......................................................
+    .......................................................eedddddddddddddddd4444444444ee..............4444ee......................................................
+    .......................................................eedddddddddddddddd4444444444ee..............4444ee......................................................
+    .......................................................eedddddddddddddddd444444444444ee........ee444444........................................................
+    .......................................................eedddddddddddddddd444444444444ee........ee444444........................................................
+    .....................................................44eedddddddddddddd44444444444444ee....ee44444444ee........................................................
+    .....................................................44eedddddddddddddd44444444444444ee....ee44444444ee........................................................
+    ...................................................44444444dddddddd44444444444444444444..444444444444..........................................................
+    ...................................................44444444dddddddd44444444444444444444..444444444444..........................................................
+    ...................................................44444444444444444444ee44444444444444ee4444444444............................................................
+    ...................................................44444444444444444444ee44444444444444ee4444444444............................................................
+    .................................................ee44444444444444444444ee4444444444444444ee444444..............................................................
+    .................................................ee44444444444444444444ee4444444444444444ee444444..............................................................
+    .................................................ee444444ee444444444444ee4444444444444444..44ee................................................................
+    .................................................ee444444ee444444444444ee4444444444444444..44ee................................................................
+    ...................................................44444444ee4444444444ee4444444444444444......................................................................
+    ...................................................44444444ee4444444444ee4444444444444444......................................................................
+    ...................................................4444444444ee44444444ee4444444444444444......................................................................
+    ...................................................4444444444ee44444444ee4444444444444444......................................................................
+    ...................................................444444444444ee..444444ee444444444444ee......................................................................
+    ...................................................444444444444ee..444444ee444444444444ee......................................................................
+    .....................................................444444444444..eeee......4444444444........................................................................
+    .....................................................444444444444..eeee......4444444444........................................................................
+    .....................................................eeee444444ee............ee44444444ee......................................................................
+    .....................................................eeee444444ee............ee44444444ee......................................................................
+    .....................................................4444444444ee..............4444444444ee....................................................................
+    .....................................................4444444444ee..............4444444444ee....................................................................
+    ...................................................bb44bb44....................ee4444444444....................................................................
+    ...................................................bb44bb44....................ee4444444444....................................................................
+    .................................................................................11ee11..11....................................................................
+    .................................................................................11ee11..11....................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    ...............................................................................................................................................................
+    `, SpriteKind.Player)
