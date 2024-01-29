@@ -4,7 +4,7 @@ namespace SpriteKind {
     export const Brock = SpriteKind.create()
     export const YN = SpriteKind.create()
 }
-function Fightvspok(mySprite: Sprite) {
+function Fightvspok (mySprite: Sprite) {
     question = game.askForString("Derivative is the ____ of a tangent line at a given point.")
     if (question == "slope") {
         statusbar.value += 1
@@ -54,7 +54,7 @@ function Fightvspok(mySprite: Sprite) {
         }
     }
 }
-function Fightvspok3(mySprite: Sprite) {
+function Fightvspok3 (mySprite: Sprite) {
     question = game.askForString("(3.14)r^2")
     if (question == "circle area") {
         statusbar.value += 1
@@ -104,7 +104,7 @@ function Fightvspok3(mySprite: Sprite) {
         }
     }
 }
-function yndb() {
+function yndb () {
     statusbar8 = statusbars.create(20, 4, StatusBarKind.Health)
     statusbar8.setLabel("Life")
     statusbar8.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
@@ -113,12 +113,12 @@ function yndb() {
     statusbar8.value = 100
 }
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile15`, function (sprite, location) {
-
+	
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile13`, function (sprite, location) {
-
+	
 })
-function mistyq(mySprite: Sprite) {
+function mistyq (mySprite: Sprite) {
     q1 = game.askForNumber("Choose a number from one to four")
     if (q1 == 1) {
         Fightvspok3(Ash2)
@@ -133,9 +133,9 @@ function mistyq(mySprite: Sprite) {
     }
 }
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile12`, function (sprite, location) {
-
+	
 })
-function ashq(mySprite: Sprite) {
+function ashq (mySprite: Sprite) {
     q1 = game.askForNumber("Choose a number from one to four")
     if (q1 == 1) {
         Fightvspok(Ash2)
@@ -149,7 +149,7 @@ function ashq(mySprite: Sprite) {
         game.reset()
     }
 }
-function ynq(mySprite: Sprite) {
+function ynq (mySprite: Sprite) {
     q1 = game.askForNumber("Choose a number from one to four")
     if (q1 == 1) {
         Fightvspok4(Ash2)
@@ -173,7 +173,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile18`, function (sprite, 
 statusbars.onStatusReached(StatusBarKind.Health, statusbars.StatusComparison.EQ, statusbars.ComparisonType.Percentage, 0, function (status) {
     game.gameOver(false)
 })
-function ashdb() {
+function ashdb () {
     statusbar5 = statusbars.create(20, 4, StatusBarKind.Health)
     statusbar5.setLabel("Life")
     statusbar5.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
@@ -181,7 +181,7 @@ function ashdb() {
     statusbar5.setColor(3, 15, 0)
     statusbar5.value = 100
 }
-function brockq(mySprite: Sprite) {
+function brockq (mySprite: Sprite) {
     q1 = game.askForNumber("Choose a number from one to four")
     if (q1 == 1) {
         Fightvspok2(Ash2)
@@ -195,7 +195,7 @@ function brockq(mySprite: Sprite) {
         game.reset()
     }
 }
-function ashpb() {
+function ashpb () {
     statusbar = statusbars.create(20, 4, StatusBarKind.Health)
     statusbar.setLabel("Life")
     statusbar.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
@@ -205,7 +205,7 @@ function ashpb() {
 }
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, location) {
     list = [
-        img`
+    img`
         . . . . c c c b b b b b . . . . 
         . . c c b 4 4 4 4 4 4 b b b . . 
         . c c 4 4 4 4 4 5 4 4 4 4 b c . 
@@ -223,7 +223,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, l
         . e e b b 4 4 4 4 4 4 4 4 e e . 
         . . . c c c c c e e e e e . . . 
         `,
-        img`
+    img`
         . . . . . . . e c 7 . . . . . . 
         . . . . e e e c 7 7 e e . . . . 
         . . c e e e e c 7 e 2 2 e e . . 
@@ -241,7 +241,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, l
         . . . 2 2 e e 4 4 4 2 e e . . . 
         . . . . . 2 2 e e e e . . . . . 
         `,
-        img`
+    img`
         4 4 4 . . 4 4 4 4 4 . . . . . . 
         4 5 5 4 4 5 5 5 5 5 4 4 . . . . 
         b 4 5 5 1 5 1 1 1 5 5 5 4 . . . 
@@ -259,7 +259,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, l
         . . . . c c b 4 4 4 b b 4 5 4 4 
         . . . . . . c c c c c c b b 4 . 
         `,
-        img`
+    img`
         . . 2 2 b b b b b . . . . . . . 
         . 2 b 4 4 4 4 4 4 b . . . . . . 
         2 2 4 4 4 4 d d 4 4 b . . . . . 
@@ -277,7 +277,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, l
         . . . . . . . . . . . c 1 b c . 
         . . . . . . . . . . . . c c . . 
         `,
-        img`
+    img`
         . . . . . . 2 2 2 2 . . . . . . 
         . . . . 2 2 3 3 3 3 2 e . . . . 
         . . . 2 3 d 1 1 d d 3 2 e . . . 
@@ -295,7 +295,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, l
         . . e 3 3 3 3 3 3 b e e e e . . 
         . . . e e e e e e e e e e . . . 
         `,
-        img`
+    img`
         . . . . . . b b b b . . . . . . 
         . . . . . . b 4 4 4 b . . . . . 
         . . . . . . b b 4 4 4 b . . . . 
@@ -313,7 +313,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, l
         4 d d d 4 4 4 . . . . . . . . . 
         4 4 4 4 . . . . . . . . . . . . 
         `,
-        img`
+    img`
         . . . . . . b b b b a a . . . . 
         . . . . b b d d d 3 3 3 a a . . 
         . . . b d d d 3 3 3 3 3 3 a a . 
@@ -331,7 +331,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, l
         . . . e e e e e e e e . . . . . 
         . . . . . . . . . . . . . . . . 
         `,
-        img`
+    img`
         . . . . . . . . . . b b b . . . 
         . . . . . . . . b e e 3 3 b . . 
         . . . . . . b b e 3 2 e 3 a . . 
@@ -349,7 +349,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, l
         . . . . . . b b b b 3 d d d b a 
         . . . . . . . . . . b b b a a . 
         `,
-        img`
+    img`
         . . . . . 3 3 b 3 3 d d 3 3 . . 
         . . . . 3 1 1 d 3 d 1 1 1 1 3 . 
         . . . 3 d 1 1 1 d 1 1 1 d 3 1 3 
@@ -367,7 +367,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, l
         . 4 5 5 5 4 4 4 . . . . . . . . 
         . . 4 4 4 . . . . . . . . . . . 
         `,
-        img`
+    img`
         . . . . . . . 6 . . . . . . . . 
         . . . . . . 8 6 6 . . . 6 8 . . 
         . . . e e e 8 8 6 6 . 6 7 8 . . 
@@ -412,7 +412,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, l
     ashdb()
     brockpd()
 })
-function mistypb() {
+function mistypb () {
     statusbar3 = statusbars.create(20, 4, StatusBarKind.Health)
     statusbar3.setLabel("Life")
     statusbar3.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
@@ -420,7 +420,7 @@ function mistypb() {
     statusbar3.setColor(3, 15, 0)
     statusbar3.value = 100
 }
-function ynpb() {
+function ynpb () {
     statusbar4 = statusbars.create(20, 4, StatusBarKind.Health)
     statusbar4.setLabel("Life")
     statusbar4.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
@@ -428,7 +428,7 @@ function ynpb() {
     statusbar4.setColor(3, 15, 0)
     statusbar4.value = 100
 }
-function Fightvspok4(mySprite: Sprite) {
+function Fightvspok4 (mySprite: Sprite) {
     question = game.askForString("3x3")
     if (question == "9") {
         statusbar.value += 1
@@ -478,7 +478,7 @@ function Fightvspok4(mySprite: Sprite) {
         }
     }
 }
-function mistydb() {
+function mistydb () {
     statusbar6 = statusbars.create(20, 4, StatusBarKind.Health)
     statusbar6.setLabel("Life")
     statusbar6.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
@@ -486,7 +486,7 @@ function mistydb() {
     statusbar6.setColor(3, 15, 0)
     statusbar6.value = 100
 }
-function brockdb() {
+function brockdb () {
     statusbar7 = statusbars.create(20, 4, StatusBarKind.Health)
     statusbar7.setLabel("Life")
     statusbar7.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
@@ -494,9 +494,9 @@ function brockdb() {
     statusbar7.setColor(3, 15, 0)
     statusbar7.value = 100
 }
-function Fightvspok2(mySprite: Sprite) {
+function Fightvspok2 (mySprite: Sprite) {
     question = game.askForString("Who is the best looking men? ")
-    if (question == "V") {
+    if (question == "v") {
         statusbar.value += 1
     } else {
         while (false) {
@@ -556,9 +556,9 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile23`, function (sprite, 
     }
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile14`, function (sprite, location) {
-
+	
 })
-function brockpd() {
+function brockpd () {
     statusbar2 = statusbars.create(20, 4, StatusBarKind.Health)
     statusbar2.setLabel("Life")
     statusbar2.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
@@ -751,3 +751,29 @@ splitScreen.cameraFollowSprite(splitScreen.Camera.Camera1, Ash2)
 splitScreen.cameraFollowSprite(splitScreen.Camera.Camera2, Brock2)
 splitScreen.cameraFollowSprite(splitScreen.Camera.Camera3, Misty2)
 splitScreen.cameraFollowSprite(splitScreen.Camera.Camera4, YN2)
+let MERCHANT = sprites.create(img`
+    ........................
+    ........................
+    ........................
+    ........................
+    ..........ffff..........
+    ........ff1111ff........
+    .......fb111111bf.......
+    .......f11111111f.......
+    ......fd11111111df......
+    ......fd11111111df......
+    ......fddd1111dddf......
+    ......fbdbfddfbdbf......
+    ......fcdcf11fcdcf......
+    .......fb111111bf.......
+    ......fffcdb1bdffff.....
+    ....fc111cbfbfc111cf....
+    ....f1b1b1ffff1b1b1f....
+    ....fbfbffffffbfbfbf....
+    .........ffffff.........
+    ...........fff..........
+    ........................
+    ........................
+    ........................
+    ........................
+    `, SpriteKind.Player)
