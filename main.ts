@@ -195,16 +195,6 @@ function brockq (mySprite: Sprite) {
         game.reset()
     }
 }
-function statusbarallb () {
-    statusbarall = statusbars.create(20, 4, StatusBarKind.Health)
-    statusbarall.setLabel("Life")
-    statusbarall.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
-    statusbarall.attachToSprite(brockp, 10, 1)
-    statusbarall.attachToSprite(ashp, 10, 1)
-    statusbarall.attachToSprite(mistyp, 10, 1)
-    statusbarall.attachToSprite(ynp, 10, 1)
-    statusbarall.setColor(3, 15, 0)
-}
 function ashpb () {
     statusbar = statusbars.create(20, 4, StatusBarKind.Health)
     statusbar.setLabel("Life")
@@ -413,8 +403,14 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, l
     tiles.placeOnRandomTile(brockd, assets.tile`myTile7`)
     tiles.placeOnRandomTile(mistyd, assets.tile`myTile8`)
     tiles.placeOnRandomTile(ynd, assets.tile`myTile9`)
-    statusbarenemyb()
-    statusbarallb()
+    ashpb()
+    mistydb()
+    brockdb()
+    yndb()
+    ynpb()
+    mistypb()
+    ashdb()
+    brockpd()
 })
 function mistypb () {
     statusbar3 = statusbars.create(20, 4, StatusBarKind.Health)
@@ -498,16 +494,6 @@ function brockdb () {
     statusbar7.setColor(3, 15, 0)
     statusbar7.value = 100
 }
-function statusbarenemyb () {
-    statusbarenemy = statusbars.create(20, 4, StatusBarKind.Health)
-    statusbarenemy.setLabel("Life")
-    statusbarenemy.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
-    statusbarenemy.attachToSprite(brockd, 10, 1)
-    statusbarenemy.attachToSprite(ashd, 10, 1)
-    statusbarenemy.attachToSprite(mistyd, 10, 1)
-    statusbarenemy.attachToSprite(ynd, 10, 1)
-    statusbarenemy.setColor(3, 15, 0)
-}
 function Fightvspok2 (mySprite: Sprite) {
     question = game.askForString("Who is the Finest looking man? ")
     if (question == "Bang Chan") {
@@ -580,7 +566,6 @@ function brockpd () {
     statusbar2.setColor(3, 15, 0)
 }
 let statusbar2: StatusBarSprite = null
-let statusbarenemy: StatusBarSprite = null
 let statusbar7: StatusBarSprite = null
 let statusbar6: StatusBarSprite = null
 let statusbar4: StatusBarSprite = null
@@ -588,7 +573,6 @@ let statusbar3: StatusBarSprite = null
 let mistyd: Sprite = null
 let brockd: Sprite = null
 let list: Image[] = []
-let statusbarall: StatusBarSprite = null
 let ashd: Sprite = null
 let statusbar5: StatusBarSprite = null
 let q1 = 0
