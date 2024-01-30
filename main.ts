@@ -554,6 +554,9 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile23`, function (sprite, 
     } else {
         ynq(YN2)
     }
+    if (statusbar > 0) {
+    	
+    }
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile14`, function (sprite, location) {
 	
