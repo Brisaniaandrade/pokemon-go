@@ -14,42 +14,162 @@ function yndb () {
 }
 scene.onOverlapTile(SpriteKind.Ash, assets.tile`myTile14`, function (sprite, location) {
     ashp = sprites.create(img`
-        . . . . . . . . . . b 5 b . . . 
-        . . . . . . . . . b 5 b . . . . 
-        . . . . . . b b b b b b . . . . 
-        . . . . . b b 5 5 5 5 5 b . . . 
-        . . . . b b 5 d 1 f 5 d 4 c . . 
-        . . . . b 5 5 1 f f d d 4 4 4 b 
-        . . . . b 5 5 d f b 4 4 4 4 b . 
-        . . . b d 5 5 5 5 4 4 4 4 b . . 
-        . b b d d d 5 5 5 5 5 5 5 b . . 
-        b d d d b b b 5 5 5 5 5 5 5 b . 
-        c d d b 5 5 d c 5 5 5 5 5 5 b . 
-        c b b d 5 d c d 5 5 5 5 5 5 b . 
-        c b 5 5 b c d d 5 5 5 5 5 5 b . 
-        b b c c c d d d 5 5 5 5 5 d b . 
-        . . . . c c d d d 5 5 5 b b . . 
-        . . . . . . c c c c c b b . . . 
+        . . . . . . 2 2 2 2 . . . . . . 
+        . . . . 2 2 3 3 3 3 2 e . . . . 
+        . . . 2 3 d 1 1 d d 3 2 e . . . 
+        . . 2 3 1 d 3 3 3 d d 3 e . . . 
+        . 2 3 1 3 3 3 3 3 d 1 3 b e . . 
+        . 2 1 d 3 3 3 3 d 3 3 1 3 b b . 
+        2 3 1 d 3 3 1 1 3 3 3 1 3 4 b b 
+        2 d 3 3 d 1 3 1 3 3 3 1 3 4 4 b 
+        2 d 3 3 3 1 3 1 3 3 3 1 b 4 4 e 
+        2 d 3 3 3 1 1 3 3 3 3 1 b 4 4 e 
+        e d 3 3 3 3 d 3 3 3 d d b 4 4 e 
+        e d d 3 3 3 d 3 3 3 1 3 b 4 b e 
+        e 3 d 3 3 1 d d 3 d 1 b b e e . 
+        . e 3 1 1 d d 1 1 1 b b e e e . 
+        . . e 3 3 3 3 3 3 b e e e e . . 
+        . . . e e e e e e e e e e . . . 
         `, SpriteKind.Projectile)
 })
 scene.onOverlapTile(SpriteKind.Ash, assets.tile`myTile12`, function (sprite, location) {
     ashp = sprites.create(img`
-        . . . . . . . . . . b 5 b . . . 
-        . . . . . . . . . b 5 b . . . . 
-        . . . . . . b b b b b b . . . . 
-        . . . . . b b 5 5 5 5 5 b . . . 
-        . . . . b b 5 d 1 f 5 d 4 c . . 
-        . . . . b 5 5 1 f f d d 4 4 4 b 
-        . . . . b 5 5 d f b 4 4 4 4 b . 
-        . . . b d 5 5 5 5 4 4 4 4 b . . 
-        . b b d d d 5 5 5 5 5 5 5 b . . 
-        b d d d b b b 5 5 5 5 5 5 5 b . 
-        c d d b 5 5 d c 5 5 5 5 5 5 b . 
-        c b b d 5 d c d 5 5 5 5 5 5 b . 
-        c b 5 5 b c d d 5 5 5 5 5 5 b . 
-        b b c c c d d d 5 5 5 5 5 d b . 
-        . . . . c c d d d 5 5 5 b b . . 
-        . . . . . . c c c c c b b . . . 
+        . . 2 2 b b b b b . . . . . . . 
+        . 2 b 4 4 4 4 4 4 b . . . . . . 
+        2 2 4 4 4 4 d d 4 4 b . . . . . 
+        2 b 4 4 4 4 4 4 d 4 b . . . . . 
+        2 b 4 4 4 4 4 4 4 d 4 b . . . . 
+        2 b 4 4 4 4 4 4 4 4 4 b . . . . 
+        2 b 4 4 4 4 4 4 4 4 4 e . . . . 
+        2 2 b 4 4 4 4 4 4 4 b e . . . . 
+        . 2 b b b 4 4 4 b b b e . . . . 
+        . . e b b b b b b b e e . . . . 
+        . . . e e b 4 4 b e e e b . . . 
+        . . . . . e e e e e e b d b b . 
+        . . . . . . . . . . . b 1 1 1 b 
+        . . . . . . . . . . . c 1 d d b 
+        . . . . . . . . . . . c 1 b c . 
+        . . . . . . . . . . . . c c . . 
+        `, SpriteKind.Projectile)
+})
+scene.onOverlapTile(SpriteKind.Misty, assets.tile`myTile14`, function (sprite, location) {
+    mistyp = sprites.create(img`
+        . . . . . . 2 2 2 2 . . . . . . 
+        . . . . 2 2 3 3 3 3 2 e . . . . 
+        . . . 2 3 d 1 1 d d 3 2 e . . . 
+        . . 2 3 1 d 3 3 3 d d 3 e . . . 
+        . 2 3 1 3 3 3 3 3 d 1 3 b e . . 
+        . 2 1 d 3 3 3 3 d 3 3 1 3 b b . 
+        2 3 1 d 3 3 1 1 3 3 3 1 3 4 b b 
+        2 d 3 3 d 1 3 1 3 3 3 1 3 4 4 b 
+        2 d 3 3 3 1 3 1 3 3 3 1 b 4 4 e 
+        2 d 3 3 3 1 1 3 3 3 3 1 b 4 4 e 
+        e d 3 3 3 3 d 3 3 3 d d b 4 4 e 
+        e d d 3 3 3 d 3 3 3 1 3 b 4 b e 
+        e 3 d 3 3 1 d d 3 d 1 b b e e . 
+        . e 3 1 1 d d 1 1 1 b b e e e . 
+        . . e 3 3 3 3 3 3 b e e e e . . 
+        . . . e e e e e e e e e e . . . 
+        `, SpriteKind.Projectile)
+})
+scene.onOverlapTile(SpriteKind.Misty, assets.tile`myTile12`, function (sprite, location) {
+    mistyp = sprites.create(img`
+        . . 2 2 b b b b b . . . . . . . 
+        . 2 b 4 4 4 4 4 4 b . . . . . . 
+        2 2 4 4 4 4 d d 4 4 b . . . . . 
+        2 b 4 4 4 4 4 4 d 4 b . . . . . 
+        2 b 4 4 4 4 4 4 4 d 4 b . . . . 
+        2 b 4 4 4 4 4 4 4 4 4 b . . . . 
+        2 b 4 4 4 4 4 4 4 4 4 e . . . . 
+        2 2 b 4 4 4 4 4 4 4 b e . . . . 
+        . 2 b b b 4 4 4 b b b e . . . . 
+        . . e b b b b b b b e e . . . . 
+        . . . e e b 4 4 b e e e b . . . 
+        . . . . . e e e e e e b d b b . 
+        . . . . . . . . . . . b 1 1 1 b 
+        . . . . . . . . . . . c 1 d d b 
+        . . . . . . . . . . . c 1 b c . 
+        . . . . . . . . . . . . c c . . 
+        `, SpriteKind.Projectile)
+})
+scene.onOverlapTile(SpriteKind.Brock, assets.tile`myTile14`, function (sprite, location) {
+    brockp = sprites.create(img`
+        . . . . . . 2 2 2 2 . . . . . . 
+        . . . . 2 2 3 3 3 3 2 e . . . . 
+        . . . 2 3 d 1 1 d d 3 2 e . . . 
+        . . 2 3 1 d 3 3 3 d d 3 e . . . 
+        . 2 3 1 3 3 3 3 3 d 1 3 b e . . 
+        . 2 1 d 3 3 3 3 d 3 3 1 3 b b . 
+        2 3 1 d 3 3 1 1 3 3 3 1 3 4 b b 
+        2 d 3 3 d 1 3 1 3 3 3 1 3 4 4 b 
+        2 d 3 3 3 1 3 1 3 3 3 1 b 4 4 e 
+        2 d 3 3 3 1 1 3 3 3 3 1 b 4 4 e 
+        e d 3 3 3 3 d 3 3 3 d d b 4 4 e 
+        e d d 3 3 3 d 3 3 3 1 3 b 4 b e 
+        e 3 d 3 3 1 d d 3 d 1 b b e e . 
+        . e 3 1 1 d d 1 1 1 b b e e e . 
+        . . e 3 3 3 3 3 3 b e e e e . . 
+        . . . e e e e e e e e e e . . . 
+        `, SpriteKind.Projectile)
+})
+scene.onOverlapTile(SpriteKind.Brock, assets.tile`myTile12`, function (sprite, location) {
+    brockp = sprites.create(img`
+        . . 2 2 b b b b b . . . . . . . 
+        . 2 b 4 4 4 4 4 4 b . . . . . . 
+        2 2 4 4 4 4 d d 4 4 b . . . . . 
+        2 b 4 4 4 4 4 4 d 4 b . . . . . 
+        2 b 4 4 4 4 4 4 4 d 4 b . . . . 
+        2 b 4 4 4 4 4 4 4 4 4 b . . . . 
+        2 b 4 4 4 4 4 4 4 4 4 e . . . . 
+        2 2 b 4 4 4 4 4 4 4 b e . . . . 
+        . 2 b b b 4 4 4 b b b e . . . . 
+        . . e b b b b b b b e e . . . . 
+        . . . e e b 4 4 b e e e b . . . 
+        . . . . . e e e e e e b d b b . 
+        . . . . . . . . . . . b 1 1 1 b 
+        . . . . . . . . . . . c 1 d d b 
+        . . . . . . . . . . . c 1 b c . 
+        . . . . . . . . . . . . c c . . 
+        `, SpriteKind.Projectile)
+})
+scene.onOverlapTile(SpriteKind.YN, assets.tile`myTile14`, function (sprite, location) {
+    ynp = sprites.create(img`
+        . . . . . . 2 2 2 2 . . . . . . 
+        . . . . 2 2 3 3 3 3 2 e . . . . 
+        . . . 2 3 d 1 1 d d 3 2 e . . . 
+        . . 2 3 1 d 3 3 3 d d 3 e . . . 
+        . 2 3 1 3 3 3 3 3 d 1 3 b e . . 
+        . 2 1 d 3 3 3 3 d 3 3 1 3 b b . 
+        2 3 1 d 3 3 1 1 3 3 3 1 3 4 b b 
+        2 d 3 3 d 1 3 1 3 3 3 1 3 4 4 b 
+        2 d 3 3 3 1 3 1 3 3 3 1 b 4 4 e 
+        2 d 3 3 3 1 1 3 3 3 3 1 b 4 4 e 
+        e d 3 3 3 3 d 3 3 3 d d b 4 4 e 
+        e d d 3 3 3 d 3 3 3 1 3 b 4 b e 
+        e 3 d 3 3 1 d d 3 d 1 b b e e . 
+        . e 3 1 1 d d 1 1 1 b b e e e . 
+        . . e 3 3 3 3 3 3 b e e e e . . 
+        . . . e e e e e e e e e e . . . 
+        `, SpriteKind.Projectile)
+})
+scene.onOverlapTile(SpriteKind.YN, assets.tile`myTile12`, function (sprite, location) {
+    ynp = sprites.create(img`
+        . . 2 2 b b b b b . . . . . . . 
+        . 2 b 4 4 4 4 4 4 b . . . . . . 
+        2 2 4 4 4 4 d d 4 4 b . . . . . 
+        2 b 4 4 4 4 4 4 d 4 b . . . . . 
+        2 b 4 4 4 4 4 4 4 d 4 b . . . . 
+        2 b 4 4 4 4 4 4 4 4 4 b . . . . 
+        2 b 4 4 4 4 4 4 4 4 4 e . . . . 
+        2 2 b 4 4 4 4 4 4 4 b e . . . . 
+        . 2 b b b 4 4 4 b b b e . . . . 
+        . . e b b b b b b b e e . . . . 
+        . . . e e b 4 4 b e e e b . . . 
+        . . . . . e e e e e e b d b b . 
+        . . . . . . . . . . . b 1 1 1 b 
+        . . . . . . . . . . . c 1 d d b 
+        . . . . . . . . . . . c 1 b c . 
+        . . . . . . . . . . . . c c . . 
         `, SpriteKind.Projectile)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile18`, function (sprite, location) {
@@ -72,62 +192,22 @@ function ashdb () {
 }
 scene.onOverlapTile(SpriteKind.Ash, assets.tile`myTile15`, function (sprite, location) {
     ashp = sprites.create(img`
-        . . . . . . . . . . b 5 b . . . 
-        . . . . . . . . . b 5 b . . . . 
-        . . . . . . b b b b b b . . . . 
-        . . . . . b b 5 5 5 5 5 b . . . 
-        . . . . b b 5 d 1 f 5 d 4 c . . 
-        . . . . b 5 5 1 f f d d 4 4 4 b 
-        . . . . b 5 5 d f b 4 4 4 4 b . 
-        . . . b d 5 5 5 5 4 4 4 4 b . . 
-        . b b d d d 5 5 5 5 5 5 5 b . . 
-        b d d d b b b 5 5 5 5 5 5 5 b . 
-        c d d b 5 5 d c 5 5 5 5 5 5 b . 
-        c b b d 5 d c d 5 5 5 5 5 5 b . 
-        c b 5 5 b c d d 5 5 5 5 5 5 b . 
-        b b c c c d d d 5 5 5 5 5 d b . 
-        . . . . c c d d d 5 5 5 b b . . 
-        . . . . . . c c c c c b b . . . 
-        `, SpriteKind.Projectile)
-})
-scene.onOverlapTile(SpriteKind.Brock, assets.tile`myTile15`, function (sprite, location) {
-    brockp = sprites.create(img`
-        . . . . . . . . . . b 5 b . . . 
-        . . . . . . . . . b 5 b . . . . 
-        . . . . . . b b b b b b . . . . 
-        . . . . . b b 5 5 5 5 5 b . . . 
-        . . . . b b 5 d 1 f 5 d 4 c . . 
-        . . . . b 5 5 1 f f d d 4 4 4 b 
-        . . . . b 5 5 d f b 4 4 4 4 b . 
-        . . . b d 5 5 5 5 4 4 4 4 b . . 
-        . b b d d d 5 5 5 5 5 5 5 b . . 
-        b d d d b b b 5 5 5 5 5 5 5 b . 
-        c d d b 5 5 d c 5 5 5 5 5 5 b . 
-        c b b d 5 d c d 5 5 5 5 5 5 b . 
-        c b 5 5 b c d d 5 5 5 5 5 5 b . 
-        b b c c c d d d 5 5 5 5 5 d b . 
-        . . . . c c d d d 5 5 5 b b . . 
-        . . . . . . c c c c c b b . . . 
-        `, SpriteKind.Projectile)
-})
-scene.onOverlapTile(SpriteKind.Misty, assets.tile`myTile13`, function (sprite, location) {
-    mistyp = sprites.create(img`
-        . . . . . . . . . . b 5 b . . . 
-        . . . . . . . . . b 5 b . . . . 
-        . . . . . . b b b b b b . . . . 
-        . . . . . b b 5 5 5 5 5 b . . . 
-        . . . . b b 5 d 1 f 5 d 4 c . . 
-        . . . . b 5 5 1 f f d d 4 4 4 b 
-        . . . . b 5 5 d f b 4 4 4 4 b . 
-        . . . b d 5 5 5 5 4 4 4 4 b . . 
-        . b b d d d 5 5 5 5 5 5 5 b . . 
-        b d d d b b b 5 5 5 5 5 5 5 b . 
-        c d d b 5 5 d c 5 5 5 5 5 5 b . 
-        c b b d 5 d c d 5 5 5 5 5 5 b . 
-        c b 5 5 b c d d 5 5 5 5 5 5 b . 
-        b b c c c d d d 5 5 5 5 5 d b . 
-        . . . . c c d d d 5 5 5 b b . . 
-        . . . . . . c c c c c b b . . . 
+        . . . . . . . 6 . . . . . . . . 
+        . . . . . . 8 6 6 . . . 6 8 . . 
+        . . . e e e 8 8 6 6 . 6 7 8 . . 
+        . . e 2 2 2 2 e 8 6 6 7 6 . . . 
+        . e 2 2 4 4 2 7 7 7 7 7 8 6 . . 
+        . e 2 4 4 2 6 7 7 7 6 7 6 8 8 . 
+        e 2 4 5 2 2 6 7 7 6 2 7 7 6 . . 
+        e 2 4 4 2 2 6 7 6 2 2 6 7 7 6 . 
+        e 2 4 2 2 2 6 6 2 2 2 e 7 7 6 . 
+        e 2 4 2 2 4 2 2 2 4 2 2 e 7 6 . 
+        e 2 4 2 2 2 2 2 2 2 2 2 e c 6 . 
+        e 2 2 2 2 2 2 2 4 e 2 e e c . . 
+        e e 2 e 2 2 4 2 2 e e e c . . . 
+        e e e e 2 e 2 2 e e e c . . . . 
+        e e e 2 e e c e c c c . . . . . 
+        . c c c c c c c . . . . . . . . 
         `, SpriteKind.Projectile)
 })
 function ashpb () {
@@ -138,26 +218,6 @@ function ashpb () {
     statusbar.setColor(3, 15, 0)
     statusbar.value = 100
 }
-scene.onOverlapTile(SpriteKind.Brock, assets.tile`myTile13`, function (sprite, location) {
-    brockp = sprites.create(img`
-        . . . . . . . . . . b 5 b . . . 
-        . . . . . . . . . b 5 b . . . . 
-        . . . . . . b b b b b b . . . . 
-        . . . . . b b 5 5 5 5 5 b . . . 
-        . . . . b b 5 d 1 f 5 d 4 c . . 
-        . . . . b 5 5 1 f f d d 4 4 4 b 
-        . . . . b 5 5 d f b 4 4 4 4 b . 
-        . . . b d 5 5 5 5 4 4 4 4 b . . 
-        . b b d d d 5 5 5 5 5 5 5 b . . 
-        b d d d b b b 5 5 5 5 5 5 5 b . 
-        c d d b 5 5 d c 5 5 5 5 5 5 b . 
-        c b b d 5 d c d 5 5 5 5 5 5 b . 
-        c b 5 5 b c d d 5 5 5 5 5 5 b . 
-        b b c c c d d d 5 5 5 5 5 d b . 
-        . . . . c c d d d 5 5 5 b b . . 
-        . . . . . . c c c c c b b . . . 
-        `, SpriteKind.Projectile)
-})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, location) {
     list = [
     img`
@@ -367,26 +427,6 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, l
     ashdb()
     brockpd()
 })
-scene.onOverlapTile(SpriteKind.Misty, assets.tile`myTile12`, function (sprite, location) {
-    mistyp = sprites.create(img`
-        . . . . . . . . . . b 5 b . . . 
-        . . . . . . . . . b 5 b . . . . 
-        . . . . . . b b b b b b . . . . 
-        . . . . . b b 5 5 5 5 5 b . . . 
-        . . . . b b 5 d 1 f 5 d 4 c . . 
-        . . . . b 5 5 1 f f d d 4 4 4 b 
-        . . . . b 5 5 d f b 4 4 4 4 b . 
-        . . . b d 5 5 5 5 4 4 4 4 b . . 
-        . b b d d d 5 5 5 5 5 5 5 b . . 
-        b d d d b b b 5 5 5 5 5 5 5 b . 
-        c d d b 5 5 d c 5 5 5 5 5 5 b . 
-        c b b d 5 d c d 5 5 5 5 5 5 b . 
-        c b 5 5 b c d d 5 5 5 5 5 5 b . 
-        b b c c c d d d 5 5 5 5 5 d b . 
-        . . . . c c d d d 5 5 5 b b . . 
-        . . . . . . c c c c c b b . . . 
-        `, SpriteKind.Projectile)
-})
 function mistypb () {
     statusbar3 = statusbars.create(20, 4, StatusBarKind.Health)
     statusbar3.setLabel("Life")
@@ -403,26 +443,6 @@ function ynpb () {
     statusbar4.setColor(3, 15, 0)
     statusbar4.value = 100
 }
-scene.onOverlapTile(SpriteKind.Misty, assets.tile`myTile15`, function (sprite, location) {
-    mistyp = sprites.create(img`
-        . . . . . . . . . . b 5 b . . . 
-        . . . . . . . . . b 5 b . . . . 
-        . . . . . . b b b b b b . . . . 
-        . . . . . b b 5 5 5 5 5 b . . . 
-        . . . . b b 5 d 1 f 5 d 4 c . . 
-        . . . . b 5 5 1 f f d d 4 4 4 b 
-        . . . . b 5 5 d f b 4 4 4 4 b . 
-        . . . b d 5 5 5 5 4 4 4 4 b . . 
-        . b b d d d 5 5 5 5 5 5 5 b . . 
-        b d d d b b b 5 5 5 5 5 5 5 b . 
-        c d d b 5 5 d c 5 5 5 5 5 5 b . 
-        c b b d 5 d c d 5 5 5 5 5 5 b . 
-        c b 5 5 b c d d 5 5 5 5 5 5 b . 
-        b b c c c d d d 5 5 5 5 5 d b . 
-        . . . . c c d d d 5 5 5 b b . . 
-        . . . . . . c c c c c b b . . . 
-        `, SpriteKind.Projectile)
-})
 function mistydb () {
     statusbar6 = statusbars.create(20, 4, StatusBarKind.Health)
     statusbar6.setLabel("Life")
@@ -451,26 +471,6 @@ scene.onOverlapTile(SpriteKind.Ash, assets.tile`myTile13`, function (sprite, loc
         . . . . . . c c c c c b b . . . 
         `, SpriteKind.Projectile)
 })
-scene.onOverlapTile(SpriteKind.Brock, assets.tile`myTile12`, function (sprite, location) {
-    brockp = sprites.create(img`
-        . . . . . . . . . . b 5 b . . . 
-        . . . . . . . . . b 5 b . . . . 
-        . . . . . . b b b b b b . . . . 
-        . . . . . b b 5 5 5 5 5 b . . . 
-        . . . . b b 5 d 1 f 5 d 4 c . . 
-        . . . . b 5 5 1 f f d d 4 4 4 b 
-        . . . . b 5 5 d f b 4 4 4 4 b . 
-        . . . b d 5 5 5 5 4 4 4 4 b . . 
-        . b b d d d 5 5 5 5 5 5 5 b . . 
-        b d d d b b b 5 5 5 5 5 5 5 b . 
-        c d d b 5 5 d c 5 5 5 5 5 5 b . 
-        c b b d 5 d c d 5 5 5 5 5 5 b . 
-        c b 5 5 b c d d 5 5 5 5 5 5 b . 
-        b b c c c d d d 5 5 5 5 5 d b . 
-        . . . . c c d d d 5 5 5 b b . . 
-        . . . . . . c c c c c b b . . . 
-        `, SpriteKind.Projectile)
-})
 function brockdb () {
     statusbar7 = statusbars.create(20, 4, StatusBarKind.Health)
     statusbar7.setLabel("Life")
@@ -479,26 +479,6 @@ function brockdb () {
     statusbar7.setColor(3, 15, 0)
     statusbar7.value = 100
 }
-scene.onOverlapTile(SpriteKind.Misty, assets.tile`myTile14`, function (sprite, location) {
-    mistyp = sprites.create(img`
-        . . . . . . . . . . b 5 b . . . 
-        . . . . . . . . . b 5 b . . . . 
-        . . . . . . b b b b b b . . . . 
-        . . . . . b b 5 5 5 5 5 b . . . 
-        . . . . b b 5 d 1 f 5 d 4 c . . 
-        . . . . b 5 5 1 f f d d 4 4 4 b 
-        . . . . b 5 5 d f b 4 4 4 4 b . 
-        . . . b d 5 5 5 5 4 4 4 4 b . . 
-        . b b d d d 5 5 5 5 5 5 5 b . . 
-        b d d d b b b 5 5 5 5 5 5 5 b . 
-        c d d b 5 5 d c 5 5 5 5 5 5 b . 
-        c b b d 5 d c d 5 5 5 5 5 5 b . 
-        c b 5 5 b c d d 5 5 5 5 5 5 b . 
-        b b c c c d d d 5 5 5 5 5 d b . 
-        . . . . c c d d d 5 5 5 b b . . 
-        . . . . . . c c c c c b b . . . 
-        `, SpriteKind.Projectile)
-})
 scene.onOverlapTile(SpriteKind.Brock, assets.tile`myTile14`, function (sprite, location) {
     brockp = sprites.create(img`
         . . . . . . . . . . b 5 b . . . 
@@ -543,12 +523,12 @@ let statusbar6: StatusBarSprite = null
 let statusbar4: StatusBarSprite = null
 let statusbar3: StatusBarSprite = null
 let ynp: Sprite = null
+let mistyp: Sprite = null
+let brockp: Sprite = null
 let mistyd: Sprite = null
 let brockd: Sprite = null
 let list: Image[] = []
 let statusbar: StatusBarSprite = null
-let mistyp: Sprite = null
-let brockp: Sprite = null
 let ashd: Sprite = null
 let statusbar5: StatusBarSprite = null
 let ashp: Sprite = null
@@ -578,7 +558,7 @@ Ash2 = sprites.create(img`
     . . 4 4 f 4 4 5 5 4 4 f 4 4 . . 
     . . . . . f f f f f f . . . . . 
     . . . . . f f . . f f . . . . . 
-    `, SpriteKind.Ash)
+    `, SpriteKind.Player)
 Misty2 = sprites.create(img`
     . . . . . . 5 . 5 . . . . . . . 
     . . . . . f 5 5 5 f f . . . . . 
@@ -596,7 +576,7 @@ Misty2 = sprites.create(img`
     . . . f 3 3 5 3 3 5 3 3 f . . . 
     . . . f f f f f f f f f f . . . 
     . . . . . f f . . f f . . . . . 
-    `, SpriteKind.Misty)
+    `, SpriteKind.Player)
 Brock2 = sprites.create(img`
     . . . . . . . f f . . . . . . . 
     . . . . . f f 4 4 f f . . . . . 
@@ -614,7 +594,7 @@ Brock2 = sprites.create(img`
     . . e f b b d b d d e e f . . . 
     . . . f f 1 1 d 1 d 1 f f . . . 
     . . . . . f b b f f f . . . . . 
-    `, SpriteKind.Brock)
+    `, SpriteKind.Player)
 YN2 = sprites.create(img`
     . f f f . f f f f . f f f . 
     f f f f f c c c c f f f f f 
@@ -632,7 +612,7 @@ YN2 = sprites.create(img`
     . 4 4 f 6 6 6 6 6 6 f 4 4 . 
     . . . . f f f f f f . . . . 
     . . . . f f . . f f . . . . 
-    `, SpriteKind.YN)
+    `, SpriteKind.Player)
 controller.player1.moveSprite(Ash2, 100, 100)
 controller.player2.moveSprite(Brock2, 100, 100)
 controller.player3.moveSprite(Misty2, 100, 100)
