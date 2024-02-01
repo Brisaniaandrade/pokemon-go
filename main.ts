@@ -32,6 +32,9 @@ function yndb () {
     statusbar8.setColor(3, 15, 0)
     statusbar8.value = 100
 }
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile7`, function (sprite, location) {
+    fight(randint(0, 10), ashp)
+})
 scene.onOverlapTile(SpriteKind.Ash, assets.tile`myTile14`, function (sprite, location) {
     ashp = sprites.create(img`
         . . . . . . 2 2 2 2 . . . . . . 
@@ -130,6 +133,25 @@ scene.onOverlapTile(SpriteKind.Ash, assets.tile`myTile15`, function (sprite, loc
         . c c c c c c c . . . . . . . . 
         `, SpriteKind.Projectile)
 })
+function fight (num: number, mySprite: Sprite) {
+    tiles.loadMap(tiles.createMap(tilemap`level57`))
+    enemypsa = sprites.create(list._pickRandom(), SpriteKind.Enemy)
+    while (statusbarall != statusbarenemy) {
+        if (mySprite.x == num && mySprite.y == num) {
+            statusbarenemy.value += -1
+            ashd.startEffect(effects.fire, 500)
+            mistyd.startEffect(effects.fire, 500)
+            brockd.startEffect(effects.fire, 500)
+            sprites.destroy(enemypsa, effects.spray, 500)
+        } else {
+            statusbarall.value += -1
+            ashd.startEffect(effects.fire, 500)
+            mistyd.startEffect(effects.fire, 500)
+            brockd.startEffect(effects.fire, 500)
+            ynd.startEffect(effects.fire, 500)
+        }
+    }
+}
 function ashpb () {
     statusbar = statusbars.create(20, 4, StatusBarKind.Health)
     statusbar.setLabel("Life")
@@ -338,14 +360,6 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, l
     tiles.placeOnRandomTile(brockd, assets.tile`myTile7`)
     tiles.placeOnRandomTile(mistyd, assets.tile`myTile8`)
     tiles.placeOnRandomTile(ynd, assets.tile`myTile9`)
-    ashpb()
-    mistydb()
-    brockdb()
-    yndb()
-    ynpb()
-    mistypb()
-    ashdb()
-    brockpd()
 })
 scene.onOverlapTile(SpriteKind.Misty, assets.tile`myTile12`, function (sprite, location) {
     mistyp = sprites.create(img`
@@ -390,6 +404,28 @@ function mistydb () {
     statusbar6.attachToSprite(mistyd, 10, 1)
     statusbar6.setColor(3, 15, 0)
     statusbar6.value = 100
+}
+function statusbarallbd () {
+    statusbarall = statusbars.create(20, 4, StatusBarKind.Health)
+    statusbarall.setLabel("Life")
+    statusbarall.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
+    statusbarall.attachToSprite(ynp, 10, 1)
+    statusbarall.attachToSprite(brockp, 10, 1)
+    statusbarall.attachToSprite(mistyp, 10, 1)
+    statusbarall.attachToSprite(ashp, 10, 1)
+    statusbarall.setColor(3, 15, 0)
+    statusbarall.value = 100
+}
+function statusbarenemybd () {
+    statusbarenemy = statusbars.create(20, 4, StatusBarKind.Health)
+    statusbarenemy.setLabel("Life")
+    statusbarenemy.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
+    statusbarenemy.attachToSprite(ynd, 10, 1)
+    statusbarenemy.attachToSprite(brockd, 10, 1)
+    statusbarenemy.attachToSprite(mistyd, 10, 1)
+    statusbarenemy.attachToSprite(ashd, 10, 1)
+    statusbarenemy.setColor(3, 15, 0)
+    statusbarenemy.value = 100
 }
 scene.onOverlapTile(SpriteKind.Ash, assets.tile`myTile13`, function (sprite, location) {
     ashp = sprites.create(img`
@@ -503,10 +539,14 @@ let statusbar6: StatusBarSprite = null
 let statusbar4: StatusBarSprite = null
 let statusbar3: StatusBarSprite = null
 let mistyp: Sprite = null
-let mistyd: Sprite = null
-let brockd: Sprite = null
-let list: Image[] = []
+let brockp: Sprite = null
 let statusbar: StatusBarSprite = null
+let brockd: Sprite = null
+let mistyd: Sprite = null
+let statusbarenemy: StatusBarSprite = null
+let statusbarall: StatusBarSprite = null
+let list: Image[] = []
+let enemypsa: Sprite = null
 let ashd: Sprite = null
 let statusbar5: StatusBarSprite = null
 let ashp: Sprite = null
@@ -517,28 +557,11 @@ let YN2: Sprite = null
 let Brock2: Sprite = null
 let Misty2: Sprite = null
 let Ash2: Sprite = null
-let brockp: Sprite = null
+let out = 0
 story.setPagePauseLength(100, 200)
 story.printCharacterText("PLEASE SELECT A STARTER PRESENTED IN FRONT OF YOU (walk to it)")
 tiles.loadMap(tiles.createMap(tilemap`level1`))
-Ash2 = sprites.create(img`
-    . . . . . . f f f f . . . . . . 
-    . . . . f f f 2 2 f f f . . . . 
-    . . . f f f 2 2 2 2 f f f . . . 
-    . . f f f e e e e e e f f f . . 
-    . . f f e 2 2 2 2 2 2 e e f . . 
-    . . f e 2 f f f f f f 2 e f . . 
-    . . f f f f e e e e f f f f . . 
-    . f f e f b f 4 4 f b f e f f . 
-    . f e e 4 1 f d d f 1 4 e e f . 
-    . . f e e d d d d d d e e f . . 
-    . . . f e e 4 4 4 4 e e f . . . 
-    . . e 4 f 2 2 2 2 2 2 f 4 e . . 
-    . . 4 d f 2 2 2 2 2 2 f d 4 . . 
-    . . 4 4 f 4 4 5 5 4 4 f 4 4 . . 
-    . . . . . f f f f f f . . . . . 
-    . . . . . f f . . f f . . . . . 
-    `, SpriteKind.Player)
+Ash2 = sprites.create(assets.image`ash`, SpriteKind.Player)
 Misty2 = sprites.create(img`
     . . . . . . 5 . 5 . . . . . . . 
     . . . . . f 5 5 5 f f . . . . . 
