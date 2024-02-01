@@ -1,18 +1,8 @@
 namespace SpriteKind {
     export const Ash = SpriteKind.create()
-    export const Misty = SpriteKind.create()
-    export const Brock = SpriteKind.create()
-    export const YN = SpriteKind.create()
 }
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile19`, function (sprite, location) {
     tiles.loadMap(tiles.createMap(tilemap`level22`))
-    player2 = [
-    Ash2,
-    Brock2,
-    Misty2,
-    YN2
-    ]
-    Fightvspok(player2._pickRandom())
 })
 function Fightvspok (mySprite: Sprite) {
     question = game.askForString("Derivative is the ____ of a tangent line at a given point.")
@@ -22,9 +12,6 @@ function Fightvspok (mySprite: Sprite) {
         while (false) {
             statusbar.value += -1
             ashp.startEffect(effects.spray, 500)
-            mistyp.startEffect(effects.spray, 500)
-            ynp.startEffect(effects.spray, 500)
-            brockp.startEffect(effects.spray, 500)
         }
     }
     question = game.askForString("What is the formula for dx? (_ - _)")
@@ -34,9 +21,6 @@ function Fightvspok (mySprite: Sprite) {
         while (false) {
             statusbar.value += -1
             ashp.startEffect(effects.spray, 500)
-            mistyp.startEffect(effects.spray, 500)
-            ynp.startEffect(effects.spray, 500)
-            brockp.startEffect(effects.spray, 500)
         }
     }
     question = game.askForString("6 x 3")
@@ -46,9 +30,6 @@ function Fightvspok (mySprite: Sprite) {
         while (false) {
             statusbar.value += -1
             ashp.startEffect(effects.spray, 500)
-            mistyp.startEffect(effects.spray, 500)
-            ynp.startEffect(effects.spray, 500)
-            brockp.startEffect(effects.spray, 500)
         }
     }
     question = game.askForString(" 1+1")
@@ -58,9 +39,6 @@ function Fightvspok (mySprite: Sprite) {
         while (false) {
             statusbar.value += -1
             ashp.startEffect(effects.spray, 500)
-            mistyp.startEffect(effects.spray, 500)
-            ynp.startEffect(effects.spray, 500)
-            brockp.startEffect(effects.spray, 500)
         }
     }
 }
@@ -72,9 +50,6 @@ function Fightvspok3 (mySprite: Sprite) {
         while (false) {
             statusbar.value += -1
             ashp.startEffect(effects.spray, 500)
-            mistyp.startEffect(effects.spray, 500)
-            ynp.startEffect(effects.spray, 500)
-            brockp.startEffect(effects.spray, 500)
         }
     }
     question = game.askForString("Formula for rectangle area?")
@@ -84,9 +59,6 @@ function Fightvspok3 (mySprite: Sprite) {
         while (false) {
             statusbar.value += -1
             ashp.startEffect(effects.spray, 500)
-            mistyp.startEffect(effects.spray, 500)
-            ynp.startEffect(effects.spray, 500)
-            brockp.startEffect(effects.spray, 500)
         }
     }
     question = game.askForString("How do you find vertical tangent? (y'=?)  ")
@@ -96,9 +68,6 @@ function Fightvspok3 (mySprite: Sprite) {
         while (false) {
             statusbar.value += -1
             ashp.startEffect(effects.spray, 500)
-            mistyp.startEffect(effects.spray, 500)
-            ynp.startEffect(effects.spray, 500)
-            brockp.startEffect(effects.spray, 500)
         }
     }
     question = game.askForString(" 36-8")
@@ -108,32 +77,14 @@ function Fightvspok3 (mySprite: Sprite) {
         while (false) {
             statusbar.value += -1
             ashp.startEffect(effects.spray, 500)
-            mistyp.startEffect(effects.spray, 500)
-            ynp.startEffect(effects.spray, 500)
-            brockp.startEffect(effects.spray, 500)
         }
     }
-}
-function yndb () {
-    statusbar8 = statusbars.create(20, 4, StatusBarKind.Health)
-    statusbar8.setLabel("Life")
-    statusbar8.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
-    statusbar8.attachToSprite(ynd, 10, 1)
-    statusbar8.setColor(3, 15, 0)
-    statusbar8.value = 100
 }
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile15`, function (sprite, location) {
 	
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile22`, function (sprite, location) {
     tiles.loadMap(tiles.createMap(tilemap`level22`))
-    player2 = [
-    Ash2,
-    Brock2,
-    Misty2,
-    YN2
-    ]
-    Fightvspok2(player2._pickRandom())
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile13`, function (sprite, location) {
 	
@@ -154,23 +105,9 @@ function ashdb () {
 }
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile21`, function (sprite, location) {
     tiles.loadMap(tiles.createMap(tilemap`level22`))
-    player2 = [
-    Ash2,
-    Brock2,
-    Misty2,
-    YN2
-    ]
-    Fightvspok4(player2._pickRandom())
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile20`, function (sprite, location) {
     tiles.loadMap(tiles.createMap(tilemap`level22`))
-    player2 = [
-    Ash2,
-    Brock2,
-    Misty2,
-    YN2
-    ]
-    Fightvspok3(player2._pickRandom())
 })
 function ashpb () {
     statusbar = statusbars.create(20, 4, StatusBarKind.Health)
@@ -181,6 +118,7 @@ function ashpb () {
     statusbar.value = 100
 }
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, location) {
+    let Ash2: Sprite = null
     list = [
     img`
         . . . . c c c b b b b b . . . . 
@@ -364,47 +302,13 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, l
         `
     ]
     ashd = sprites.create(list._pickRandom(), SpriteKind.Enemy)
-    brockd = sprites.create(list._pickRandom(), SpriteKind.Enemy)
-    mistyd = sprites.create(list._pickRandom(), SpriteKind.Enemy)
-    ynd = sprites.create(list._pickRandom(), SpriteKind.Enemy)
     tiles.loadMap(tiles.createMap(tilemap`level5`))
     tiles.placeOnRandomTile(Ash2, assets.tile`myTile1`)
     tiles.placeOnRandomTile(ashp, assets.tile`myTile1`)
-    tiles.placeOnRandomTile(Brock2, assets.tile`myTile2`)
-    tiles.placeOnRandomTile(brockp, assets.tile`myTile2`)
-    tiles.placeOnRandomTile(Misty2, assets.tile`myTile3`)
-    tiles.placeOnRandomTile(mistyp, assets.tile`myTile3`)
-    tiles.placeOnRandomTile(YN2, assets.tile`myTile4`)
-    tiles.placeOnRandomTile(ynp, assets.tile`myTile4`)
     tiles.placeOnRandomTile(ashd, assets.tile`myTile6`)
-    tiles.placeOnRandomTile(brockd, assets.tile`myTile7`)
-    tiles.placeOnRandomTile(mistyd, assets.tile`myTile8`)
-    tiles.placeOnRandomTile(ynd, assets.tile`myTile9`)
     ashpb()
-    mistydb()
-    brockdb()
-    yndb()
-    ynpb()
-    mistypb()
     ashdb()
-    brockpd()
 })
-function mistypb () {
-    statusbar3 = statusbars.create(20, 4, StatusBarKind.Health)
-    statusbar3.setLabel("Life")
-    statusbar3.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
-    statusbar3.attachToSprite(mistyp, 10, 1)
-    statusbar3.setColor(3, 15, 0)
-    statusbar3.value = 100
-}
-function ynpb () {
-    statusbar4 = statusbars.create(20, 4, StatusBarKind.Health)
-    statusbar4.setLabel("Life")
-    statusbar4.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
-    statusbar4.attachToSprite(ynp, 10, 1)
-    statusbar4.setColor(3, 15, 0)
-    statusbar4.value = 100
-}
 function Fightvspok4 (mySprite: Sprite) {
     question = game.askForString("3x3")
     if (question == "9") {
@@ -413,9 +317,6 @@ function Fightvspok4 (mySprite: Sprite) {
         while (false) {
             statusbar.value += -1
             ashp.startEffect(effects.spray, 500)
-            mistyp.startEffect(effects.spray, 500)
-            ynp.startEffect(effects.spray, 500)
-            brockp.startEffect(effects.spray, 500)
         }
     }
     question = game.askForString("Best character from shameless? ")
@@ -425,9 +326,6 @@ function Fightvspok4 (mySprite: Sprite) {
         while (false) {
             statusbar.value += -1
             ashp.startEffect(effects.spray, 500)
-            mistyp.startEffect(effects.spray, 500)
-            ynp.startEffect(effects.spray, 500)
-            brockp.startEffect(effects.spray, 500)
         }
     }
     question = game.askForString("WHo is the younger brother from Supernatural?")
@@ -437,9 +335,6 @@ function Fightvspok4 (mySprite: Sprite) {
         while (false) {
             statusbar.value += -1
             ashp.startEffect(effects.spray, 500)
-            mistyp.startEffect(effects.spray, 500)
-            ynp.startEffect(effects.spray, 500)
-            brockp.startEffect(effects.spray, 500)
         }
     }
     question = game.askForString(" Who is the oldest brother from Supernatural?")
@@ -449,27 +344,8 @@ function Fightvspok4 (mySprite: Sprite) {
         while (false) {
             statusbar.value += -1
             ashp.startEffect(effects.spray, 500)
-            mistyp.startEffect(effects.spray, 500)
-            ynp.startEffect(effects.spray, 500)
-            brockp.startEffect(effects.spray, 500)
         }
     }
-}
-function mistydb () {
-    statusbar6 = statusbars.create(20, 4, StatusBarKind.Health)
-    statusbar6.setLabel("Life")
-    statusbar6.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
-    statusbar6.attachToSprite(mistyd, 10, 1)
-    statusbar6.setColor(3, 15, 0)
-    statusbar6.value = 100
-}
-function brockdb () {
-    statusbar7 = statusbars.create(20, 4, StatusBarKind.Health)
-    statusbar7.setLabel("Life")
-    statusbar7.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
-    statusbar7.attachToSprite(brockd, 10, 1)
-    statusbar7.setColor(3, 15, 0)
-    statusbar7.value = 100
 }
 function Fightvspok2 (mySprite: Sprite) {
     question = game.askForString("Who is the best looking men? ")
@@ -479,9 +355,6 @@ function Fightvspok2 (mySprite: Sprite) {
         while (false) {
             statusbar.value += -1
             ashp.startEffect(effects.spray, 500)
-            mistyp.startEffect(effects.spray, 500)
-            ynp.startEffect(effects.spray, 500)
-            brockp.startEffect(effects.spray, 500)
         }
     }
     question = game.askForString("First rule for second Derivative test? (y=?)")
@@ -491,9 +364,6 @@ function Fightvspok2 (mySprite: Sprite) {
         while (false) {
             statusbar.value += -1
             ashp.startEffect(effects.spray, 500)
-            mistyp.startEffect(effects.spray, 500)
-            ynp.startEffect(effects.spray, 500)
-            brockp.startEffect(effects.spray, 500)
         }
     }
     question = game.askForString("What color is the sky?")
@@ -503,9 +373,6 @@ function Fightvspok2 (mySprite: Sprite) {
         while (false) {
             statusbar.value += -1
             ashp.startEffect(effects.spray, 500)
-            mistyp.startEffect(effects.spray, 500)
-            ynp.startEffect(effects.spray, 500)
-            brockp.startEffect(effects.spray, 500)
         }
     }
     question = game.askForString(" Who was the best player in Exatlon?")
@@ -515,231 +382,22 @@ function Fightvspok2 (mySprite: Sprite) {
         while (false) {
             statusbar.value += -1
             ashp.startEffect(effects.spray, 500)
-            mistyp.startEffect(effects.spray, 500)
-            ynp.startEffect(effects.spray, 500)
-            brockp.startEffect(effects.spray, 500)
         }
     }
 }
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile14`, function (sprite, location) {
 	
 })
-function brockpd () {
-    statusbar2 = statusbars.create(20, 4, StatusBarKind.Health)
-    statusbar2.setLabel("Life")
-    statusbar2.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
-    statusbar2.attachToSprite(brockp, 10, 1)
-    statusbar2.setColor(3, 15, 0)
-}
-let statusbar2: StatusBarSprite = null
-let statusbar7: StatusBarSprite = null
-let statusbar6: StatusBarSprite = null
-let statusbar4: StatusBarSprite = null
-let statusbar3: StatusBarSprite = null
-let mistyd: Sprite = null
-let brockd: Sprite = null
 let list: Image[] = []
 let ashd: Sprite = null
 let statusbar5: StatusBarSprite = null
-let ynd: Sprite = null
-let statusbar8: StatusBarSprite = null
+let ashp: Sprite = null
 let statusbar: StatusBarSprite = null
 let question = ""
-let player2: Sprite[] = []
-let ynp: Sprite = null
-let mistyp: Sprite = null
-let brockp: Sprite = null
-let ashp: Sprite = null
-let YN2: Sprite = null
-let Brock2: Sprite = null
-let Misty2: Sprite = null
-let Ash2: Sprite = null
-story.setPagePauseLength(100, 200)
-story.printCharacterText("PLEASE SELECT A STARTER PRESENTED IN FRONT OF YOU (walk to it)")
-tiles.loadMap(tiles.createMap(tilemap`level1`))
-Ash2 = sprites.create(img`
-    . . . . . . f f f f . . . . . . 
-    . . . . f f f 2 2 f f f . . . . 
-    . . . f f f 2 2 2 2 f f f . . . 
-    . . f f f e e e e e e f f f . . 
-    . . f f e 2 2 2 2 2 2 e e f . . 
-    . . f e 2 f f f f f f 2 e f . . 
-    . . f f f f e e e e f f f f . . 
-    . f f e f b f 4 4 f b f e f f . 
-    . f e e 4 1 f d d f 1 4 e e f . 
-    . . f e e d d d d d d e e f . . 
-    . . . f e e 4 4 4 4 e e f . . . 
-    . . e 4 f 2 2 2 2 2 2 f 4 e . . 
-    . . 4 d f 2 2 2 2 2 2 f d 4 . . 
-    . . 4 4 f 4 4 5 5 4 4 f 4 4 . . 
-    . . . . . f f f f f f . . . . . 
-    . . . . . f f . . f f . . . . . 
-    `, SpriteKind.Player)
-Misty2 = sprites.create(img`
-    . . . . . . 5 . 5 . . . . . . . 
-    . . . . . f 5 5 5 f f . . . . . 
-    . . . . f 1 5 2 5 1 6 f . . . . 
-    . . . f 1 6 6 6 6 6 1 6 f . . . 
-    . . . f 6 6 f f f f 6 1 f . . . 
-    . . . f 6 f f d d f f 6 f . . . 
-    . . f 6 f d f d d f d f 6 f . . 
-    . . f 6 f d 3 d d 3 d f 6 f . . 
-    . . f 6 6 f d d d d f 6 6 f . . 
-    . f 6 6 f 3 f f f f 3 f 6 6 f . 
-    . . f f d 3 5 3 3 5 3 d f f . . 
-    . . f d d f 3 5 5 3 f d d f . . 
-    . . . f f 3 3 3 3 3 3 f f . . . 
-    . . . f 3 3 5 3 3 5 3 3 f . . . 
-    . . . f f f f f f f f f f . . . 
-    . . . . . f f . . f f . . . . . 
-    `, SpriteKind.Player)
-Brock2 = sprites.create(img`
-    . . . . . . . f f . . . . . . . 
-    . . . . . f f 4 4 f f . . . . . 
-    . . . . f 5 4 5 5 4 5 f . . . . 
-    . . . f e 4 5 5 5 5 4 e f . . . 
-    . . f b 3 e 4 4 4 4 e 3 b f . . 
-    . f e 3 3 3 3 3 3 3 3 3 3 e f . 
-    . f 3 3 e b 3 e e 3 b e 3 3 f . 
-    . f b 3 f f e e e e f f 3 b f . 
-    f f b b f b f e e f b f b b f f 
-    f b b b e 1 f 4 4 f 1 e b b b f 
-    . f b b f 4 4 4 4 4 e e b b f . 
-    . . f e f b d d d e 4 4 4 f . . 
-    . . e 4 c d d d d e 4 4 e f . . 
-    . . e f b b d b d d e e f . . . 
-    . . . f f 1 1 d 1 d 1 f f . . . 
-    . . . . . f b b f f f . . . . . 
-    `, SpriteKind.Player)
-YN2 = sprites.create(img`
-    . f f f . f f f f . f f f . 
-    f f f f f c c c c f f f f f 
-    f f f f b c c c c b f f f f 
-    f f f c 3 c c c c 3 c f f f 
-    . f 3 3 c c c c c c 3 3 f . 
-    . f c c c c 4 4 c c c c f . 
-    . f f c c 4 4 4 4 c c f f . 
-    . f f f b f 4 4 f b f f f . 
-    . f f 4 1 f d d f 1 4 f f . 
-    . . f f d d d d d d f f . . 
-    . . e f e 4 4 4 4 e f e . . 
-    . e 4 f b 3 3 3 3 b f 4 e . 
-    . 4 d f 3 3 3 3 3 3 c d 4 . 
-    . 4 4 f 6 6 6 6 6 6 f 4 4 . 
-    . . . . f f f f f f . . . . 
-    . . . . f f . . f f . . . . 
-    `, SpriteKind.Player)
-ashp = sprites.create(img`
-    . . . . . . . . . . b 5 b . . . 
-    . . . . . . . . . b 5 b . . . . 
-    . . . . . . b b b b b b . . . . 
-    . . . . . b b 5 5 5 5 5 b . . . 
-    . . . . b b 5 d 1 f 5 d 4 c . . 
-    . . . . b 5 5 1 f f d d 4 4 4 b 
-    . . . . b 5 5 d f b 4 4 4 4 b . 
-    . . . b d 5 5 5 5 4 4 4 4 b . . 
-    . b b d d d 5 5 5 5 5 5 5 b . . 
-    b d d d b b b 5 5 5 5 5 5 5 b . 
-    c d d b 5 5 d c 5 5 5 5 5 5 b . 
-    c b b d 5 d c d 5 5 5 5 5 5 b . 
-    c b 5 5 b c d d 5 5 5 5 5 5 b . 
-    b b c c c d d d 5 5 5 5 5 d b . 
-    . . . . c c d d d 5 5 5 b b . . 
-    . . . . . . c c c c c b b . . . 
-    `, SpriteKind.Projectile)
-brockp = sprites.create(img`
-    . . . . . . . . . . b 5 b . . . 
-    . . . . . . . . . b 5 b . . . . 
-    . . . . . . b b b b b b . . . . 
-    . . . . . b b 5 5 5 5 5 b . . . 
-    . . . . b b 5 d 1 f 5 d 4 c . . 
-    . . . . b 5 5 1 f f d d 4 4 4 b 
-    . . . . b 5 5 d f b 4 4 4 4 b . 
-    . . . b d 5 5 5 5 4 4 4 4 b . . 
-    . b b d d d 5 5 5 5 5 5 5 b . . 
-    b d d d b b b 5 5 5 5 5 5 5 b . 
-    c d d b 5 5 d c 5 5 5 5 5 5 b . 
-    c b b d 5 d c d 5 5 5 5 5 5 b . 
-    c b 5 5 b c d d 5 5 5 5 5 5 b . 
-    b b c c c d d d 5 5 5 5 5 d b . 
-    . . . . c c d d d 5 5 5 b b . . 
-    . . . . . . c c c c c b b . . . 
-    `, SpriteKind.Projectile)
-mistyp = sprites.create(img`
-    . . . . . . . . . . b 5 b . . . 
-    . . . . . . . . . b 5 b . . . . 
-    . . . . . . b b b b b b . . . . 
-    . . . . . b b 5 5 5 5 5 b . . . 
-    . . . . b b 5 d 1 f 5 d 4 c . . 
-    . . . . b 5 5 1 f f d d 4 4 4 b 
-    . . . . b 5 5 d f b 4 4 4 4 b . 
-    . . . b d 5 5 5 5 4 4 4 4 b . . 
-    . b b d d d 5 5 5 5 5 5 5 b . . 
-    b d d d b b b 5 5 5 5 5 5 5 b . 
-    c d d b 5 5 d c 5 5 5 5 5 5 b . 
-    c b b d 5 d c d 5 5 5 5 5 5 b . 
-    c b 5 5 b c d d 5 5 5 5 5 5 b . 
-    b b c c c d d d 5 5 5 5 5 d b . 
-    . . . . c c d d d 5 5 5 b b . . 
-    . . . . . . c c c c c b b . . . 
-    `, SpriteKind.Projectile)
-ynp = sprites.create(img`
-    . . . . . . . . . . b 5 b . . . 
-    . . . . . . . . . b 5 b . . . . 
-    . . . . . . b b b b b b . . . . 
-    . . . . . b b 5 5 5 5 5 b . . . 
-    . . . . b b 5 d 1 f 5 d 4 c . . 
-    . . . . b 5 5 1 f f d d 4 4 4 b 
-    . . . . b 5 5 d f b 4 4 4 4 b . 
-    . . . b d 5 5 5 5 4 4 4 4 b . . 
-    . b b d d d 5 5 5 5 5 5 5 b . . 
-    b d d d b b b 5 5 5 5 5 5 5 b . 
-    c d d b 5 5 d c 5 5 5 5 5 5 b . 
-    c b b d 5 d c d 5 5 5 5 5 5 b . 
-    c b 5 5 b c d d 5 5 5 5 5 5 b . 
-    b b c c c d d d 5 5 5 5 5 d b . 
-    . . . . c c d d d 5 5 5 b b . . 
-    . . . . . . c c c c c b b . . . 
-    `, SpriteKind.Projectile)
-ynp.follow(YN2, 45)
-mistyp.follow(Misty2, 45)
-brockp.follow(Brock2, 45)
-ashp.follow(Ash2, 45)
-controller.player1.moveSprite(Ash2, 100, 100)
-controller.player2.moveSprite(Brock2, 100, 100)
-controller.player3.moveSprite(Misty2, 100, 100)
-controller.player4.moveSprite(YN2, 100, 100)
-tiles.placeOnRandomTile(Ash2, assets.tile`myTile1`)
-tiles.placeOnRandomTile(Brock2, assets.tile`myTile2`)
-tiles.placeOnRandomTile(Misty2, assets.tile`myTile3`)
-tiles.placeOnRandomTile(YN2, assets.tile`myTile4`)
-splitScreen.cameraFollowSprite(splitScreen.Camera.Camera1, Ash2)
-splitScreen.cameraFollowSprite(splitScreen.Camera.Camera2, Brock2)
-splitScreen.cameraFollowSprite(splitScreen.Camera.Camera3, Misty2)
-splitScreen.cameraFollowSprite(splitScreen.Camera.Camera4, YN2)
-let MERCHANT = sprites.create(img`
-    ........................
-    ........................
-    ........................
-    ........................
-    ..........ffff..........
-    ........ff1111ff........
-    .......fb111111bf.......
-    .......f11111111f.......
-    ......fd11111111df......
-    ......fd11111111df......
-    ......fddd1111dddf......
-    ......fbdbfddfbdbf......
-    ......fcdcf11fcdcf......
-    .......fb111111bf.......
-    ......fffcdb1bdffff.....
-    ....fc111cbfbfc111cf....
-    ....f1b1b1ffff1b1b1f....
-    ....fbfbffffffbfbfbf....
-    .........ffffff.........
-    ...........fff..........
-    ........................
-    ........................
-    ........................
-    ........................
-    `, SpriteKind.Player)
+let player2: number[] = []
+let statusbar8 = null
+let statusbar3 = null
+let statusbar4 = null
+let statusbar6 = null
+let statusbar7 = null
+let statusbar2 = null
