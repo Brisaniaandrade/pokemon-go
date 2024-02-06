@@ -22,6 +22,20 @@ namespace SpriteKind {
     export const Map = SpriteKind.create()
     export const Nurse = SpriteKind.create()
 }
+controller.combos.attachCombo("", function () {
+	
+})
+controller.combos.attachCombo("up up down down left right left right", function () {
+    ARK = 1
+    if (ASH) {
+        controller.moveSprite(ASH, 1000, 1000)
+        ASH.setFlag(SpriteFlag.GhostThroughTiles, false)
+        ASH.setFlag(SpriteFlag.GhostThroughWalls, true)
+    }
+    if (HealthBar) {
+        HealthBar.value += 10000
+    }
+})
 statusbars.onStatusReached(StatusBarKind.EnemyHealth, statusbars.StatusComparison.LT, statusbars.ComparisonType.Percentage, 60, function (status) {
     ENB.setColor(4, 15)
 })
@@ -524,6 +538,11 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         }
     }
 })
+sprites.onOverlap(SpriteKind.Cursor, SpriteKind.SWITCH, function (sprite, otherSprite) {
+    if (controller.A.isPressed()) {
+    	
+    }
+})
 sprites.onOverlap(SpriteKind.Cursor, SpriteKind.RUN, function (sprite, otherSprite) {
     if (ANOTHEROP == 1) {
         if (controller.A.isPressed()) {
@@ -877,11 +896,14 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Nurse, function (sprite, otherSp
     if (ASH) {
         if (VALue) {
             VALue = 100
-            story.printDialog("UR DERPMONS ARE HEALED", 80, 90, 50, 150)
+            story.printDialog("UR DERPMON AE HEALED", 80, 90, 50, 150)
         } else {
             story.printDialog("YOUR DERPMON ARE ALREADY HEALED", 80, 90, 50, 150)
         }
     }
+})
+sprites.onOverlap(SpriteKind.Cursor, SpriteKind.CATCH, function (sprite, otherSprite) {
+	
 })
 statusbars.onStatusReached(StatusBarKind.EnemyHealth, statusbars.StatusComparison.GTE, statusbars.ComparisonType.Percentage, 60, function (status) {
     ENB.setColor(2, 15)
@@ -945,10 +967,10 @@ let DART: Sprite = null
 let FIGHT_OPTION: Sprite = null
 let Change_Players_Pokemon = ""
 let Reds_Pokemon_List: string[] = []
-let HealthBar: StatusBarSprite = null
 let Player_Position_Y = 0
 let Player_Position_X = 0
 let ENB: StatusBarSprite = null
+let HealthBar: StatusBarSprite = null
 let Able_to_switch_pokemon = 0
 let ARK = 0
 let ANOTHEROP = 0
@@ -1098,7 +1120,7 @@ forever(function () {
         if (Moving) {
             if (ASH) {
                 if (ASH.tileKindAt(TileDirection.Center, sprites.swamp.swampTile1)) {
-                    if (Math.percentChance(99)) {
+                    if (Math.percentChance(89)) {
                         StartBattle()
                     }
                 }
